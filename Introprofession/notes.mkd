@@ -1,0 +1,32 @@
+# Premier cours T14 (31)
+
+## A faire
+
+1- Envoyer petit paragraphe a Dany pour me présenter OK
+
+ui user interface
+ux user experience
+
+CIO Chief information officer (directeur ti)
+CTO chief technology officer Directeur Technique
+mstsc microsoft service
+
+### RECHERCHES GOOGLE
+
+- Recherche explicite "Le mot en guillement va etre dans la recherche"
+
+- Recherche -LE MOT . retire le mot des resultats
+
+- wild card \* (remplace l'etoile pour dire TOUT)
+
+- recherche site:reddit.com
+
+- Around restaurant around centre bell (change ta geolocalisation pour les results)
+
+-Recherche entre 2 chiffres 2001..2020
+
+- type specific filetype:pdf
+
+- define LEMOT (retourne la definition)
+
+-convert 100 usd to cad (convertir 2 mesures ou devise )
