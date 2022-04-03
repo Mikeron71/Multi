@@ -1,0 +1,15 @@
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\bin\Debug\net6.0\HelloCs.exe
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\bin\Debug\net6.0\HelloCs.deps.json
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\bin\Debug\net6.0\HelloCs.runtimeconfig.json
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\bin\Debug\net6.0\HelloCs.dll
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\bin\Debug\net6.0\HelloCs.pdb
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\obj\Debug\net6.0\HelloCs.csproj.AssemblyReference.cache
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\obj\Debug\net6.0\HelloCs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\obj\Debug\net6.0\HelloCs.AssemblyInfoInputs.cache
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\obj\Debug\net6.0\HelloCs.AssemblyInfo.cs
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\obj\Debug\net6.0\HelloCs.csproj.CoreCompileInputs.cache
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\obj\Debug\net6.0\HelloCs.dll
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\obj\Debug\net6.0\refint\HelloCs.dll
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\obj\Debug\net6.0\HelloCs.pdb
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\obj\Debug\net6.0\HelloCs.genruntimeconfig.cache
+C:\Users\Mike\github\multihexa\code\chapter01-vscode\HelloCs\obj\Debug\net6.0\ref\HelloCs.dll

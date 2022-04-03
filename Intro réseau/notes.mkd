@@ -1,0 +1,10 @@
+# Cour 1
+
+- ouvrir remove appwiz.cpl
+
+msinfo32 info system
+
+george whilem
+rien de grand ne s'est accompli dans le monde sans passion
+
+a voir askii
