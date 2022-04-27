@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hS2taKj2D5AuvmVaDIo5jOh3nZD0Mp/zirqMWnr824zZbUMSwWHmCz70O6AwpqeG7tRfBZFmWy1cZbGvHHg8UA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\AOC_2021_01\\AOC_2021_01.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}
