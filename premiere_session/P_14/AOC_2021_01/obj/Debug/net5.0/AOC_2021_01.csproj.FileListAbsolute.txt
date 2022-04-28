@@ -1,0 +1,16 @@
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\bin\Debug\net5.0\AOC_2021_01.exe
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\bin\Debug\net5.0\AOC_2021_01.deps.json
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\bin\Debug\net5.0\AOC_2021_01.runtimeconfig.json
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\bin\Debug\net5.0\AOC_2021_01.runtimeconfig.dev.json
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\bin\Debug\net5.0\AOC_2021_01.dll
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\bin\Debug\net5.0\AOC_2021_01.pdb
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\obj\Debug\net5.0\AOC_2021_01.csproj.AssemblyReference.cache
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\obj\Debug\net5.0\AOC_2021_01.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\obj\Debug\net5.0\AOC_2021_01.AssemblyInfoInputs.cache
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\obj\Debug\net5.0\AOC_2021_01.AssemblyInfo.cs
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\obj\Debug\net5.0\AOC_2021_01.csproj.CoreCompileInputs.cache
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\obj\Debug\net5.0\AOC_2021_01.dll
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\obj\Debug\net5.0\refint\AOC_2021_01.dll
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\obj\Debug\net5.0\AOC_2021_01.pdb
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\obj\Debug\net5.0\AOC_2021_01.genruntimeconfig.cache
+C:\Users\Mike\github\multihexa\premiere_session\P_14\AOC_2021_01\obj\Debug\net5.0\ref\AOC_2021_01.dll

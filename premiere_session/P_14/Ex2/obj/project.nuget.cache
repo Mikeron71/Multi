@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vCs7BnqzPwNK9eE6oKqv1gmCijKGG1YoPMA/hR+6vUEnc65WRy/Pr4EzHSojZYdtgQsDkrNb1tQe/zQ7eAFZZA==",
+  "dgSpecHash": "gltJg2jKG3eMxCE5/T0QET9E/J6Ic88XjT+k84h5dTlC9tHBwYTBy2TBxQf0cKsWcRd6djO6ucjyBkb0YXcTiA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\P_14\\AOC_2021_01\\AOC_2021_01.csproj",
+  "projectFilePath": "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\P_14\\Ex2\\Ex2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mike\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
   ],
