@@ -1,0 +1,16 @@
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\bin\Debug\net5.0\lecon8.exe
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\bin\Debug\net5.0\lecon8.deps.json
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\bin\Debug\net5.0\lecon8.runtimeconfig.json
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\bin\Debug\net5.0\lecon8.runtimeconfig.dev.json
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\bin\Debug\net5.0\lecon8.dll
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\bin\Debug\net5.0\lecon8.pdb
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\obj\Debug\net5.0\lecon8.csproj.AssemblyReference.cache
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\obj\Debug\net5.0\lecon8.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\obj\Debug\net5.0\lecon8.AssemblyInfoInputs.cache
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\obj\Debug\net5.0\lecon8.AssemblyInfo.cs
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\obj\Debug\net5.0\lecon8.csproj.CoreCompileInputs.cache
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\obj\Debug\net5.0\lecon8.dll
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\obj\Debug\net5.0\refint\lecon8.dll
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\obj\Debug\net5.0\lecon8.pdb
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\obj\Debug\net5.0\lecon8.genruntimeconfig.cache
+C:\Users\Mike\github\multihexa\premiere_session\p_14\lecon8\obj\Debug\net5.0\ref\lecon8.dll

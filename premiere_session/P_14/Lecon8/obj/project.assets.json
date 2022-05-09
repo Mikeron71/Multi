@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\p_14\\ex6\\Ex6.csproj",
-      "projectName": "Ex6",
-      "projectPath": "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\p_14\\ex6\\Ex6.csproj",
+      "projectUniqueName": "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\p_14\\lecon8\\lecon8.csproj",
+      "projectName": "lecon8",
+      "projectPath": "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\p_14\\lecon8\\lecon8.csproj",
       "packagesPath": "C:\\Users\\Mike\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\p_14\\ex6\\obj\\",
+      "outputPath": "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\p_14\\lecon8\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mike\\AppData\\Roaming\\NuGet\\NuGet.Config"

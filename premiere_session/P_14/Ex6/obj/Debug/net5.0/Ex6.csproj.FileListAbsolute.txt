@@ -1,0 +1,16 @@
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\bin\Debug\net5.0\Ex6.exe
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\bin\Debug\net5.0\Ex6.deps.json
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\bin\Debug\net5.0\Ex6.runtimeconfig.json
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\bin\Debug\net5.0\Ex6.runtimeconfig.dev.json
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\bin\Debug\net5.0\Ex6.dll
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\bin\Debug\net5.0\Ex6.pdb
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\obj\Debug\net5.0\Ex6.csproj.AssemblyReference.cache
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\obj\Debug\net5.0\Ex6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\obj\Debug\net5.0\Ex6.AssemblyInfoInputs.cache
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\obj\Debug\net5.0\Ex6.AssemblyInfo.cs
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\obj\Debug\net5.0\Ex6.csproj.CoreCompileInputs.cache
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\obj\Debug\net5.0\Ex6.dll
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\obj\Debug\net5.0\refint\Ex6.dll
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\obj\Debug\net5.0\Ex6.pdb
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\obj\Debug\net5.0\Ex6.genruntimeconfig.cache
+C:\Users\Mike\github\multihexa\premiere_session\p_14\ex6\obj\Debug\net5.0\ref\Ex6.dll

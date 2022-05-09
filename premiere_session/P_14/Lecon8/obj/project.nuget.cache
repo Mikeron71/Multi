@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b2wIZMixUnRrDIARg/Wn6xwNrdKNR+LSLNZkCwGsqmahxrIOv0A1ys8y9VZZkg3p8aGqx6k8+P4GjAoykA6pBg==",
+  "dgSpecHash": "VWh9+LXWE2n1zdt5dJssN90ML26aHXVCEsjVPElOS2JS13ZygqzXWZjJgN4U3jdCBS37mZT8IRdivo13byZ+sQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\Ex6\\Ex6.csproj",
+  "projectFilePath": "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\p_14\\lecon8\\lecon8.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mike\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
   ],
