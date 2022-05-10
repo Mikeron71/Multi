@@ -14,3 +14,5 @@ C:\Users\Mike\github\MultiHexa\premiere_session\P_14\TP2\Partie1\obj\Debug\net5.
 C:\Users\Mike\github\MultiHexa\premiere_session\P_14\TP2\Partie1\obj\Debug\net5.0\Partie1.pdb
 C:\Users\Mike\github\MultiHexa\premiere_session\P_14\TP2\Partie1\obj\Debug\net5.0\Partie1.genruntimeconfig.cache
 C:\Users\Mike\github\MultiHexa\premiere_session\P_14\TP2\Partie1\obj\Debug\net5.0\ref\Partie1.dll
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\TP2\Partie1\bin\Debug\net5.0\ConsoleTables.dll
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\TP2\Partie1\obj\Debug\net5.0\Partie1.csproj.CopyComplete

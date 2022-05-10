@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\partie1\\Partie1.csproj": {}
+    "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\Partie1\\Partie1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\partie1\\Partie1.csproj": {
+    "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\Partie1\\Partie1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\partie1\\Partie1.csproj",
+        "projectUniqueName": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\Partie1\\Partie1.csproj",
         "projectName": "Partie1",
-        "projectPath": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\partie1\\Partie1.csproj",
+        "projectPath": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\Partie1\\Partie1.csproj",
         "packagesPath": "C:\\Users\\Mike\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\partie1\\obj\\",
+        "outputPath": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\Partie1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mike\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "ConsoleTables": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
