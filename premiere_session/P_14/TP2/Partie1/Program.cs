@@ -1,5 +1,6 @@
 ﻿using System;
 using ConsoleTables;
+using System.Globalization;
 
 
 namespace Partie1
@@ -8,6 +9,11 @@ namespace Partie1
     {
         static void Main(string[] args)
         {
+            
+            
+            //j'utilise la cultureInfo du canada pour le format monétaire
+            CultureInfo myCIintl = new CultureInfo("fr-CA", false);
+           
             double montantPret;
             double tauxHypotecaire;
             double versementsMensuels;
@@ -55,15 +61,22 @@ namespace Partie1
 
                                 Console.WriteLine("versements===" +versementsMensuels);
 
-                                var table = new ConsoleTable("Catégorie","");
-                                table.AddRow("Nombre de versements", versementsUnAn*amortissement)
-                                .AddRow("Versements mensuels", versementsMensuels )
-                                .AddRow("Paiement de capital", montantPret)
-                                .AddRow("Paiement de frais d'interêts", interets )
-                                .AddRow("Coût total", total );
+                                var table = new ConsoleTable("Catégorie","","");
+                                
+                        
+                           
+                                table.AddRow("Nombre de versements","------------------------->" ,versementsUnAn*amortissement)
+                                .AddRow("Versements mensuels", "------------------------->",versementsMensuels.ToString("c", myCIintl) )
+                                .AddRow("Paiement de capital","------------------------->", montantPret.ToString("c", myCIintl))
+                                .AddRow("Paiement de frais d'interêts", "------------------------->",interets.ToString("c", myCIintl) )
+                                .AddRow("Coût total", "------------------------->",total.ToString("c", myCIintl) );
                                 
 
+                              
                                 Console.WriteLine(table);
+                            
+                            
+
                                 
 
                                
@@ -74,7 +87,7 @@ namespace Partie1
                                
                                 Console.WriteLine("Voulez vous calculer une autre hypoteque? (O)ui ou (N)on");
                                 valide = Char.TryParse(Console.ReadLine().ToUpper(), out reponse) && reponse == 'O' || reponse =='N';
-                                Console.WriteLine("dernier valide:" +valide);
+                           
                                 }while(!valide);
 
                                 continuer = (reponse =='O')?  true : false;
