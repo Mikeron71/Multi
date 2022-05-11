@@ -14,30 +14,33 @@ namespace Partie1
             //j'utilise la cultureInfo du canada pour le format monétaire
             CultureInfo myCIintl = new CultureInfo("fr-CA", false);
            
+
+           //Declaration/Assignations 
+            
             double montantPret;
             double tauxHypotecaire;
-            double versementsMensuels;
-            double total;
+            decimal versementsMensuels;
+            decimal total;
             int amortissement = 0;
             int versementsUnAn = 12;
             bool continuer = false;
             bool valide = true;
-            double interets ;
+            decimal interets ;
             char reponse;
             
       
-
-
-            do
-            {
+            do{
                do{
-                    Console.WriteLine("Veuillez entrer le montant du pret sans espace.");
-                    valide = double.TryParse(Console.ReadLine(),out montantPret)&& montantPret > 0;
+                    Console.WriteLine("Veuillez entrer le montant du pret");
+                    valide = double.TryParse(Console.ReadLine().Replace(" ", string.Empty),out montantPret)&& montantPret > 0;
+  
 
                 }while(!valide);
                 do{
-                    Console.WriteLine("Veuillez entrer le taux hypotecaire.");
-                    valide = double.TryParse(Console.ReadLine(),out tauxHypotecaire);
+                    Console.WriteLine("Veuillez entrer le taux hypotecaire. Entrez 10 pour 10%");
+                    valide = double.TryParse  (Console.ReadLine(),out tauxHypotecaire);
+                    tauxHypotecaire = tauxHypotecaire/100;
+
 
                 }while(!valide);
                 do{
@@ -47,89 +50,40 @@ namespace Partie1
 
                 }while(!valide);
 
-                double aDiviser = montantPret*tauxHypotecaire/versementsUnAn;
+                //Calculs formule hypotecaire
+
+                decimal dividende = (decimal)montantPret*(decimal)tauxHypotecaire/versementsUnAn;
                 double exposant = -versementsUnAn*amortissement;
+                decimal diviseur =  1- (decimal)Math.Pow((1+tauxHypotecaire/versementsUnAn),exposant);
                               
-                double diviseur =  1- Math.Pow((1+tauxHypotecaire/versementsUnAn),exposant);
              
-                versementsMensuels = aDiviser/diviseur;
+                versementsMensuels = dividende/diviseur;
                 
                 total = versementsMensuels*(versementsUnAn*amortissement);
-                interets = total - montantPret;
+                interets = decimal.Subtract(total , (decimal)montantPret);
                
                               
-
-                                var table = new ConsoleTable("Catégorie","","");
+                //Config tableau resultats
+                var table = new ConsoleTable("Catégorie","","");
                                 
                         
-                           
-                                table.AddRow("Nombre de versements","------------------------->" ,versementsUnAn*amortissement)
-                                .AddRow("Versements mensuels", "------------------------->",versementsMensuels.ToString("c", myCIintl) )
-                                .AddRow("Paiement de capital","------------------------->", montantPret.ToString("c", myCIintl))
-                                .AddRow("Paiement de frais d'interêts", "------------------------->",interets.ToString("c", myCIintl) )
-                                .AddRow("Coût total", "------------------------->",total.ToString("c", myCIintl) );
+                string fleche = "------------------------>";
+                table.AddRow("Nombre de versements",fleche        ,versementsUnAn*amortissement)
+                .AddRow("Paiement de capital",fleche              ,montantPret.ToString("c", myCIintl))
+                .AddRow("Paiement de frais d'interêts", fleche    ,interets.ToString("c", myCIintl) )
+                .AddRow("Coût total", fleche                      ,total.ToString("c", myCIintl) );
+                Console.WriteLine(table);
                                 
+                do{
+                    Console.WriteLine("Voulez vous calculer une autre hypoteque? (O)ui ou (N)on");
+                    valide = Char.TryParse(Console.ReadLine().ToUpper(), out reponse) && reponse == 'O' || reponse =='N';}
+                    while(!valide);
 
-                              
-                                Console.WriteLine(table);
-                            
-                            
-
-                                
-
-                               
-                               do{
-                   
-               
-                               
-                               
-                                Console.WriteLine("Voulez vous calculer une autre hypoteque? (O)ui ou (N)on");
-                                valide = Char.TryParse(Console.ReadLine().ToUpper(), out reponse) && reponse == 'O' || reponse =='N';
-                           
-                                }while(!valide);
-
-                                continuer = (reponse =='O')?  true : false;
-
-
-                          
-
-
-
-
-
-                
-
-                    
-
-
-
-          
-               
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                continuer = (reponse =='O')?  true : false;
 
                 
             } while (continuer == true);
-
-
-
-
-            
         }
     }
 }
+// NOTE je suis incapable de retirer le COUNT: apres mon tableau. :(

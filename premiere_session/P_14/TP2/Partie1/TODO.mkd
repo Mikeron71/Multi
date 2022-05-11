@@ -1,0 +1,7 @@
+# TODO
+
+- [x] Vérifier pour tableau dans terminal
+- [x] Vérifier double vs decimal
+- [x] validation input partout et tests
+- [x] :C?? $$$$
+- [x] Entrer taux hypo format 5%

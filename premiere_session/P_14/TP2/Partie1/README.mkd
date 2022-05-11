@@ -1,6 +1,11 @@
-# A FAIRE
+Programme 1 : Calculette de prêts hypothécaires
 
-- [x] Vérifier pour tableau dans terminal
-- [] Vérifier double vs decimal
-- [] validation input partout et tests
-- [] :C?? $$$$
+Écrivez un programme console agissant comme calculatrice hypothécaire.
+
+Votre programme doit afficher le versement mensuel et les entrées de l’utilisateur
+
+• Montant du prêt
+
+• Taux d’intérêt
+
+• Période d’amortissement (5 à 30 ans, par multiple de 5)
