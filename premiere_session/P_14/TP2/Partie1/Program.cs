@@ -49,17 +49,15 @@ namespace Partie1
 
                 double aDiviser = montantPret*tauxHypotecaire/versementsUnAn;
                 double exposant = -versementsUnAn*amortissement;
-                                Console.WriteLine("EXPO" + exposant);
+                              
                 double diviseur =  1- Math.Pow((1+tauxHypotecaire/versementsUnAn),exposant);
              
                 versementsMensuels = aDiviser/diviseur;
+                
                 total = versementsMensuels*(versementsUnAn*amortissement);
                 interets = total - montantPret;
-                Console.WriteLine("adiviser===" +aDiviser);
-                                Console.WriteLine("diviseur===" +diviseur);
-                                Console.WriteLine("div2===" +diviseur);
-
-                                Console.WriteLine("versements===" +versementsMensuels);
+               
+                              
 
                                 var table = new ConsoleTable("Catégorie","","");
                                 

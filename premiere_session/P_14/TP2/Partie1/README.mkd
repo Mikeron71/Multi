@@ -1,6 +1,6 @@
 # A FAIRE
 
-- Vérifier pour tableau dans terminal
-- Vérifier double vs decimal
-- validation input partout et tests
-- :C?? $$$$
+- [x] Vérifier pour tableau dans terminal
+- [] Vérifier double vs decimal
+- [] validation input partout et tests
+- [] :C?? $$$$
