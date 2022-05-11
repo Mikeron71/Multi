@@ -1,0 +1,9 @@
+Programme 2 : Calculette de placements à intérêts composés pour devenir millionnaire
+
+Écrivez un programme qui produit des tableaux de placement annuels à intérêts composés et qui indique combien d’années il faudra pour devenir millionnaire. Les variables entrées par l’utilisateur seront :
+
+• Le montant du dépôt initial
+
+• Le taux d’intérêt annuel
+
+• Les montants des dépôts subséquents mensuels

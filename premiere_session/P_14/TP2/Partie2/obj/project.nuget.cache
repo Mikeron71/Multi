@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "VkMup8HzXqQftvljPudoA+f2VZtB0yg+RrGxvvOCYlmgA8zY8OxVmdoH0adngp7pFZjKhuK1F+v0mlR5MxOFGQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\p_14\\tp2\\partie2\\partie2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}
