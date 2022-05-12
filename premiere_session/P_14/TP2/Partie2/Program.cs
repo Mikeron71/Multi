@@ -1,20 +1,27 @@
 ﻿using System;
 
+using System.Globalization;
+
 namespace partie2
 {
     class Program
     {
         static void Main(string[] args)
         {
+                       
+            //j'utilise la cultureInfo du canada pour le format monétaire
+            CultureInfo myCIintl = new CultureInfo("fr-CA", false);
 
-            double depotInitial;
+            decimal depotInitial;
             double tauxAnnuel;
-            double depotsSubsequents;
+            decimal depotsSubsequents;
             bool valide = false;
             bool continuer = false;
-            double total= 0;
+
             double count = 0;
-            double interetGagne;
+            decimal interetGagne;
+            decimal montant = 0;
+            
             
 
 
@@ -22,7 +29,7 @@ namespace partie2
            do{
                do{
                     Console.WriteLine("Veuillez entrer le montant du dépot initial");
-                    valide = double.TryParse(Console.ReadLine().Replace(" ", string.Empty),out depotInitial)&& depotInitial > 0;
+                    valide = decimal.TryParse(Console.ReadLine().Replace(" ", string.Empty),out depotInitial)&& depotInitial > 0;
   
 
                 }while(!valide);
@@ -35,30 +42,44 @@ namespace partie2
                 }while(!valide);
                 do{
                     Console.WriteLine("Veuillez entrer le montant des dépots subséquents mensuels");
-                    valide = double.TryParse(Console.ReadLine(),out depotsSubsequents);
+                    valide = decimal.TryParse(Console.ReadLine(),out depotsSubsequents);
                   
 
                 }while(!valide);
 
                 //Calculs 
 
-                while (total <10000){
-                    count++;
+                
+                  do{  
+                    
                   
                     // interetGagne = (decimal)Math.Pow(depotInitial*(1+tauxAnnuel/12/100),12);
-               
-                double montant = depotInitial*Math.Pow((1+tauxAnnuel/12/100),12);
-                interetGagne = depotInitial-montant;
-                total = total +montant;
-                total = total +depotsSubsequents;
-                    Console.WriteLine("montant====" + montant);
-                    Console.WriteLine("interet gagne====" + interetGagne);
-                    Console.WriteLine("total" + total);
 
-                    Console.WriteLine(count);
+
+                double tauxmensuel = tauxAnnuel/12;
+
+                montant = depotInitial*(decimal)Math.Pow((1+tauxmensuel/100),1) + depotsSubsequents;
+                Console.WriteLine($"mois {count}");
+                Console.WriteLine($"montant ==={montant.ToString("c",myCIintl)}");
+                interetGagne = montant-depotInitial;
+                // Console.WriteLine($"interet==={interetGagne}");
+                depotInitial += interetGagne ;
+                count++;
+
+               
+
+            
+                  }
+                while (montant <=1000000);
+              
+
+
+                   
+                   
+               
 
                 
-                }
+                
 
 
 
