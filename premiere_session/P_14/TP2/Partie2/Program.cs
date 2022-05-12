@@ -1,5 +1,5 @@
 ﻿using System;
-
+using ConsoleTables;
 using System.Globalization;
 
 namespace partie2
@@ -18,7 +18,7 @@ namespace partie2
             bool valide = false;
             bool continuer = false;
 
-            double count = 0;
+            double mois = 0;
             decimal interetGagne;
             decimal montant = 0;
             
@@ -59,12 +59,21 @@ namespace partie2
                 double tauxmensuel = tauxAnnuel/12;
 
                 montant = depotInitial*(decimal)Math.Pow((1+tauxmensuel/100),1) + depotsSubsequents;
-                Console.WriteLine($"mois {count}");
-                Console.WriteLine($"montant ==={montant.ToString("c",myCIintl)}");
                 interetGagne = montant-depotInitial;
-                // Console.WriteLine($"interet==={interetGagne}");
                 depotInitial += interetGagne ;
-                count++;
+                mois++;
+
+            
+                if(mois % 12 ==0){
+
+                var table = new ConsoleTable("Catégorie","","");
+                                
+                        
+                string fleche = "------------------------>";
+                table.AddRow($"année {mois/12}",fleche ,  montant.ToString("c",myCIintl)    );
+                Console.WriteLine(table);
+                }
+
 
                
 
@@ -72,7 +81,10 @@ namespace partie2
                   }
                 while (montant <=1000000);
               
+              int annes = (int)Math.Floor(mois/12);
+              int moisRestants = (int)mois %12;
 
+                Console.WriteLine($"En {annes} ans et {moisRestants} mois vous aurrez atteint le million de dollars. Plus précisément {montant.ToString("c",myCIintl)}.");
 
                    
                    

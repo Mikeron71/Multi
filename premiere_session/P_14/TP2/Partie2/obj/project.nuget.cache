@@ -1,9 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "VkMup8HzXqQftvljPudoA+f2VZtB0yg+RrGxvvOCYlmgA8zY8OxVmdoH0adngp7pFZjKhuK1F+v0mlR5MxOFGQ==",
+  "dgSpecHash": "k+zFx6rGSDgmQNQvMPIriYP03vLlScuzjHQ8DNvr+31qVkj6vY5oJ/LdLobfZ7/rYZRdVMM7If8gmHbK603W9Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\p_14\\tp2\\partie2\\partie2.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Mike\\.nuget\\packages\\consoletables\\2.4.2\\consoletables.2.4.2.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
+    "C:\\Users\\Mike\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\Mike\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
   ],
   "logs": []
