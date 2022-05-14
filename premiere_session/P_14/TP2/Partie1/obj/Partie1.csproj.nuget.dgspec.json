@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< Updated upstream
     "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\p_14\\tp2\\partie1\\Partie1.csproj": {}
   },
   "projects": {
@@ -12,9 +13,22 @@
         "projectPath": "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\p_14\\tp2\\partie1\\Partie1.csproj",
         "packagesPath": "C:\\Users\\Mike\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\p_14\\tp2\\partie1\\obj\\",
+=======
+    "/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/Partie1.csproj": {}
+  },
+  "projects": {
+    "/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/Partie1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/Partie1.csproj",
+        "projectName": "Partie1",
+        "projectPath": "/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/Partie1.csproj",
+        "packagesPath": "/Users/michael/.nuget/packages/",
+        "outputPath": "/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/obj/",
+>>>>>>> Stashed changes
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mike\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/michael/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -53,18 +67,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[5.0.15, 5.0.15]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }

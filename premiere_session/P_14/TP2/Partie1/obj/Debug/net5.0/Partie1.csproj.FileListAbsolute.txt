@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 C:\Users\Mike\github\MultiHexa\premiere_session\P_14\TP2\Partie1\bin\Debug\net5.0\Partie1.exe
 C:\Users\Mike\github\MultiHexa\premiere_session\P_14\TP2\Partie1\bin\Debug\net5.0\Partie1.deps.json
 C:\Users\Mike\github\MultiHexa\premiere_session\P_14\TP2\Partie1\bin\Debug\net5.0\Partie1.runtimeconfig.json
@@ -16,3 +17,37 @@ C:\Users\Mike\github\MultiHexa\premiere_session\P_14\TP2\Partie1\obj\Debug\net5.
 C:\Users\Mike\github\MultiHexa\premiere_session\P_14\TP2\Partie1\obj\Debug\net5.0\ref\Partie1.dll
 C:\Users\Mike\github\MultiHexa\premiere_session\P_14\TP2\Partie1\bin\Debug\net5.0\ConsoleTables.dll
 C:\Users\Mike\github\MultiHexa\premiere_session\P_14\TP2\Partie1\obj\Debug\net5.0\Partie1.csproj.CopyComplete
+=======
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/bin/Debug/net5.0/Partie1.exe
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/bin/Debug/net5.0/Partie1.deps.json
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/bin/Debug/net5.0/Partie1.runtimeconfig.json
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/bin/Debug/net5.0/Partie1.runtimeconfig.dev.json
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/bin/Debug/net5.0/Partie1.dll
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/bin/Debug/net5.0/Partie1.pdb
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.csproj.AssemblyReference.cache
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.AssemblyInfoInputs.cache
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.AssemblyInfo.cs
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.csproj.CoreCompileInputs.cache
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.dll
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/refint/Partie1.dll
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.pdb
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.genruntimeconfig.cache
+C:/Users/Mike/github/MultiHexa/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/ref/Partie1.dll
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/bin/Debug/net5.0/Partie1
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/bin/Debug/net5.0/Partie1.deps.json
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/bin/Debug/net5.0/Partie1.runtimeconfig.json
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/bin/Debug/net5.0/Partie1.runtimeconfig.dev.json
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/bin/Debug/net5.0/Partie1.dll
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/bin/Debug/net5.0/Partie1.pdb
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.csproj.AssemblyReference.cache
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.AssemblyInfoInputs.cache
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.AssemblyInfo.cs
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.csproj.CoreCompileInputs.cache
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.dll
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/refint/Partie1.dll
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.pdb
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/Partie1.genruntimeconfig.cache
+/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/obj/Debug/net5.0/ref/Partie1.dll
+>>>>>>> Stashed changes
