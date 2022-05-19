@@ -672,19 +672,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/michael/.nuget/packages/": {}
+    "C:\\Users\\Mike\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/Partie1.csproj",
+      "projectUniqueName": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\Partie1\\Partie1.csproj",
       "projectName": "Partie1",
-      "projectPath": "/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/Partie1.csproj",
-      "packagesPath": "/Users/michael/.nuget/packages/",
-      "outputPath": "/Users/michael/Documents/github/Multi/premiere_session/P_14/TP2/Partie1/obj/",
+      "projectPath": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\Partie1\\Partie1.csproj",
+      "packagesPath": "C:\\Users\\Mike\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\Partie1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/michael/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Mike\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -723,13 +723,27 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.15, 5.0.15]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\Partie1\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
