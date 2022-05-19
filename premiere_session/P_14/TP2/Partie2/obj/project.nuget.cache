@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k+zFx6rGSDgmQNQvMPIriYP03vLlScuzjHQ8DNvr+31qVkj6vY5oJ/LdLobfZ7/rYZRdVMM7If8gmHbK603W9Q==",
+  "dgSpecHash": "j8t3C7qMgCya+4ZjwtDbQB6tXR85U3QZ657Y7zIJIaO9+kWeVVWb0VXDwrqdP3itbA0yIctgrB12t/EW5sNfRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mike\\github\\multihexa\\premiere_session\\p_14\\tp2\\partie2\\partie2.csproj",
+  "projectFilePath": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\P_14\\TP2\\partie2\\partie2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mike\\.nuget\\packages\\consoletables\\2.4.2\\consoletables.2.4.2.nupkg.sha512",
     "C:\\Users\\Mike\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

@@ -76,7 +76,7 @@ namespace partie2
                 Console.WriteLine($"En {annes} ans et {moisRestants} mois vous aurrez atteint le million de dollars. Plus précisément {montant.ToString("c",myCIintl)}.");
 
                 do{
-                    Console.WriteLine("Voulez vous calculer une autre hypoteque? (O)ui ou (N)on");
+                    Console.WriteLine("Voulez vous calculer une autre placement? (O)ui ou (N)on");
                     valide = Char.TryParse(Console.ReadLine().ToUpper(), out reponse) && reponse == 'O' || reponse =='N';}
                     while(!valide);
 
