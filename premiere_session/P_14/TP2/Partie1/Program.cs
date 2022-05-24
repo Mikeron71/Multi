@@ -80,6 +80,8 @@ namespace Partie1
                     while(!valide);
 
                 continuer = (reponse =='O')?  true : false;
+              
+               
 
                 
             } while (continuer == true);

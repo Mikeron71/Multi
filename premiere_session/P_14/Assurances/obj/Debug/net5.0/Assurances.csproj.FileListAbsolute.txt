@@ -1,0 +1,16 @@
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\obj\Debug\net5.0\Assurances.csproj.AssemblyReference.cache
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\obj\Debug\net5.0\Assurances.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\obj\Debug\net5.0\Assurances.AssemblyInfoInputs.cache
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\obj\Debug\net5.0\Assurances.AssemblyInfo.cs
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\obj\Debug\net5.0\Assurances.csproj.CoreCompileInputs.cache
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\bin\Debug\net5.0\Assurances.exe
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\bin\Debug\net5.0\Assurances.deps.json
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\bin\Debug\net5.0\Assurances.runtimeconfig.json
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\bin\Debug\net5.0\Assurances.runtimeconfig.dev.json
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\bin\Debug\net5.0\Assurances.dll
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\bin\Debug\net5.0\Assurances.pdb
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\obj\Debug\net5.0\Assurances.dll
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\obj\Debug\net5.0\refint\Assurances.dll
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\obj\Debug\net5.0\Assurances.pdb
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\obj\Debug\net5.0\Assurances.genruntimeconfig.cache
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Assurances\obj\Debug\net5.0\ref\Assurances.dll

@@ -1,0 +1,16 @@
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\bin\Debug\net5.0\Essence.exe
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\bin\Debug\net5.0\Essence.deps.json
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\bin\Debug\net5.0\Essence.runtimeconfig.json
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\bin\Debug\net5.0\Essence.runtimeconfig.dev.json
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\bin\Debug\net5.0\Essence.dll
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\bin\Debug\net5.0\Essence.pdb
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\obj\Debug\net5.0\Essence.csproj.AssemblyReference.cache
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\obj\Debug\net5.0\Essence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\obj\Debug\net5.0\Essence.AssemblyInfoInputs.cache
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\obj\Debug\net5.0\Essence.AssemblyInfo.cs
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\obj\Debug\net5.0\Essence.csproj.CoreCompileInputs.cache
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\obj\Debug\net5.0\Essence.dll
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\obj\Debug\net5.0\refint\Essence.dll
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\obj\Debug\net5.0\Essence.pdb
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\obj\Debug\net5.0\Essence.genruntimeconfig.cache
+C:\Users\Mike\github\MultiHexa\premiere_session\P_14\Essence\obj\Debug\net5.0\ref\Essence.dll
