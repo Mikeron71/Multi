@@ -47,7 +47,7 @@ namespace Essence
 
             while (autreMontant) {
                 do{
-                    Console.WriteLine("Avez un montant a ajouter au total (O)ui ou (N)on ?");
+                    Console.WriteLine("Avez-vous un autre montant a ajouter au total (O)ui ou (N)on ?");
                     valide = Char.TryParse(Console.ReadLine().ToUpper(),out reponse) && reponse == 'N' || reponse == 'O';
                 } while(!valide);
 
@@ -90,10 +90,7 @@ namespace Essence
                 valide = Char.TryParse(Console.ReadLine().ToUpper(),out reponse) && reponse == 'N' || reponse == 'O';
             } while(!valide);
 
-            if (reponse == 'O')
-            {
-              continuer = true;  
-            }
+          continuer = (reponse == 'O')? true: false; 
 
          }while(continuer == true);
           
