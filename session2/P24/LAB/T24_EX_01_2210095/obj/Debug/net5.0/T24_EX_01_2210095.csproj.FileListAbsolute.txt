@@ -1,0 +1,32 @@
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\bin\Debug\net5.0\T24_EX_01_2210095.exe
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\bin\Debug\net5.0\T24_EX_01_2210095.deps.json
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\bin\Debug\net5.0\T24_EX_01_2210095.runtimeconfig.json
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\bin\Debug\net5.0\T24_EX_01_2210095.runtimeconfig.dev.json
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\bin\Debug\net5.0\T24_EX_01_2210095.dll
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\bin\Debug\net5.0\T24_EX_01_2210095.pdb
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.csproj.AssemblyReference.cache
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.AssemblyInfoInputs.cache
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.AssemblyInfo.cs
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.csproj.CoreCompileInputs.cache
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.dll
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\obj\Debug\net5.0\refint\T24_EX_01_2210095.dll
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.pdb
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.genruntimeconfig.cache
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\T24_EX_01_2210095\obj\Debug\net5.0\ref\T24_EX_01_2210095.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\bin\Debug\net5.0\T24_EX_01_2210095.exe
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\bin\Debug\net5.0\T24_EX_01_2210095.deps.json
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\bin\Debug\net5.0\T24_EX_01_2210095.runtimeconfig.json
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\bin\Debug\net5.0\T24_EX_01_2210095.runtimeconfig.dev.json
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\bin\Debug\net5.0\T24_EX_01_2210095.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\bin\Debug\net5.0\T24_EX_01_2210095.pdb
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.csproj.AssemblyReference.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.AssemblyInfoInputs.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.AssemblyInfo.cs
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.csproj.CoreCompileInputs.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\obj\Debug\net5.0\refint\T24_EX_01_2210095.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.pdb
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\obj\Debug\net5.0\T24_EX_01_2210095.genruntimeconfig.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\cours1\lab\T24_EX_01_2210095\obj\Debug\net5.0\ref\T24_EX_01_2210095.dll

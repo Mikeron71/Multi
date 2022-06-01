@@ -1,0 +1,5 @@
+date naissance
+note
+nom 
+prenom 
+numero etudiant

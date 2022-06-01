@@ -1,0 +1,16 @@
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\obj\Debug\net5.0\tableau.csproj.AssemblyReference.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\obj\Debug\net5.0\tableau.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\obj\Debug\net5.0\tableau.AssemblyInfoInputs.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\obj\Debug\net5.0\tableau.AssemblyInfo.cs
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\obj\Debug\net5.0\tableau.csproj.CoreCompileInputs.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\bin\Debug\net5.0\tableau.exe
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\bin\Debug\net5.0\tableau.deps.json
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\bin\Debug\net5.0\tableau.runtimeconfig.json
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\bin\Debug\net5.0\tableau.runtimeconfig.dev.json
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\bin\Debug\net5.0\tableau.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\bin\Debug\net5.0\tableau.pdb
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\obj\Debug\net5.0\tableau.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\obj\Debug\net5.0\refint\tableau.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\obj\Debug\net5.0\tableau.pdb
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\obj\Debug\net5.0\tableau.genruntimeconfig.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\pratique\tableau\obj\Debug\net5.0\ref\tableau.dll

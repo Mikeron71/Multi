@@ -1,0 +1,32 @@
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\bin\Debug\net5.0\1-Battleship.exe
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\bin\Debug\net5.0\1-Battleship.deps.json
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\bin\Debug\net5.0\1-Battleship.runtimeconfig.json
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\bin\Debug\net5.0\1-Battleship.runtimeconfig.dev.json
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\bin\Debug\net5.0\1-Battleship.dll
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\bin\Debug\net5.0\1-Battleship.pdb
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\obj\Debug\net5.0\1-Battleship.csproj.AssemblyReference.cache
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\obj\Debug\net5.0\1-Battleship.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\obj\Debug\net5.0\1-Battleship.AssemblyInfoInputs.cache
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\obj\Debug\net5.0\1-Battleship.AssemblyInfo.cs
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\obj\Debug\net5.0\1-Battleship.csproj.CoreCompileInputs.cache
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\obj\Debug\net5.0\1-Battleship.dll
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\obj\Debug\net5.0\refint\1-Battleship.dll
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\obj\Debug\net5.0\1-Battleship.pdb
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\obj\Debug\net5.0\1-Battleship.genruntimeconfig.cache
+C:\Users\Mike\github\MultiHexa\session 2\P24\cours1\LAB\Battleship\obj\Debug\net5.0\ref\1-Battleship.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\bin\Debug\net5.0\1-Battleship.exe
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\bin\Debug\net5.0\1-Battleship.deps.json
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\bin\Debug\net5.0\1-Battleship.runtimeconfig.json
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\bin\Debug\net5.0\1-Battleship.runtimeconfig.dev.json
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\bin\Debug\net5.0\1-Battleship.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\bin\Debug\net5.0\1-Battleship.pdb
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\obj\Debug\net5.0\1-Battleship.csproj.AssemblyReference.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\obj\Debug\net5.0\1-Battleship.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\obj\Debug\net5.0\1-Battleship.AssemblyInfoInputs.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\obj\Debug\net5.0\1-Battleship.AssemblyInfo.cs
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\obj\Debug\net5.0\1-Battleship.csproj.CoreCompileInputs.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\obj\Debug\net5.0\1-Battleship.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\obj\Debug\net5.0\refint\1-Battleship.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\obj\Debug\net5.0\1-Battleship.pdb
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\obj\Debug\net5.0\1-Battleship.genruntimeconfig.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\battleship\obj\Debug\net5.0\ref\1-Battleship.dll
