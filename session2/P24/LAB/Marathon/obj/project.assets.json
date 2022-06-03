@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\p_14\\essence\\Essence.csproj",
-      "projectName": "Essence",
-      "projectPath": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\p_14\\essence\\Essence.csproj",
+      "projectUniqueName": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\p24\\lab\\marathon\\marathon.csproj",
+      "projectName": "marathon",
+      "projectPath": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\p24\\lab\\marathon\\marathon.csproj",
       "packagesPath": "C:\\Users\\Mike\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mike\\github\\MultiHexa\\premiere_session\\p_14\\essence\\obj\\",
+      "outputPath": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\p24\\lab\\marathon\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

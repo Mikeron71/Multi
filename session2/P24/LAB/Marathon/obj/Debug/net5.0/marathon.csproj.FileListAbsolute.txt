@@ -1,0 +1,16 @@
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\bin\Debug\net5.0\marathon.exe
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\bin\Debug\net5.0\marathon.deps.json
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\bin\Debug\net5.0\marathon.runtimeconfig.json
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\bin\Debug\net5.0\marathon.runtimeconfig.dev.json
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\bin\Debug\net5.0\marathon.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\bin\Debug\net5.0\marathon.pdb
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\obj\Debug\net5.0\marathon.csproj.AssemblyReference.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\obj\Debug\net5.0\marathon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\obj\Debug\net5.0\marathon.AssemblyInfoInputs.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\obj\Debug\net5.0\marathon.AssemblyInfo.cs
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\obj\Debug\net5.0\marathon.csproj.CoreCompileInputs.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\obj\Debug\net5.0\marathon.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\obj\Debug\net5.0\refint\marathon.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\obj\Debug\net5.0\marathon.pdb
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\obj\Debug\net5.0\marathon.genruntimeconfig.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\lab\marathon\obj\Debug\net5.0\ref\marathon.dll
