@@ -1,0 +1,13 @@
+On doit: creer la partie 
+demander le nom des joueurs 
+
+
+creer leurs map et les laisser choisir la position de 3 navires 
+
+joueur1 
+joueur2 
+
+
+laisser jouer joueur1 --> choisir ou il attaque
+
+laisser jouer joueur2 -->choisir ou il attaque 

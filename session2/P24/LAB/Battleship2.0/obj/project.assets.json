@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\P24\\LAB\\T24_EX_01_2210095\\T24_EX_01_2210095.csproj",
-      "projectName": "T24_EX_01_2210095",
-      "projectPath": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\P24\\LAB\\T24_EX_01_2210095\\T24_EX_01_2210095.csproj",
+      "projectUniqueName": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\p24\\LAB\\Battleship2.0\\Battleship2.0.csproj",
+      "projectName": "Battleship2.0",
+      "projectPath": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\p24\\LAB\\Battleship2.0\\Battleship2.0.csproj",
       "packagesPath": "C:\\Users\\Mike\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\P24\\LAB\\T24_EX_01_2210095\\obj\\",
+      "outputPath": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\p24\\LAB\\Battleship2.0\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

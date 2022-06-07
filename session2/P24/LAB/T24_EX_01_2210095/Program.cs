@@ -39,15 +39,16 @@ namespace T24_EX_01_2210095
         {
 
 
+
             double noteSession;
-            int noteTp1;
-            int noteTp2;
-            int noteIntra;
-            int noteFinal;
-            int tp1sur100;
-            int tp2sur100;
-            int intrasur100;
-            int finalsur100;
+            double noteTp1;
+            double noteTp2;
+            double noteIntra;
+            double noteFinal;
+            double tp1sur100;
+            double tp2sur100;
+            double intrasur100;
+            double finalsur100;
             char reponse;
             bool valide = true;
             bool continuer = false;
@@ -64,8 +65,10 @@ namespace T24_EX_01_2210095
           
 
                 do{
-                    Console.WriteLine("Veuillez entrer l'age de l'etudiant");
-                    valide = Int32.TryParse(Console.ReadLine(),out unEtudiant.age) && unEtudiant.age >=14 && unEtudiant.age <=102;
+                    Console.WriteLine("Veuillez entrer votre année de naissance");
+                    valide = Int32.TryParse(Console.ReadLine(),out int anneeNaissance) && anneeNaissance >=14 && anneeNaissance <=102;
+                    unEtudiant.age = DateTime.Now.Year - anneeNaissance;
+
                 
                 }while(!valide);
 
@@ -93,25 +96,25 @@ namespace T24_EX_01_2210095
                 
                 do{            
                     Console.WriteLine("Veuillez entrer la note du tp1");
-                    valide = Int32.TryParse(Console.ReadLine(),out noteTp1) && noteTp1 >=0 && noteTp1 <=100 ;
+                    valide = double.TryParse(Console.ReadLine(),out noteTp1) && noteTp1 >=0 && noteTp1 <=100 ;
                     tp1sur100 = noteTp1*10/100;
                 }while(!valide);
 
                 do{            
                     Console.WriteLine("Veuillez entrer la note du tp2");
-                    valide = Int32.TryParse(Console.ReadLine(),out noteTp2) && noteTp2 >=0 && noteTp2 <=100 ;
+                    valide = double.TryParse(Console.ReadLine(),out noteTp2) && noteTp2 >=0 && noteTp2 <=100 ;
                     tp2sur100 = noteTp2*10/100;
                 }while(!valide);
                 
                 do{            
                     Console.WriteLine("Veuillez entrer la note de l'examen intra");
-                    valide = Int32.TryParse(Console.ReadLine(),out noteIntra) && noteIntra >=0 && noteIntra <=100 ;
+                    valide = double.TryParse(Console.ReadLine(),out noteIntra) && noteIntra >=0 && noteIntra <=100 ;
                     intrasur100 = noteIntra*40/100;
                 }while(!valide);
                 
                 do{            
                     Console.WriteLine("Veuillez entrer la note de l'examen final");
-                    valide = Int32.TryParse(Console.ReadLine(),out noteFinal) && noteFinal >=0 && noteFinal <=100 ;
+                    valide = double.TryParse(Console.ReadLine(),out noteFinal) && noteFinal >=0 && noteFinal <=100 ;
                     finalsur100 = noteFinal*40/100;
                 }while(!valide);
 

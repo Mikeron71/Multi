@@ -6,17 +6,47 @@ namespace _1_Battleship
     {
         static void Main(string[] args)
         {   
-            char[,] battle = new char[10,10];
-            char[,] blank = new char[10,10];
+            
             int count = 0;
-            bool valide;
-            int ligneAttaque;
-            int coloneAttaque;
-
-
-
+            int ligneAttaque =0;
+            int coloneAttaque =0;
             int ligne;
             int col;
+            
+            
+            char[,] blank = creerBlank();
+            char[,] battle  = creerBattle();
+
+
+            do{
+
+                attaquer(ref ligneAttaque,ref coloneAttaque);
+
+                if(battle[ligneAttaque-1 ,coloneAttaque-1]=='S'){
+                    blank[ligneAttaque-1,coloneAttaque-1]= 'S';
+                    count++;
+                
+                } else{
+                    blank[ligneAttaque-1,coloneAttaque-1]= 'X';
+                }
+
+            
+                
+                for (ligne = 0; ligne < 10; ligne++){
+                    Console.WriteLine();
+                    for (col = 0; col < 10; col++){
+                        Console.Write(blank[ligne,col]);
+                    }
+                }
+            }while(count <3);
+        }
+          static char[,] creerBattle() {
+        
+            int ligne;
+            int col;
+            char[,] battle = new char[10,10];
+            Random hasard = new Random(DateTime.Now.Millisecond);
+            int ligneOuCol = hasard.Next(0,2);
 
             for (ligne = 0; ligne < 10; ligne++){
                 for (col = 0; col < 10; col++){
@@ -24,28 +54,6 @@ namespace _1_Battleship
                 }
                 
             }
-             for (ligne = 0; ligne < 10; ligne++){
-                for (col = 0; col < 10; col++){
-                    blank[ligne,col] = '.';
-                }
-                
-            }
-         
-            for (ligne = 0; ligne < 10; ligne++){
-                Console.WriteLine();
-                for (col = 0; col < 10; col++){
-                    Console.Write(blank[ligne,col]);
-                }
-                
-            }
-
-       
-
-            Random hasard = new Random();
-
-            int ligneOuCol = hasard.Next(0,2);
-
-
             if (ligneOuCol == 0){
               
                 int ligneAuHasard = hasard.Next(0,8);
@@ -62,54 +70,40 @@ namespace _1_Battleship
                 battle[colAuHasard+2,colAuHasard] = 'S';
              
             }
-
-        
-
-            do{
-
-            do{
-            Console.WriteLine("\n Entrez la ligne de votre attaque");
-            valide = Int32.TryParse(Console.ReadLine(),out ligneAttaque)&& ligneAttaque >=0 && ligneAttaque <=10;
-            }while(!valide);
+            return battle;
+    
+        }
+        static char[,] creerBlank(){
+            int ligne;
+            int col;
+            char[,] blank = new char[10,10];
+            for (ligne = 0; ligne < 10; ligne++){
+                for (col = 0; col < 10; col++){
+                    blank[ligne,col] = '.';
+                }
             
-            do{
-            Console.WriteLine("Entrez la colone de votre attaque");
-            valide = Int32.TryParse(Console.ReadLine(),out coloneAttaque)&& coloneAttaque >=0 && coloneAttaque <=10;
-            }while(!valide);
-            
-
-
-
-            Console.WriteLine(battle[ligneAttaque-1 ,coloneAttaque-1]);
-
-            if(battle[ligneAttaque-1 ,coloneAttaque-1]=='S'){
-            blank[ligneAttaque-1,coloneAttaque-1]= 'S';
-            count++;
-            
-            } else{
-                 blank[ligneAttaque-1,coloneAttaque-1]= 'X';
             }
-
-         
-            
+    
             for (ligne = 0; ligne < 10; ligne++){
                 Console.WriteLine();
                 for (col = 0; col < 10; col++){
                     Console.Write(blank[ligne,col]);
                 }
             }
-            }while(count <3);
-
-
-
-        
-
-
-
-
-
-
+            return blank;
         }
-    
+        static void attaquer(ref int ligneAttaque,ref int coloneAttaque){;
+            bool valide;
+            do{
+                    Console.WriteLine("\n Entrez la ligne de votre attaque");
+                    valide = Int32.TryParse(Console.ReadLine(),out ligneAttaque)&& ligneAttaque >=0 && ligneAttaque <=10;
+                }while(!valide);
+                
+                do{
+                    Console.WriteLine("Entrez la colone de votre attaque");
+                    valide = Int32.TryParse(Console.ReadLine(),out coloneAttaque)&& coloneAttaque >=0 && coloneAttaque <=10;
+            }while(!valide);
+          
+        }
      }     
 }   
