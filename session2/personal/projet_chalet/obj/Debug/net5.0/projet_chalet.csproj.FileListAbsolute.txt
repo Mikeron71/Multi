@@ -1,0 +1,16 @@
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/bin/Debug/net5.0/projet_chalet
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/bin/Debug/net5.0/projet_chalet.deps.json
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/bin/Debug/net5.0/projet_chalet.runtimeconfig.json
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/bin/Debug/net5.0/projet_chalet.runtimeconfig.dev.json
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/bin/Debug/net5.0/projet_chalet.dll
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/bin/Debug/net5.0/projet_chalet.pdb
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/obj/Debug/net5.0/projet_chalet.csproj.AssemblyReference.cache
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/obj/Debug/net5.0/projet_chalet.GeneratedMSBuildEditorConfig.editorconfig
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/obj/Debug/net5.0/projet_chalet.AssemblyInfoInputs.cache
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/obj/Debug/net5.0/projet_chalet.AssemblyInfo.cs
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/obj/Debug/net5.0/projet_chalet.csproj.CoreCompileInputs.cache
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/obj/Debug/net5.0/projet_chalet.dll
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/obj/Debug/net5.0/refint/projet_chalet.dll
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/obj/Debug/net5.0/projet_chalet.pdb
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/obj/Debug/net5.0/projet_chalet.genruntimeconfig.cache
+/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/obj/Debug/net5.0/ref/projet_chalet.dll

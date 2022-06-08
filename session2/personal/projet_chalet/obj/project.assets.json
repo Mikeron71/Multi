@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/michael/Documents/github/Multi/session2/P24/LAB/Battleship/1-Battleship.csproj",
-      "projectName": "1-Battleship",
-      "projectPath": "/Users/michael/Documents/github/Multi/session2/P24/LAB/Battleship/1-Battleship.csproj",
+      "projectUniqueName": "/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/projet_chalet.csproj",
+      "projectName": "projet_chalet",
+      "projectPath": "/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/projet_chalet.csproj",
       "packagesPath": "/Users/michael/.nuget/packages/",
-      "outputPath": "/Users/michael/Documents/github/Multi/session2/P24/LAB/Battleship/obj/",
+      "outputPath": "/Users/michael/Documents/github/Multi/session2/personal/projet_chalet/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/michael/.nuget/NuGet/NuGet.Config"
