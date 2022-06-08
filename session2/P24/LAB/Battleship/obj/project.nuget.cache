@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "L/5xxlaNqxDfoD4uYeAxoJobZpQJgcfQALXJGv7JgsJWElGiPiK4c0VCcDnjyW4QGqnMKgWOz4bA2ApwdpzYVw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\p24\\lab\\battleship\\1-Battleship.csproj",
+=======
+  "dgSpecHash": "TCbzLfqx3EUz94A3aukRQtLk8ivZiJLus1UZQdnn188OsYuX1h78xAKiAeYvIz/XHj0n8ZLWT3Zmchkjj3XKrA==",
+  "success": true,
+  "projectFilePath": "/Users/michael/Documents/github/Multi/session2/P24/LAB/Battleship/1-Battleship.csproj",
+>>>>>>> multi
   "expectedPackageFiles": [],
   "logs": []
 }
