@@ -11,3 +11,14 @@ joueur2
 laisser jouer joueur1 --> choisir ou il attaque
 
 laisser jouer joueur2 -->choisir ou il attaque 
+
+
+
+
+
+
+2
+3
+4
+5
+

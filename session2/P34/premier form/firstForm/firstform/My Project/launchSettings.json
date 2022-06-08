@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "firstform": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}
