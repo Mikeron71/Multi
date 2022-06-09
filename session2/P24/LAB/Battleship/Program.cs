@@ -92,7 +92,7 @@ namespace _1_Battleship
             }
             return blank;
         }
-        static void attaquer(ref int ligneAttaque,ref int coloneAttaque){;
+        static void attaquer(ref int ligneAttaque,ref int coloneAttaque){
             bool valide;
             do{
                     Console.WriteLine("\n Entrez la ligne de votre attaque");

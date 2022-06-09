@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mike\\github\\MultiHexa\\session2\\P24\\lab\\battleship2.0\\Battleship2.0.csproj": {}
+    "C:\\Users\\Mike\\github\\multihexa\\session2\\p24\\lab\\battleship2.0\\Battleship2.0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mike\\github\\MultiHexa\\session2\\P24\\lab\\battleship2.0\\Battleship2.0.csproj": {
+    "C:\\Users\\Mike\\github\\multihexa\\session2\\p24\\lab\\battleship2.0\\Battleship2.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\P24\\lab\\battleship2.0\\Battleship2.0.csproj",
+        "projectUniqueName": "C:\\Users\\Mike\\github\\multihexa\\session2\\p24\\lab\\battleship2.0\\Battleship2.0.csproj",
         "projectName": "Battleship2.0",
-        "projectPath": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\P24\\lab\\battleship2.0\\Battleship2.0.csproj",
+        "projectPath": "C:\\Users\\Mike\\github\\multihexa\\session2\\p24\\lab\\battleship2.0\\Battleship2.0.csproj",
         "packagesPath": "C:\\Users\\Mike\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\P24\\lab\\battleship2.0\\obj\\",
+        "outputPath": "C:\\Users\\Mike\\github\\multihexa\\session2\\p24\\lab\\battleship2.0\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
