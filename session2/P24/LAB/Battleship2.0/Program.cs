@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 
 namespace Battleship2._0
 {
@@ -6,6 +7,9 @@ namespace Battleship2._0
     {
         static string player1Name;
         static string player2Name;
+
+        
+      
 
        
         static string[,] player1Card ;
@@ -109,7 +113,9 @@ namespace Battleship2._0
             afficherBattle(player1Battle);
            
         }
-
+        
+       
+       StringBuilder pow = new StringBuilder(); 
 
 
 

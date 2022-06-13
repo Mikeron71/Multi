@@ -22,3 +22,32 @@ laisser jouer joueur2 -->choisir ou il attaque
 4
 5
 
+Fonction pour placer 4 bateaux
+
+sortir placerbateau de creer battle
+
+
+
+Jouer 
+
+fonction attaquer
+
+
+
+tour joueur2
+
+
+Fonction pour placer 4 bateaux
+
+sortir placerbateau de creer battle
+
+
+
+Jouer 
+
+fonction attaquer
+
+
+
+tour joueur2
+

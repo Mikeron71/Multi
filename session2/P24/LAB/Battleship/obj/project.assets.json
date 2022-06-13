@@ -8,24 +8,31 @@
     "net5.0": []
   },
   "packageFolders": {
-    "/Users/michael/.nuget/packages/": {}
+    "C:\\Users\\Mike\\.nuget\\packages\\": {},
+    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/michael/Documents/github/Multi/session2/P24/LAB/Battleship/1-Battleship.csproj",
+      "projectUniqueName": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\P24\\LAB\\Battleship\\1-Battleship.csproj",
       "projectName": "1-Battleship",
-      "projectPath": "/Users/michael/Documents/github/Multi/session2/P24/LAB/Battleship/1-Battleship.csproj",
-      "packagesPath": "/Users/michael/.nuget/packages/",
-      "outputPath": "/Users/michael/Documents/github/Multi/session2/P24/LAB/Battleship/obj/",
+      "projectPath": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\P24\\LAB\\Battleship\\1-Battleship.csproj",
+      "packagesPath": "C:\\Users\\Mike\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\P24\\LAB\\Battleship\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/michael/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Mike\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -58,8 +65,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Mike\\github\\MultiHexa\\session2\\P24\\LAB\\Battleship\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

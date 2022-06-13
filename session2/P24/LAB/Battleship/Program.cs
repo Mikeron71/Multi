@@ -107,3 +107,6 @@ namespace _1_Battleship
         }
      }     
 }   
+
+// CECI EST MA PREMIERE VERSION DE BATTLESHIP
+// j'ai bien avancé dans mon battleship2.0 a deux joueurs mais j'ai tout brisé en mergant sur github. Disons que j'ai plus appris sur github par la suite.
