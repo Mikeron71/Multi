@@ -1,0 +1,16 @@
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\bin\Debug\net5.0\TP1.exe
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\bin\Debug\net5.0\TP1.deps.json
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\bin\Debug\net5.0\TP1.runtimeconfig.json
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\bin\Debug\net5.0\TP1.runtimeconfig.dev.json
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\bin\Debug\net5.0\TP1.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\bin\Debug\net5.0\TP1.pdb
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\obj\Debug\net5.0\TP1.csproj.AssemblyReference.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\obj\Debug\net5.0\TP1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\obj\Debug\net5.0\TP1.AssemblyInfoInputs.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\obj\Debug\net5.0\TP1.AssemblyInfo.cs
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\obj\Debug\net5.0\TP1.csproj.CoreCompileInputs.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\obj\Debug\net5.0\TP1.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\obj\Debug\net5.0\refint\TP1.dll
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\obj\Debug\net5.0\TP1.pdb
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\obj\Debug\net5.0\TP1.genruntimeconfig.cache
+C:\Users\Mike\github\MultiHexa\session2\p24\tp1\obj\Debug\net5.0\ref\TP1.dll

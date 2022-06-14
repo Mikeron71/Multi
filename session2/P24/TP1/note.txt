@@ -1,0 +1,31 @@
+Demander au user combien de billet il veut generer.
+
+On genere  UNE METHODE
+
+on affiche les combinaisons () UNE METHODE
+
+boucle de validation DANS METHODE >
+
+
+
+generer la combinaison gagnante 
+
+
+Afficher quelle combinaisons gagne 
+
+le + est le complementaire
+
+
+methode Sortir les statisitques
+
+
+si combinaison 2 17 26 2 32 --> dire combien de fois ils sont apparu.. 
+
+Aficher le  % delon le 3 sur 6 4 sur 6     (combien de gagnants par categorie.)
+
+
+billet est une struct
+
+
+
+RENDU A GENERATE COMB
