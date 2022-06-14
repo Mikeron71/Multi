@@ -14,6 +14,7 @@ namespace TP1
                 generateTickets();
                 int [] winnigCombination = generateCombination();
                 int complementaire = hasard.Next(1,50);
+            
                 // generateStats();
                 // showStats();
 
@@ -34,9 +35,10 @@ namespace TP1
             for (int i = 0; i < 6; i++)
             {  
                 int randomNuber = hasard.Next(1,50);
-                if(Array.Exists(lign,chiffre =>chiffre == randomNuber)){
+                lign[i]= randomNuber;
+                // if(Array.Exists(lign,chiffre =>chiffre == randomNuber)){
                     
-                } 
+                // } 
             }
 
             
@@ -50,7 +52,7 @@ namespace TP1
            
 
            for (int i = 0; i < nbTickets; i++){
-                tickets[i] = generateCombination();;;
+                tickets[i] = generateCombination();
            }
 
             for (int i = 0; i < tickets.Length;i++){
