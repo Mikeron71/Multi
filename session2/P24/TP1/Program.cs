@@ -5,14 +5,15 @@ namespace TP1
     class Program
     {   static int nbTickets;
         static Random hasard = new Random(DateTime.Now.Millisecond);
+        int [][] tickets;
         static void Main(string[] args)
         {   bool continuer = false;
             do{
                 askUser();
                 generateCombination();
-                int[][] tickets = generateTickets();
+                generateTickets();
                 int [] winnigCombination = generateCombination();
-                int complementaire = hasard.Next(0,50);
+                int complementaire = hasard.Next(1,50);
                 // generateStats();
                 // showStats();
 
@@ -32,7 +33,10 @@ namespace TP1
             int[] lign = new int[6];
             for (int i = 0; i < 6; i++)
             {  
-                lign[i] = hasard.Next(0,50);
+                int randomNuber = hasard.Next(1,50);
+                if(Array.Exists(lign,chiffre =>chiffre == randomNuber)){
+                    
+                } 
             }
 
             
@@ -40,24 +44,24 @@ namespace TP1
         }
         
         
-        static int[][] generateTickets(){
+        static void generateTickets(){
             
-             int[][] jaggedArray = new int[nbTickets][];
+             int[][] tickets = new int[nbTickets][];
            
 
            for (int i = 0; i < nbTickets; i++){
-                jaggedArray[i] = generateCombination();
+                tickets[i] = generateCombination();;;
            }
 
-            for (int i = 0; i < jaggedArray.Length;i++){
+            for (int i = 0; i < tickets.Length;i++){
                 Console.WriteLine();
-                Console.Write($"ticket{i+1} :    ");
+                Console.Write( $"ticket {i+1} :    ");
                 for (int j = 0; j < 6; j++){ 
-                    Console.Write(jaggedArray[i][j]);
-                    Console.Write(" ");
+                    Console.Write(tickets[i][j] + " ");
+                    
                 }
             }
-            return jaggedArray;
+          
         }
     }
 }

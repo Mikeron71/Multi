@@ -28,4 +28,3 @@ billet est une struct
 
 
 
-RENDU A GENERATE COMB
