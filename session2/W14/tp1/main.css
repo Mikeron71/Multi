@@ -1,34 +1,31 @@
 * {
-  margin: 0;
-  padding: 0;
   font-family: "Oswald", sans-serif;
+  margin: 0%;
 }
 
 h1 {
-  margin-left: 150px;
-  text-align: left;
+  margin: 4%;
   color: rgb(129, 178, 154);
-  padding-top: 40px;
-  padding-right: 75px;
-  font-size: 80px;
+  font-size: 380%;
+}
+h2 {
+  text-align: center;
 }
 
 #navheader {
-  flex: auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  display: flex;
   background-color: rgb(242, 204, 143);
-  height: 70px;
-  padding-top: 30px;
-
-  text-align: center;
   color: white;
 }
 
 a:link {
   color: inherit;
-  font-size: xx-large;
-  margin: 100px;
+  align-items: space-around;
   text-decoration: none;
   font-family: "Oswald", sans-serif;
+  font-size: 250%;
 }
 
 a:visited {
@@ -43,25 +40,35 @@ a:hover {
 
 body {
   background-color: rgb(244, 241, 222);
+  display: flex;
+  flex-direction: column;
 }
 
 main {
   color: rgb(129, 178, 154);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #quoifaire {
-  float: right;
-
-  margin-right: 100px;
-  padding: 30px;
   border: solid 10px rgb(242, 204, 143);
   border-radius: 75px;
   font-size: 25px;
-
-  width: 500px;
-  height: 350px;
+  padding: 3%;
+  margin-top: 12%;
+  margin-left: auto;
+  margin-right: 5%;
 }
 
 #activites {
-  padding: 25px;
+}
+
+footer {
+  background-image: url(./media/village-vue-du-clocher-20210811151656.jpg);
+}
+
+#evenements {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(242, 204, 143, 0.5);
 }
