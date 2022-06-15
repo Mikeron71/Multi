@@ -16,6 +16,7 @@ namespace _1_Battleship
             
             char[,] blank = creerBlank();
             char[,] battle  = creerBattle();
+            Console.WriteLine("coucou");
 
 
             do{

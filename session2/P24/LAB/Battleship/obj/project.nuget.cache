@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H1fE9lwpg+fzKxYeOOJ2+ZSDnX4c+usyS7dzS62xkiBa+RsZa/GRnF8oQ6oyE9stDNNyGzjxt+WIg67d7oiYZg==",
+  "dgSpecHash": "xoCIxRAp6GhViwCL2Znfnx4nX+Ir8ea2m2mKPwZoewiOClvsYobpUMaFOdcn1HG1kxdq2O1intmUdcFL5Q22hg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mike\\github\\MultiHexa\\session2\\P24\\LAB\\Battleship\\1-Battleship.csproj",
+  "projectFilePath": "C:\\Users\\ronde\\Documents\\github\\Multi\\session2\\P24\\LAB\\Battleship\\1-Battleship.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Mike\\github\\MultiHexa\\session2\\P24\\LAB\\Battleship\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
