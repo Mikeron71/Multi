@@ -5,18 +5,17 @@ namespace TP1
     class Program
     {   static int nbTickets;
         static Random hasard = new Random(DateTime.Now.Millisecond);
-        int [][] tickets;
+        static int [][] tickets;
+        static int [] winningCombination;
         static void Main(string[] args)
         {   bool continuer = false;
             do{
                 askUser();
-                generateCombination();
+                generateCombination(6);
                 generateTickets();
-                int [] winnigCombination = generateCombination();
-                int complementaire = hasard.Next(1,50);
-            
+                int [] winningCombination = generateCombination(7);
+                validateTickets();
 
-            
                 // generateStats();
                 // showStats();
 
@@ -33,23 +32,21 @@ namespace TP1
             }while(!valid);
         }
         
-        static int[] generateCombination(){
-            bool doublon = false;
-            int[] lign = new int[6];
-            for (int i = 0; i < 6; i++){  
+        static int[] generateCombination(int combien){
+            
+            int[] lign = new int[combien];
+            for (int i = 0; i < combien; i++){  
+                bool doublon;
+                
                 do{
                     int randomNuber = hasard.Next(1,50);
-                    if(Array.Exists(lign,chiffre =>chiffre == randomNuber)){
-                        doublon = true;
-                    }
-            
-                    }while(doublon);
-                lign[i]= randomNuber;
-                Console.Write("doublon");
-             } 
-            
-
-            
+                    doublon = Array.Exists(lign, element => element == randomNuber);
+                    if (doublon == false){
+                        lign[i]= randomNuber;
+                    } 
+                }while(doublon == true);
+                
+            } 
                 return lign;
         }
         
@@ -60,7 +57,7 @@ namespace TP1
            
 
            for (int i = 0; i < nbTickets; i++){
-                tickets[i] = generateCombination();
+                tickets[i] = generateCombination(6);
            }
 
             for (int i = 0; i < tickets.Length;i++){
@@ -71,7 +68,12 @@ namespace TP1
                     
                 }
             }
-          
+          Console.WriteLine();
+        }
+        static void validateTickets(){
+         
+            Console.Write(tickets[0][0]);
+
         }
     }
 }
