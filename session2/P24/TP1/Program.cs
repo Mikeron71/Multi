@@ -15,11 +15,14 @@ namespace TP1
                 int [] winnigCombination = generateCombination();
                 int complementaire = hasard.Next(1,50);
             
+
+            
                 // generateStats();
                 // showStats();
 
 
             }while(continuer);
+
             
         }
         static void askUser(){
@@ -31,15 +34,20 @@ namespace TP1
         }
         
         static int[] generateCombination(){
+            bool doublon = false;
             int[] lign = new int[6];
-            for (int i = 0; i < 6; i++)
-            {  
-                int randomNuber = hasard.Next(1,50);
+            for (int i = 0; i < 6; i++){  
+                do{
+                    int randomNuber = hasard.Next(1,50);
+                    if(Array.Exists(lign,chiffre =>chiffre == randomNuber)){
+                        doublon = true;
+                    }
+            
+                    }while(doublon);
                 lign[i]= randomNuber;
-                // if(Array.Exists(lign,chiffre =>chiffre == randomNuber)){
-                    
-                // } 
-            }
+                Console.Write("doublon");
+             } 
+            
 
             
                 return lign;
