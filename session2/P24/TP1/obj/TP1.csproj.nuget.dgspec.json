@@ -1,19 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< Updated upstream
-    "C:\\Users\\ronde\\Documents\\github\\Multi\\session2\\P24\\TP1\\TP1.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\ronde\\Documents\\github\\Multi\\session2\\P24\\TP1\\TP1.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\ronde\\Documents\\github\\Multi\\session2\\P24\\TP1\\TP1.csproj",
-        "projectName": "TP1",
-        "projectPath": "C:\\Users\\ronde\\Documents\\github\\Multi\\session2\\P24\\TP1\\TP1.csproj",
-        "packagesPath": "C:\\Users\\ronde\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ronde\\Documents\\github\\Multi\\session2\\P24\\TP1\\obj\\",
-=======
     "C:\\Users\\Mike\\github\\multihexa\\session2\\p24\\tp1\\TP1.csproj": {}
   },
   "projects": {
@@ -25,15 +12,20 @@
         "projectPath": "C:\\Users\\Mike\\github\\multihexa\\session2\\p24\\tp1\\TP1.csproj",
         "packagesPath": "C:\\Users\\Mike\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Mike\\github\\multihexa\\session2\\p24\\tp1\\obj\\",
->>>>>>> Stashed changes
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ronde\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Mike\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -66,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

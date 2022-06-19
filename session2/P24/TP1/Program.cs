@@ -150,6 +150,7 @@ namespace TP1
         Console.Write("countcount ===" + countnum5);
         Console.Write("countcount ===" + countnum6);
         Console.Write("countcount ===" + countcomp);
+        Console.Write("countcount ===" + countcomp);
                 
 
         }
