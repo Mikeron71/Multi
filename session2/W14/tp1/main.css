@@ -71,4 +71,5 @@ footer {
   display: flex;
   flex-direction: column;
   background-color: rgba(242, 204, 143, 0.5);
+  padding-left: 2%;
 }
