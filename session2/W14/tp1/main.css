@@ -1,31 +1,40 @@
 * {
   font-family: "Oswald", sans-serif;
   margin: 0%;
+  padding: 0%;
 }
-
-h1 {
-  margin: 4%;
+main {
   color: rgb(129, 178, 154);
-  font-size: 380%;
+  display: flex;
+  flex-direction: column;
 }
-h2 {
-  text-align: center;
+body {
+  background-color: rgb(244, 241, 222);
+  display: flex;
+  flex-direction: column;
 }
-
+/* _____________________________________________________HEADER */
 #navheader {
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   display: flex;
   background-color: rgb(242, 204, 143);
   color: white;
+  font-size: 250%;
+  height: 10%;
+  /* border-bottom: 5px solid rgb(129, 178, 154); */
 }
-
 a:link {
+  padding: 1% 0%;
   color: inherit;
   align-items: space-around;
+
   text-decoration: none;
   font-family: "Oswald", sans-serif;
-  font-size: 250%;
+
+  transition: 0.5s color;
+  transition: 0.2s font-size;
+  transition: 0.2s letter-spacing;
 }
 
 a:visited {
@@ -34,42 +43,159 @@ a:visited {
   text-decoration: none;
 }
 
+h1 {
+  margin: 1%;
+  color: rgb(129, 178, 154);
+  font-size: 300%;
+}
+h2 {
+  font-size: 150%;
+  z-index: 3;
+}
+
 a:hover {
   color: rgb(129, 178, 154);
-}
-
-body {
-  background-color: rgb(244, 241, 222);
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  color: rgb(129, 178, 154);
-  display: flex;
-  flex-wrap: wrap;
+  transition: 0.5s color;
+  transition: 0.2s letter-spacing;
+  letter-spacing: 2px;
 }
 
 #quoifaire {
-  border: solid 10px rgb(242, 204, 143);
-  border-radius: 75px;
+  border: solid 8px rgb(242, 204, 143);
+  border-radius: 20px;
   font-size: 25px;
   padding: 3%;
-  margin-top: 12%;
+  margin-left: auto;
+  margin-right: 2%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  background-color: rgb(244, 241, 222);
+}
+
+#evenements {
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(242, 204, 143);
+  padding-left: 2%;
+}
+
+.sectionEvenements {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgb(129, 178, 154);
+}
+.imgcontainer {
+  width: 30rem;
   margin-left: auto;
   margin-right: 5%;
 }
 
-#activites {
+h3 {
+  font-size: 320%;
+  padding: 40px;
 }
 
-footer {
-  background-image: url(./media/village-vue-du-clocher-20210811151656.jpg);
+.date {
+  font-size: 220%;
+  width: 10%;
+  text-decoration: underline;
 }
 
-#evenements {
+.vert {
+  color: rgb(129, 178, 154);
+}
+
+img {
+  border-radius: 20px;
+  transition: opacity 0.5s;
+  transition: transform 0.5s;
+  padding: 4%;
+}
+img:hover {
+  border-radius: 20px;
+  transition: opacity 0.5s;
+  transition: transform 0.5s;
+  opacity: 0.7;
+  cursor: pointer;
+  transform: translate(-20px);
+  transform: translate(-5%);
+}
+
+.f-box {
+  display: flex;
+  flex-direction: row;
+}
+.f-boxc {
   display: flex;
   flex-direction: column;
-  background-color: rgba(242, 204, 143, 0.5);
-  padding-left: 2%;
+}
+
+/* _________________________________________________________FOOTER */
+footer {
+  padding: 1%;
+}
+
+/* __________________________________________________________TABLE */
+
+span {
+  padding: 10px;
+}
+
+#retour {
+  margin-right: 1px;
+  margin-left: auto;
+  width: 30%;
+  text-align: center;
+  font-size: 150%;
+}
+
+h2 {
+  text-align: center;
+  font-size: xx-large;
+  padding-bottom: 20px;
+}
+
+#topmain {
+  display: flex;
+  background-image: url(./media/VILLAGE_3.jpg);
+  background-repeat: no-repeat;
+  background-size: 2500px 800px;
+  position: sticky;
+  top: 0;
+  z-index: -1;
+}
+/* _____________________________________________________________Page2 */
+.sports {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.containertable {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  margin-left: 1%;
+  margin-right: auto;
+}
+
+table {
+  text-align: center;
+}
+table,
+td,
+tr {
+  border: 5px solid rgb(242, 204, 143);
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  justify-self: start;
+  z-index: 2;
 }
