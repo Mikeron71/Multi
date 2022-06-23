@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mike\\github\\multihexa\\session2\\p24\\tp1\\TP1.csproj": {}
+    "C:\\Users\\Mike\\github\\multihexa\\session2\\P24\\tp1\\TP1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mike\\github\\multihexa\\session2\\p24\\tp1\\TP1.csproj": {
+    "C:\\Users\\Mike\\github\\multihexa\\session2\\P24\\tp1\\TP1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mike\\github\\multihexa\\session2\\p24\\tp1\\TP1.csproj",
+        "projectUniqueName": "C:\\Users\\Mike\\github\\multihexa\\session2\\P24\\tp1\\TP1.csproj",
         "projectName": "TP1",
-        "projectPath": "C:\\Users\\Mike\\github\\multihexa\\session2\\p24\\tp1\\TP1.csproj",
+        "projectPath": "C:\\Users\\Mike\\github\\multihexa\\session2\\P24\\tp1\\TP1.csproj",
         "packagesPath": "C:\\Users\\Mike\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mike\\github\\multihexa\\session2\\p24\\tp1\\obj\\",
+        "outputPath": "C:\\Users\\Mike\\github\\multihexa\\session2\\P24\\tp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
