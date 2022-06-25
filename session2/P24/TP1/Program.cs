@@ -1,8 +1,16 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace TP1
 {
+  public class WiningCondition
+  {
+    public string MsgWin;
+    public int WinnerCount;
+    public int CombinationCount;
+    public bool HasComplement;
+  }
   class Program
   {
     static int nbTickets;
@@ -83,13 +91,8 @@ namespace TP1
     {
       var countNum = new int[7];
 
-      int gagnant2 = 0;
-      int gagnant2comp = 0;
-      int gagnant3 = 0;
-      int gagnant4 = 0;
-      int gagnant5 = 0;
-      int gagnant5comp = 0;
-      int gagnant6 = 0;
+
+
 
 
       for (int i = 0; i < tickets.Length; i++)
@@ -100,54 +103,90 @@ namespace TP1
         {
           if (Array.Exists(tickets[i], element => element == winningCombination[j]))
           {
+            if (j == 6)
+            {
+              containsComp = true;
+            }
             countNum[j]++;
             countWin++;
           }
 
         }
 
-        if (countWin == 2 && containsComp == false)
-        {
-          Console.WriteLine($"ticket {i + 1} remporte une participation gratuite");
-          gagnant2++;
-        }
-
-        if (countWin == 2 && containsComp == true)
-        {
-          Console.WriteLine($"ticket {i + 1} remporte 5$ ");
-          gagnant2comp++;
-        }
-
-        if (countWin == 3)
-        {
-          Console.WriteLine($"ticket {i + 1} est un billet gagnant de 10$");
-          gagnant3++;
-        }
-        if (countWin == 4)
-        {
-          Console.WriteLine($"ticket {i + 1} est un billet gagnant de 4");
-          gagnant4++;
-        }
-
-        if (countWin == 5)
-        {
-          Console.WriteLine($"ticket {i + 1} est un billet gagnant de 5");
-          gagnant5++;
-
-        }
-        if (countWin == 5 && containsComp == true)
-        {
-          Console.WriteLine($"ticket {i + 1} est un billet gagnant de 5 + C");
-          gagnant5comp++;
+        var winingConditions = new List<WiningCondition>{
+          new WiningCondition{
+            CombinationCount = 2,
+            HasComplement = false,
+            MsgWin = "Billet {0} gagne une participation gratuite.",
+            WinnerCount = 0,
 
 
-        }
-        if (countWin == 6)
-        {
-          Console.WriteLine($"ticket {i + 1} est un billet gagnant de 6");
-          gagnant6++;
+          },
 
+          new WiningCondition{
+            CombinationCount = 2,
+            HasComplement = true,
+            MsgWin = "Billet {0} gagne 5 $",
+            WinnerCount = 0,
+
+
+          },
+          new WiningCondition{
+            CombinationCount = 3,
+            HasComplement = false,
+            MsgWin = "Billet {0} gagne 10$",
+            WinnerCount = 0,
+
+
+          },
+          new WiningCondition{
+            CombinationCount = 4,
+            HasComplement = false,
+            MsgWin = "Billet {0} remporte lot (4/6).",
+            WinnerCount = 0,
+
+
+          },
+              new WiningCondition{
+            CombinationCount = 5,
+            HasComplement = false,
+            MsgWin = "Billet {0} remporte lot(5/6).",
+            WinnerCount = 0,
+
+
+          },
+              new WiningCondition{
+            CombinationCount = 5,
+            HasComplement = true,
+            MsgWin = "Billet {0} remporte lot(5/6) plus complementaire",
+            WinnerCount = 0,
+
+
+          },
+              new WiningCondition{
+            CombinationCount = 6,
+            HasComplement = false,
+            MsgWin = "Billet {0} remporte le gros-lot.",
+            WinnerCount = 0,
+
+
+          },
+
+        };
+
+        foreach (var item in winingConditions)
+        {
+          if (countWin == item.CombinationCount && containsComp == item.HasComplement)
+          {
+            Console.WriteLine(string.Format(item.MsgWin, i + 1));
+            item.WinnerCount++;
+
+
+
+          }
         }
+
+
       }
       for (int j = 0; j < countNum.Length; j++)
       {
@@ -158,10 +197,6 @@ namespace TP1
 
 
     }
-
-
-
-
 
     static void showWinnings()
     {
