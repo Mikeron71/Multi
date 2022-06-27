@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TP1
 {
@@ -11,11 +12,16 @@ namespace TP1
     public int CombinationCount;
     public bool HasComplement;
   }
+
+  public class Ticket
+  {
+    public int Id;
+    public int[] Combination = new int[6];
+  }
   class Program
   {
     static int nbTickets;
     static Random hasard = new Random(DateTime.Now.Millisecond);
-    static int[][] tickets;
     static int[] winningCombination;
     static void Main(string[] args)
     {
@@ -23,10 +29,10 @@ namespace TP1
       do
       {
         askUser();
-        tickets = generateTickets();
+        var tickets = generateTickets();
         winningCombination = generateCombination(7);
         showWinnings();
-        validateTickets();
+        validateTickets(tickets);
         recommencer = goAgain();
       } while (recommencer == true);
     }
@@ -65,43 +71,36 @@ namespace TP1
     }
 
 
-    static int[][] generateTickets()
+    static List<Ticket> generateTickets()
     {
-      int[][] tickets = new int[nbTickets][];
+      var tickets = new List<Ticket>();
       for (int i = 0; i < nbTickets; i++)
       {
-        tickets[i] = generateCombination(6);
-      }
-
-      for (int i = 0; i < tickets.Length; i++)
-      {
-        Console.WriteLine();
-
-        Console.Write($"         ticket {i + 1} :".PadLeft(3));
-        for (int j = 0; j < 6; j++)
+        var ticket = new Ticket()
         {
-          Console.Write(tickets[i][j].ToString().PadLeft(3) + " ");
-
-        }
+          Id = i + 1,
+          Combination = generateCombination(6),
+        };
+        var conb = string.Join(" ", ticket.Combination.Select(s => string.Format("{0,2}", s)));
+        Console.WriteLine($"Ticket {string.Format("{0,2}", ticket.Id)} : {conb}");
+        tickets.Add(ticket);
       }
+
+
       Console.WriteLine();
       return tickets;
     }
-    static void validateTickets()
+    static void validateTickets(List<Ticket> tickets)
     {
       var countNum = new int[7];
 
-
-
-
-
-      for (int i = 0; i < tickets.Length; i++)
+      for (int i = 0; i < tickets.Count; i++)
       {
         bool containsComp = false;
         int countWin = 0;
         for (int j = 0; j < countNum.Length; j++)
         {
-          if (Array.Exists(tickets[i], element => element == winningCombination[j]))
+          if (Array.Exists(tickets[i].Combination, element => element == winningCombination[j]))
           {
             if (j == 6)
             {
@@ -192,7 +191,7 @@ namespace TP1
       {
 
 
-        Console.WriteLine($"Le chiffre {winningCombination[0]} est sorti {countNum[j]} fois");
+        Console.WriteLine($"Le chiffre {winningCombination[j]} est sorti {countNum[j]} fois");
       }
 
 
