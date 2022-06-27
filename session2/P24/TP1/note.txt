@@ -24,15 +24,3 @@ si combinaison 2 17 26 2 32 --> dire combien de fois ils sont apparu..
 Aficher le  % delon le 3 sur 6 4 sur 6     (combien de gagnants par categorie.)
 
 
-
-
-
-
- for (int i = 0; i < winningCombination.Length; i++)
-                {
-                   
-                    Console.Write( winningCombination[i] + " ");
-                    
-                }
-
-                ajouter safeguard dans trycatch
