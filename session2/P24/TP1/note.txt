@@ -34,3 +34,5 @@ Aficher le  % delon le 3 sur 6 4 sur 6     (combien de gagnants par categorie.)
                     Console.Write( winningCombination[i] + " ");
                     
                 }
+
+                ajouter safeguard dans trycatch

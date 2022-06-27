@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,16 +12,24 @@ namespace TP1
     public bool HasComplement;
   }
 
+
+
   public class Ticket
   {
     public int Id;
     public int[] Combination = new int[6];
+    public bool IsWinner;
   }
+
+
+
+
   class Program
   {
     static int nbTickets;
     static Random hasard = new Random(DateTime.Now.Millisecond);
     static int[] winningCombination;
+    static int[] countNum = new int[7];
     static void Main(string[] args)
     {
       var recommencer = false;
@@ -41,11 +48,29 @@ namespace TP1
 
     static void askUser()
     {
+      string errMsg = "Vous devez entrer un chiffre entre 10 et 200";
       bool valid = false;
       do
       {
-        Console.WriteLine("Bonjour! Combien de billets voulez-vous?");
-        valid = Int32.TryParse(Console.ReadLine(), out nbTickets) && nbTickets >= 10 && nbTickets <= 200;
+        Console.WriteLine("Bonjour! Combien de billets voulez-vous? Entrez un nombre entre 10 et 200.");
+        try
+        {
+          nbTickets = Convert.ToInt32(Console.ReadLine());
+          valid = nbTickets >= 10 && nbTickets <= 200;
+
+        }
+        catch (FormatException e)
+        {
+          Console.WriteLine(errMsg);
+        }
+        catch (OverflowException e)
+        {
+          Console.WriteLine(errMsg);
+        }
+        catch (Exception e)
+        {
+          Console.WriteLine(errMsg);
+        }
       } while (!valid);
     }
 
@@ -80,7 +105,10 @@ namespace TP1
         {
           Id = i + 1,
           Combination = generateCombination(6),
+          IsWinner = false
         };
+
+
         var conb = string.Join(" ", ticket.Combination.Select(s => string.Format("{0,2}", s)));
         Console.WriteLine($"Ticket {string.Format("{0,2}", ticket.Id)} : {conb}");
         tickets.Add(ticket);
@@ -92,13 +120,17 @@ namespace TP1
     }
     static void validateTickets(List<Ticket> tickets)
     {
-      var countNum = new int[7];
+
+
+      // je reset le count pour les numéros gagnants ici. Sinon il incrémente lorsque le user recommence.
+      countNum = new int[7];
 
       for (int i = 0; i < tickets.Count; i++)
       {
+
         bool containsComp = false;
         int countWin = 0;
-        for (int j = 0; j < countNum.Length; j++)
+        for (int j = 0; j < 7; j++)
         {
           if (Array.Exists(tickets[i].Combination, element => element == winningCombination[j]))
           {
@@ -106,12 +138,11 @@ namespace TP1
             {
               containsComp = true;
             }
-            countNum[j]++;
             countWin++;
           }
 
         }
-
+        // J'utilise une liste d'objets pour simplifier la validation. 
         var winingConditions = new List<WiningCondition>{
           new WiningCondition{
             CombinationCount = 2,
@@ -179,23 +210,35 @@ namespace TP1
           {
             Console.WriteLine(string.Format(item.MsgWin, i + 1));
             item.WinnerCount++;
-
-
+            tickets[i].IsWinner = true;
 
           }
         }
 
-
       }
-      for (int j = 0; j < countNum.Length; j++)
+
+      for (int i = 0; i < tickets.Count; i++)
       {
+        for (int j = 0; j < 7; j++)
+        {
+          if (Array.Exists(tickets[i].Combination, element => element == winningCombination[j]) && tickets[i].IsWinner == true)
+          {
+            countNum[j]++;
 
+          }
+        }
 
-        Console.WriteLine($"Le chiffre {winningCombination[j]} est sorti {countNum[j]} fois");
       }
-
+      for (int j = 0; j < 7; j++)
+      {
+        Console.WriteLine($"Le chiffre {winningCombination[j]} est sortis {countNum[j]} fois dans les billets gagnants.");
+      }
 
     }
+
+
+
+
 
     static void showWinnings()
     {
@@ -211,7 +254,12 @@ namespace TP1
           Console.Write(winningCombination[i] + " ");
         }
       }
+
+
     }
+
+
+
 
 
 
@@ -230,5 +278,9 @@ namespace TP1
       ouiOuNon = (reponse == 'O') ? true : false;
       return ouiOuNon;
     }
+
+
+
   }
 }
+
