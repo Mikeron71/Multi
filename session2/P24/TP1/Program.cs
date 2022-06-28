@@ -105,7 +105,7 @@ namespace TP1
 
 
         var conb = string.Join(" ", ticket.Combination.Select(s => string.Format("{0,2}", s)));
-        Console.WriteLine($"Ticket {string.Format("{0,2}", ticket.Id)} : {conb}");
+        Console.WriteLine($"Ticket {string.Format("{0,3}", ticket.Id)} : {conb}");
         tickets.Add(ticket);
       }
 
@@ -115,8 +115,6 @@ namespace TP1
     }
     static void validateTickets(List<Ticket> tickets)
     {
-
-
       // je reset le count pour les numéros gagnants ici. Sinon il incrémente lorsque le user recommence.
       countNum = new int[7];
       // J'utilise une liste d'objets pour simplifier la validation. 
@@ -126,67 +124,51 @@ namespace TP1
             HasComplement = false,
             MsgWin = "Billet {0} gagne une participation gratuite.",
             WinnerCount = 0,
-            identification = " gagnant de 2/6"
-
-
-
+            identification = "Gagnant de 2/6"
           },
 
-          new WiningCondition{
+          new  WiningCondition{
             CombinationCount = 2,
             HasComplement = true,
             MsgWin = "Billet {0} gagne 5 $",
             WinnerCount = 0,
-            identification = " gagnant 2/6 + complementaire"
-
-
+            identification = "Gagnant 2/6+c"
           },
           new WiningCondition{
             CombinationCount = 3,
             HasComplement = false,
             MsgWin = "Billet {0} gagne 10$",
             WinnerCount = 0,
-            identification = " gagnant 3/6"
-
-
+            identification = "Gagnant 3/6"
           },
           new WiningCondition{
             CombinationCount = 4,
             HasComplement = false,
             MsgWin = "Billet {0} remporte lot (4/6).",
             WinnerCount = 0,
-            identification = " gagnant 4/6"
-
-
+            identification = "Gagnant 4/6"
           },
               new WiningCondition{
             CombinationCount = 5,
             HasComplement = false,
             MsgWin = "Billet {0} remporte lot(5/6).",
             WinnerCount = 0,
-            identification = " gagnant 5/6"
-
-
+            identification = "Gagnant 5/6"
           },
               new WiningCondition{
             CombinationCount = 5,
             HasComplement = true,
             MsgWin = "Billet {0} remporte lot(5/6) plus complementaire",
             WinnerCount = 0,
-             identification = " gagnang 5/6 plus complementaire"
-
-
+             identification = "Gagnant 5/6+c"
           },
               new WiningCondition{
             CombinationCount = 6,
             HasComplement = false,
             MsgWin = "Billet {0} remporte le gros-lot.",
             WinnerCount = 0,
-            identification = " gagnant du gros-lot"
-
-
+            identification = "Gagnant du gros-lot"
           },
-
         };
 
       for (int i = 0; i < tickets.Count; i++)
@@ -236,30 +218,24 @@ namespace TP1
       }
       for (int j = 0; j < 7; j++)
       {
-        Console.WriteLine($"Le chiffre {winningCombination[j]} est sortis {countNum[j]} fois dans les billets gagnants.");
+        Console.WriteLine($"Le chiffre {winningCombination[j]} est sortis n{countNum[j]} fois dans les billets gagnants.");
       }
+
+      //iteration sur les conditions pour compter et afficher les gagnant SELON CATEGORIE
+
+
 
       foreach (var item in winningConditions)
       {
-        if (item.WinnerCount > 0)
+        Console.WriteLine();
+        Console.Write(string.Format("{0,-20}", item.identification));
+        for (int i = 0; i < item.WinnerCount; i++)
         {
-          Console.WriteLine("Il y a " + item.WinnerCount + item.identification);
+          Console.Write("■ ");
         }
-        else
-        {
-          Console.WriteLine("Il  n'y a aucun " + item.identification);
-
-        }
-
-
       }
-
-
-
-
-
-
     }
+
 
     static void showWinningComb()
     {
@@ -275,6 +251,7 @@ namespace TP1
           Console.Write(winningCombination[i] + " ");
         }
       }
+      Console.WriteLine();
 
 
     }
