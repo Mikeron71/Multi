@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using static System.Console;
 
 namespace TP1
 {
-  public class WiningCondition
+  public class WinningCondition
   {
     public string MsgWin;
-    public string identification;
-    public int WinnerCount;
+    public string Identification;
+    public double WinnerCount;
     public int CombinationCount;
     public bool HasComplement;
   }
@@ -22,7 +23,7 @@ namespace TP1
 
   class Program
   {
-    static int nbTickets;
+    static double nbTickets;
     static Random hasard = new Random(DateTime.Now.Millisecond);
     static int[] winningCombination;
     static int[] countNum = new int[7];
@@ -39,32 +40,30 @@ namespace TP1
         recommencer = goAgain();
       } while (recommencer == true);
     }
-
     static void askUser()
     {
       string errMsg = "Vous devez entrer un chiffre entre 10 et 200";
       bool valid = false;
       do
       {
-        Console.WriteLine("Bonjour! Combien de billets voulez-vous? Entrez un nombre entre 10 et 200.");
+        WriteLine("Bonjour! Combien de billets voulez-vous? Entrez un nombre entre 10 et 200.");
         try
         {
-          nbTickets = Convert.ToInt32(Console.ReadLine());
+          nbTickets = Convert.ToInt32(ReadLine());
           valid = nbTickets >= 10 && nbTickets <= 200;
 
         }
         catch (FormatException)
         {
-          Console.WriteLine(errMsg);
-
+          WriteLine(errMsg);
         }
         catch (OverflowException)
         {
-          Console.WriteLine(errMsg);
+          WriteLine(errMsg);
         }
         catch (Exception)
         {
-          Console.WriteLine(errMsg);
+          WriteLine(errMsg);
         }
       } while (!valid);
     }
@@ -89,8 +88,6 @@ namespace TP1
       Array.Sort(lign);
       return lign;
     }
-
-
     static List<Ticket> generateTickets()
     {
       var tickets = new List<Ticket>();
@@ -102,15 +99,11 @@ namespace TP1
           Combination = generateCombination(6),
           IsWinner = false
         };
-
-
         var conb = string.Join(" ", ticket.Combination.Select(s => string.Format("{0,2}", s)));
-        Console.WriteLine($"Ticket {string.Format("{0,3}", ticket.Id)} : {conb}");
+        WriteLine($"Ticket {string.Format("{0,3}", ticket.Id)} : {conb}");
         tickets.Add(ticket);
       }
-
-
-      Console.WriteLine();
+      WriteLine();
       return tickets;
     }
     static void validateTickets(List<Ticket> tickets)
@@ -118,62 +111,59 @@ namespace TP1
       // je reset le count pour les numéros gagnants ici. Sinon il incrémente lorsque le user recommence.
       countNum = new int[7];
       // J'utilise une liste d'objets pour simplifier la validation. 
-      var winningConditions = new List<WiningCondition>{
-          new WiningCondition{
+      var winningConditions = new List<WinningCondition>{
+          new WinningCondition{
             CombinationCount = 2,
             HasComplement = false,
             MsgWin = "Billet {0} gagne une participation gratuite.",
             WinnerCount = 0,
-            identification = "Gagnant de 2/6"
+            Identification = "Gagnant 2/6"
           },
-
-          new  WiningCondition{
+          new  WinningCondition{
             CombinationCount = 2,
             HasComplement = true,
             MsgWin = "Billet {0} gagne 5 $",
             WinnerCount = 0,
-            identification = "Gagnant 2/6+c"
+            Identification = "Gagnant 2/6+c"
           },
-          new WiningCondition{
+          new WinningCondition{
             CombinationCount = 3,
             HasComplement = false,
             MsgWin = "Billet {0} gagne 10$",
             WinnerCount = 0,
-            identification = "Gagnant 3/6"
+            Identification = "Gagnant 3/6"
           },
-          new WiningCondition{
+          new WinningCondition{
             CombinationCount = 4,
             HasComplement = false,
             MsgWin = "Billet {0} remporte lot (4/6).",
             WinnerCount = 0,
-            identification = "Gagnant 4/6"
+            Identification = "Gagnant 4/6"
           },
-              new WiningCondition{
+          new WinningCondition{
             CombinationCount = 5,
             HasComplement = false,
             MsgWin = "Billet {0} remporte lot(5/6).",
             WinnerCount = 0,
-            identification = "Gagnant 5/6"
+            Identification = "Gagnant 5/6"
           },
-              new WiningCondition{
+          new WinningCondition{
             CombinationCount = 5,
             HasComplement = true,
             MsgWin = "Billet {0} remporte lot(5/6) plus complementaire",
             WinnerCount = 0,
-             identification = "Gagnant 5/6+c"
+            Identification = "Gagnant 5/6+c"
           },
-              new WiningCondition{
+          new WinningCondition{
             CombinationCount = 6,
             HasComplement = false,
             MsgWin = "Billet {0} remporte le gros-lot.",
             WinnerCount = 0,
-            identification = "Gagnant du gros-lot"
+            Identification = "Gagnant du gros-lot"
           },
         };
-
       for (int i = 0; i < tickets.Count; i++)
       {
-
         bool containsComp = false;
         int countWin = 0;
 
@@ -187,23 +177,17 @@ namespace TP1
             }
             countWin++;
           }
-
         }
-
-
-
         foreach (var item in winningConditions)
         {
           if (countWin == item.CombinationCount && containsComp == item.HasComplement)
           {
-            Console.WriteLine(string.Format(item.MsgWin, i + 1));
+            WriteLine(string.Format(item.MsgWin, i + 1));
             item.WinnerCount++;
             tickets[i].IsWinner = true;
-
           }
         }
       }
-
       for (int i = 0; i < tickets.Count; i++)
       {
         for (int j = 0; j < 7; j++)
@@ -211,65 +195,57 @@ namespace TP1
           if (Array.Exists(tickets[i].Combination, element => element == winningCombination[j]) && tickets[i].IsWinner == true)
           {
             countNum[j]++;
-
           }
         }
-
       }
       for (int j = 0; j < 7; j++)
       {
-        Console.WriteLine($"Le chiffre {winningCombination[j]} est sortis n{countNum[j]} fois dans les billets gagnants.");
+        WriteLine($"Le chiffre {winningCombination[j]} est sortis {countNum[j]} fois dans les billets gagnants.");
       }
 
       //iteration sur les conditions pour compter et afficher les gagnant SELON CATEGORIE
       foreach (var item in winningConditions)
       {
-        Console.WriteLine();
-        Console.Write(string.Format("{0,-20}", item.identification));
+        double pourcentage = item.WinnerCount / nbTickets;
+        WriteLine();
+        Write(string.Format("{0,-20}", item.Identification));
+        Write(string.Format("{0,-10}", pourcentage.ToString("p")));
         for (int i = 0; i < item.WinnerCount; i++)
         {
-          Console.Write("■ ");
+          Write("■ ");
         }
       }
     }
-
-
     static void showWinningComb()
     {
-      Console.WriteLine("Voici la combinaison gagnante : ");
+      WriteLine("Voici la combinaison gagnante : ");
       for (int i = 0; i < winningCombination.Length; i++)
       {
         if (i == 6)
         {
-          Console.WriteLine("Complémentaire: " + winningCombination[i]);
+          WriteLine("Complémentaire: " + winningCombination[i]);
         }
         else
         {
-          Console.Write(winningCombination[i] + " ");
+          Write(winningCombination[i] + " ");
         }
       }
-      Console.WriteLine();
-
-
+      WriteLine();
     }
     static bool goAgain()
     {
       bool valide;
       bool ouiOuNon;
       char reponse;
-
       do
       {
-        Console.WriteLine("\nVoulez vous recommencer? (O)ui ou (N)on");
-        valide = Char.TryParse(Console.ReadLine().ToUpper(), out reponse) && reponse == 'O' || reponse == 'N';
+        WriteLine("\nVoulez vous recommencer? (O)ui ou (N)on");
+        valide = Char.TryParse(ReadLine().ToUpper(), out reponse) && reponse == 'O' || reponse == 'N';
       } while (!valide);
 
       ouiOuNon = (reponse == 'O') ? true : false;
       return ouiOuNon;
     }
-
-
-
   }
 }
 
