@@ -222,9 +222,6 @@ namespace TP1
       }
 
       //iteration sur les conditions pour compter et afficher les gagnant SELON CATEGORIE
-
-
-
       foreach (var item in winningConditions)
       {
         Console.WriteLine();
