@@ -32,15 +32,15 @@ namespace TP1
       var recommencer = false;
       do
       {
-        askUser();
-        var tickets = generateTickets();
-        winningCombination = generateCombination(7);
-        showWinningComb();
-        validateTickets(tickets);
-        recommencer = goAgain();
+        AskUser();
+        var tickets = GenerateTickets();
+        winningCombination = GenerateCombination(7);
+        ShowWinningComb();
+        ValidateTickets(tickets);
+        recommencer = GoAgain();
       } while (recommencer == true);
     }
-    static void askUser()
+    static void AskUser()
     {
       string errMsg = "Vous devez entrer un chiffre entre 10 et 200";
       bool valid = false;
@@ -68,7 +68,7 @@ namespace TP1
       } while (!valid);
     }
 
-    static int[] generateCombination(int nbDeNum)
+    static int[] GenerateCombination(int nbDeNum)
     {
       var lign = new int[nbDeNum];
       for (int i = 0; i < nbDeNum; i++)
@@ -88,7 +88,7 @@ namespace TP1
       Array.Sort(lign);
       return lign;
     }
-    static List<Ticket> generateTickets()
+    static List<Ticket> GenerateTickets()
     {
       var tickets = new List<Ticket>();
       for (int i = 0; i < nbTickets; i++)
@@ -96,7 +96,7 @@ namespace TP1
         var ticket = new Ticket()
         {
           Id = i + 1,
-          Combination = generateCombination(6),
+          Combination = GenerateCombination(6),
           IsWinner = false
         };
         var conb = string.Join(" ", ticket.Combination.Select(s => string.Format("{0,2}", s)));
@@ -106,7 +106,7 @@ namespace TP1
       WriteLine();
       return tickets;
     }
-    static void validateTickets(List<Ticket> tickets)
+    static void ValidateTickets(List<Ticket> tickets)
     {
       // je reset le count pour les numéros gagnants ici. Sinon il incrémente lorsque le user recommence.
       countNum = new int[7];
@@ -216,7 +216,7 @@ namespace TP1
         }
       }
     }
-    static void showWinningComb()
+    static void ShowWinningComb()
     {
       WriteLine("Voici la combinaison gagnante : ");
       for (int i = 0; i < winningCombination.Length; i++)
@@ -232,7 +232,7 @@ namespace TP1
       }
       WriteLine();
     }
-    static bool goAgain()
+    static bool GoAgain()
     {
       bool valide;
       bool ouiOuNon;
