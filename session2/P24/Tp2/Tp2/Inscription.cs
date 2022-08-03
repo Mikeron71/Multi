@@ -445,83 +445,87 @@
             tb_codePostal.Enabled = true;
             mtb_telephone.Enabled = true;
             gb_recherche.Enabled = true;
-            
             btn_nouveau.Enabled = false;
             btn_ok.Enabled = true;
             btn_annuler.Enabled = true;
             btn_modifier.Enabled = false;
             gb_notes.Visible = true;
-
-
-
         }
 
         private void btn_supprimer_Click(object sender, EventArgs e)
-        {
+        {   
                     string toDel = lb_noidAttribue.Text;
-            using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Open, FileAccess.Read))
+            var result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élève?", "SUPPRESSION",
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
             {
-                using (BinaryReader br = new BinaryReader(fs))
+                using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Open, FileAccess.Read))
                 {
-
-                    for (; ; )
+                    using (BinaryReader br = new BinaryReader(fs))
                     {
-                        if (br.PeekChar() == -1) break;
-                        string codePermanent = br.ReadString();
-                        string nom = br.ReadString().TrimEnd();
-                        string prenom = br.ReadString().TrimEnd();
-                        char sexe = br.ReadChar();
-                        string dateNaissance = br.ReadString();
-                        string adresse = br.ReadString();
-                        string ville = br.ReadString();
-                        string codePostal = br.ReadString();
-                        string telephone = br.ReadString();
-                        string noId = br.ReadString();
-                        int tp1 = br.ReadInt32();
-                        int tp2 = br.ReadInt32();
-                        int intra = br.ReadInt32();
-                        int final = br.ReadInt32();
+                        fs.Seek(0,SeekOrigin.Begin);
 
-                        if (toDel != noId)
+                        for (; ; )
                         {
-                            using (FileStream fs2 = new FileStream("Eleve2.Dta", FileMode.Create, FileAccess.Write))
-                            {
-                                using (BinaryWriter bw = new BinaryWriter(fs2))
-                                {
-                                    bw.Write(codePermanent.PadRight(13));
-                                    bw.Write(nom.PadRight(16));
-                                    bw.Write(prenom.PadRight(16));
-                                    bw.Write(sexe);
-                                    bw.Write(dateNaissance);
-                                    bw.Write(adresse.PadRight(31));
-                                    bw.Write(ville.PadRight(21));
-                                    bw.Write(codePostal);
-                                    bw.Write(telephone);
-                                    bw.Write(noId);
-                                    bw.Write(tp1);
-                                    bw.Write(tp2);
-                                    bw.Write(intra);
-                                    bw.Write(final);
+                            if (br.PeekChar() == -1) break;
+                            string codePermanent = br.ReadString();
+                            string nom = br.ReadString().TrimEnd();
+                            string prenom = br.ReadString().TrimEnd();
+                            char sexe = br.ReadChar();
+                            string dateNaissance = br.ReadString();
+                            string adresse = br.ReadString();
+                            string ville = br.ReadString();
+                            string codePostal = br.ReadString();
+                            string telephone = br.ReadString();
+                            string noId = br.ReadString();
+                            int tp1 = br.ReadInt32();
+                            int tp2 = br.ReadInt32();
+                            int intra = br.ReadInt32();
+                            int final = br.ReadInt32();
 
+                            if (toDel != noId)
+                            {
+                                using (FileStream fs2 = new FileStream("Eleve2.Dta", FileMode.Append, FileAccess.Write))
+                                {
+                                    using (BinaryWriter bw = new BinaryWriter(fs2))
+                                    {
+                                        bw.Write(codePermanent.PadRight(13));
+                                        bw.Write(nom.PadRight(16));
+                                        bw.Write(prenom.PadRight(16));
+                                        bw.Write(sexe);
+                                        bw.Write(dateNaissance);
+                                        bw.Write(adresse.PadRight(31));
+                                        bw.Write(ville.PadRight(21));
+                                        bw.Write(codePostal);
+                                        bw.Write(telephone);
+                                        bw.Write(noId);
+                                        bw.Write(tp1);
+                                        bw.Write(tp2);
+                                        bw.Write(intra);
+                                        bw.Write(final);
+
+                                    }
                                 }
                             }
-                        }                       
 
+                        }
                     }
                 }
-            }
-            try
-            {
-                File.Delete("Eleve.Dta");
-                File.Move("Eleve2.Dta", "Eleve.Dta");
-            }
-            catch (Exception er)
-            {
-                MessageBox.Show(er.Message);
-            }
-            pos--;
+                try
+                {
+                    File.Delete("Eleve.Dta");
+                    File.Move("Eleve2.Dta", "Eleve.Dta");
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show(er.Message);
+                }
+                pos--;
 
-            GetEtudiant(pos);
+                GetEtudiant(pos);
+            }
 
         }
     }
