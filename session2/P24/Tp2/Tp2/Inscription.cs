@@ -1,55 +1,37 @@
-﻿
-
-namespace Tp2
+﻿namespace Tp2
 {
-   
     public partial class Inscription : Form
-
     {
-        
-
         int pos = 0;
         int longeur = 159;
         public int nbEleves = 0;
         public string noId = "";
-        string action = "";
         int compteExistant = 1;
+        string action = "";
+       
         public Inscription()
         {
             InitializeComponent();
             GetEtudiant(pos);
-            
-        } 
-
-        
-       
-
-        private void btn_nouveau_Click(object sender, EventArgs e)
-        {   
-            AddMode();
-            ClearGroup(gb_inscription);
-            
-
         }
-
         public void AddMode()
         {
             action = "ajout";
-             
+
             foreach (Control item in gb_inscription.Controls)
             {
                 item.Enabled = true;
-                
+
             }
 
             btn_modifier.Enabled = false;
             btn_supprimer.Enabled = false;
             btn_ok.Enabled = true;
             btn_annuler.Enabled = true;
+            
         }
         public void IdleMode()
         {
-           
             foreach (Control item in gb_inscription.Controls)
             {
                 item.Enabled = false;
@@ -60,15 +42,19 @@ namespace Tp2
             btn_annuler.Enabled = false;
             btn_nouveau.Enabled = true;
             gb_notes.Visible = false;
-
+            gb_recherche.Visible = false;
+            pan_nav.Enabled = true;
         }
 
-
-
-
+        private void btn_nouveau_Click(object sender, EventArgs e)
+        {   
+            AddMode();
+            ClearGroup(gb_inscription);
+            pan_nav.Enabled = false;
+        }
         private void btn_ok_Click(object sender, EventArgs e)
         {
-
+                
                 string codePermanent = tb_codePermanent.Text.PadRight(13);
                 string nom = tb_nom.Text.PadRight(16);
                 string prenom = tb_prenom.Text.PadRight(16);
@@ -78,7 +64,7 @@ namespace Tp2
                 string ville = tb_ville.Text.PadRight(21);
                 string codePostal = tb_codePostal.Text;
                 string telephone = mtb_telephone.Text;
-                string nodid = noId.ToUpper();
+                string nodid = CreerNoid();
                 int tp1 = 0;
                 int tp2 = 0;
                 int intra = 0;
@@ -112,6 +98,7 @@ namespace Tp2
                 MessageBox.Show($"Inscription de {prenom.TrimEnd()} {nom.TrimEnd()} réussie.");
                 ClearGroup(gb_inscription);
                 IdleMode();
+                GetEtudiant(pos);
             }
 
             if(action == "modif")
@@ -149,68 +136,41 @@ namespace Tp2
                     }
                 }
             }
-
-
-
-
         }
-        //Je dois incrementer le noid ????? ___________________________________________________________________
-        public void CreerNoid()
+
+        private void btn_annuler_Click(object sender, EventArgs e)
         {
-                
+            ClearGroup(gb_inscription);
+            GetEtudiant(pos);
+            IdleMode();
+        }
+
+        //Je dois incrementer le noid ????? ___________________________________________________________________
+        public string CreerNoid()
+        {   
             
             bool existant = false;
             if (tb_nom.Text.Length > 2 && tb_prenom.Text.Length > 1)
             {
-
-
-                
                 string lettresNom = tb_nom.Text.Substring(0, 3);
                 string lettrePrenom = tb_prenom.Text.Substring(0, 1);
                 string noIdACreer = lettresNom.ToUpper() + lettrePrenom.ToUpper() + 1;
                 existant = Find(noIdACreer);
              if(existant)
                 {
-                    compteExistant++;
-                    noId = lettresNom.ToUpper() + lettrePrenom.ToUpper() + compteExistant;
-
-
+                   
+                    noId = lettresNom.ToUpper() + lettrePrenom.ToUpper() + compteExistant ;
+                 
                 }
                 else
                 {
                     //MessageBox.Show(" NOT foud");
                     noId = lettresNom.ToUpper() + lettrePrenom.ToUpper() + 1;
-                  
-
-
                 }
             }
-        }
-
-       
-
-        public void tb_prenom_TextChanged(object sender, EventArgs e)
-        {
-            if (tb_prenom.Text.Length > 0)
-            {
-                    CreerNoid();
-            lb_noidAttribue.Text = noId;
+            compteExistant = 1;
+            return noId;
             
-
-            }
-            
-                    
-        }
-
-        private void tb_nom_TextChanged(object sender, EventArgs e)
-        {
-            if (tb_prenom.Text.Length > 2)
-            {
-                CreerNoid();
-                lb_noidAttribue.Text = noId;
-              
-
-            }
         }
 
         public void GetEtudiant(int pos)
@@ -224,11 +184,6 @@ namespace Tp2
                         nbEleves = (int)fs.Length / longeur;
                         lb_positionEleves.Text = $"Élève {pos+1} sur {nbEleves.ToString()}";
                         fs.Seek(pos * 159, SeekOrigin.Begin);
-
-
-
-
-
                         tb_codePermanent.Text = br.ReadString();
                         tb_nom.Text = br.ReadString().TrimEnd();
                         tb_prenom.Text = br.ReadString().TrimEnd();
@@ -351,9 +306,10 @@ namespace Tp2
                                 trouve = true;
 
                             }
-                            if (noid == noId)
+                            if (noid.Substring(0, 4) == noId.Substring(0, 4))
                             {
                                 trouve = true;
+                                compteExistant++;
                                
                             }
 
@@ -433,17 +389,6 @@ namespace Tp2
             GetEtudiant(pos);
         }
 
-        private void btn_annuler_Click(object sender, EventArgs e)
-        {
-            ClearGroup(gb_inscription);
-            GetEtudiant(pos);
-            IdleMode();
-        }
-
-        private void Inscription_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_premier_Click(object sender, EventArgs e)
         {
@@ -513,14 +458,11 @@ namespace Tp2
 
         private void btn_supprimer_Click(object sender, EventArgs e)
         {
+                    string toDel = lb_noidAttribue.Text;
             using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Open, FileAccess.Read))
             {
                 using (BinaryReader br = new BinaryReader(fs))
                 {
-
-                    string toDel = lb_noidAttribue.Text;
-
-
 
                     for (; ; )
                     {
@@ -542,8 +484,6 @@ namespace Tp2
 
                         if (toDel != noId)
                         {
-
-
                             using (FileStream fs2 = new FileStream("Eleve2.Dta", FileMode.Create, FileAccess.Write))
                             {
                                 using (BinaryWriter bw = new BinaryWriter(fs2))
@@ -565,9 +505,7 @@ namespace Tp2
 
                                 }
                             }
-                        }
-
-                       
+                        }                       
 
                     }
                 }

@@ -64,10 +64,6 @@
             this.lb_rnoid = new System.Windows.Forms.Label();
             this.lb_rPrenom = new System.Windows.Forms.Label();
             this.lb_rNom = new System.Windows.Forms.Label();
-            this.btn_premier = new System.Windows.Forms.Button();
-            this.btn_reculer = new System.Windows.Forms.Button();
-            this.btn_avancer = new System.Windows.Forms.Button();
-            this.btn_dernier = new System.Windows.Forms.Button();
             this.lb_positionEleves = new System.Windows.Forms.Label();
             this.gb_notes = new System.Windows.Forms.GroupBox();
             this.nud_final = new System.Windows.Forms.NumericUpDown();
@@ -78,6 +74,11 @@
             this.lb_intra = new System.Windows.Forms.Label();
             this.lb_tp2 = new System.Windows.Forms.Label();
             this.lb_tp1 = new System.Windows.Forms.Label();
+            this.btn_reculer = new System.Windows.Forms.Button();
+            this.btn_premier = new System.Windows.Forms.Button();
+            this.btn_avancer = new System.Windows.Forms.Button();
+            this.btn_dernier = new System.Windows.Forms.Button();
+            this.pan_nav = new System.Windows.Forms.Panel();
             this.gb_inscription.SuspendLayout();
             this.gb_recherche.SuspendLayout();
             this.gb_notes.SuspendLayout();
@@ -85,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_intra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_tp2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_tp1)).BeginInit();
+            this.pan_nav.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_nouveau
@@ -216,7 +218,6 @@
             this.tb_nom.Name = "tb_nom";
             this.tb_nom.Size = new System.Drawing.Size(297, 29);
             this.tb_nom.TabIndex = 13;
-            this.tb_nom.TextChanged += new System.EventHandler(this.tb_nom_TextChanged);
             // 
             // tb_prenom
             // 
@@ -227,7 +228,6 @@
             this.tb_prenom.Name = "tb_prenom";
             this.tb_prenom.Size = new System.Drawing.Size(297, 29);
             this.tb_prenom.TabIndex = 14;
-            this.tb_prenom.TextChanged += new System.EventHandler(this.tb_prenom_TextChanged);
             // 
             // tb_adresse
             // 
@@ -479,51 +479,11 @@
             this.lb_rNom.TabIndex = 4;
             this.lb_rNom.Text = "Nom:";
             // 
-            // btn_premier
-            // 
-            this.btn_premier.Location = new System.Drawing.Point(757, 702);
-            this.btn_premier.Name = "btn_premier";
-            this.btn_premier.Size = new System.Drawing.Size(78, 67);
-            this.btn_premier.TabIndex = 33;
-            this.btn_premier.Text = "|<";
-            this.btn_premier.UseVisualStyleBackColor = true;
-            this.btn_premier.Click += new System.EventHandler(this.btn_premier_Click);
-            // 
-            // btn_reculer
-            // 
-            this.btn_reculer.Location = new System.Drawing.Point(852, 702);
-            this.btn_reculer.Name = "btn_reculer";
-            this.btn_reculer.Size = new System.Drawing.Size(78, 67);
-            this.btn_reculer.TabIndex = 34;
-            this.btn_reculer.Text = "<--";
-            this.btn_reculer.UseVisualStyleBackColor = true;
-            this.btn_reculer.Click += new System.EventHandler(this.btn_reculer_Click);
-            // 
-            // btn_avancer
-            // 
-            this.btn_avancer.Location = new System.Drawing.Point(945, 702);
-            this.btn_avancer.Name = "btn_avancer";
-            this.btn_avancer.Size = new System.Drawing.Size(78, 67);
-            this.btn_avancer.TabIndex = 35;
-            this.btn_avancer.Text = "-->";
-            this.btn_avancer.UseVisualStyleBackColor = true;
-            this.btn_avancer.Click += new System.EventHandler(this.btn_avancer_Click);
-            // 
-            // btn_dernier
-            // 
-            this.btn_dernier.Location = new System.Drawing.Point(1040, 702);
-            this.btn_dernier.Name = "btn_dernier";
-            this.btn_dernier.Size = new System.Drawing.Size(78, 67);
-            this.btn_dernier.TabIndex = 36;
-            this.btn_dernier.Text = ">|";
-            this.btn_dernier.UseVisualStyleBackColor = true;
-            this.btn_dernier.Click += new System.EventHandler(this.btn_dernier_Click);
-            // 
             // lb_positionEleves
             // 
             this.lb_positionEleves.AutoSize = true;
             this.lb_positionEleves.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lb_positionEleves.Location = new System.Drawing.Point(903, 802);
+            this.lb_positionEleves.Location = new System.Drawing.Point(882, 809);
             this.lb_positionEleves.Name = "lb_positionEleves";
             this.lb_positionEleves.Size = new System.Drawing.Size(76, 30);
             this.lb_positionEleves.TabIndex = 37;
@@ -611,17 +571,65 @@
             this.lb_tp1.TabIndex = 0;
             this.lb_tp1.Text = "tp1";
             // 
+            // btn_reculer
+            // 
+            this.btn_reculer.Location = new System.Drawing.Point(115, 51);
+            this.btn_reculer.Name = "btn_reculer";
+            this.btn_reculer.Size = new System.Drawing.Size(78, 67);
+            this.btn_reculer.TabIndex = 34;
+            this.btn_reculer.Text = "<--";
+            this.btn_reculer.UseVisualStyleBackColor = true;
+            this.btn_reculer.Click += new System.EventHandler(this.btn_reculer_Click);
+            // 
+            // btn_premier
+            // 
+            this.btn_premier.Location = new System.Drawing.Point(31, 51);
+            this.btn_premier.Name = "btn_premier";
+            this.btn_premier.Size = new System.Drawing.Size(78, 67);
+            this.btn_premier.TabIndex = 33;
+            this.btn_premier.Text = "|<";
+            this.btn_premier.UseVisualStyleBackColor = true;
+            this.btn_premier.Click += new System.EventHandler(this.btn_premier_Click);
+            // 
+            // btn_avancer
+            // 
+            this.btn_avancer.Location = new System.Drawing.Point(277, 51);
+            this.btn_avancer.Name = "btn_avancer";
+            this.btn_avancer.Size = new System.Drawing.Size(78, 67);
+            this.btn_avancer.TabIndex = 35;
+            this.btn_avancer.Text = "-->";
+            this.btn_avancer.UseVisualStyleBackColor = true;
+            this.btn_avancer.Click += new System.EventHandler(this.btn_avancer_Click);
+            // 
+            // btn_dernier
+            // 
+            this.btn_dernier.Location = new System.Drawing.Point(361, 51);
+            this.btn_dernier.Name = "btn_dernier";
+            this.btn_dernier.Size = new System.Drawing.Size(78, 67);
+            this.btn_dernier.TabIndex = 36;
+            this.btn_dernier.Text = ">|";
+            this.btn_dernier.UseVisualStyleBackColor = true;
+            this.btn_dernier.Click += new System.EventHandler(this.btn_dernier_Click);
+            // 
+            // pan_nav
+            // 
+            this.pan_nav.Controls.Add(this.btn_premier);
+            this.pan_nav.Controls.Add(this.btn_reculer);
+            this.pan_nav.Controls.Add(this.btn_dernier);
+            this.pan_nav.Controls.Add(this.btn_avancer);
+            this.pan_nav.Location = new System.Drawing.Point(705, 641);
+            this.pan_nav.Name = "pan_nav";
+            this.pan_nav.Size = new System.Drawing.Size(453, 161);
+            this.pan_nav.TabIndex = 39;
+            // 
             // Inscription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 861);
+            this.Controls.Add(this.pan_nav);
             this.Controls.Add(this.gb_notes);
             this.Controls.Add(this.lb_positionEleves);
-            this.Controls.Add(this.btn_dernier);
-            this.Controls.Add(this.btn_avancer);
-            this.Controls.Add(this.btn_reculer);
-            this.Controls.Add(this.btn_premier);
             this.Controls.Add(this.btn_supprimer);
             this.Controls.Add(this.btn_modifier);
             this.Controls.Add(this.btn_annuler);
@@ -634,7 +642,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Inscription";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Inscription_Load);
             this.gb_inscription.ResumeLayout(false);
             this.gb_inscription.PerformLayout();
             this.gb_recherche.ResumeLayout(false);
@@ -645,6 +652,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_intra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_tp2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_tp1)).EndInit();
+            this.pan_nav.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -687,10 +695,6 @@
         private Label lb_rnoid;
         private Label lb_rPrenom;
         private Label lb_rNom;
-        private Button btn_premier;
-        private Button btn_reculer;
-        private Button btn_avancer;
-        private Button btn_dernier;
         private Label lb_positionEleves;
         private GroupBox gb_notes;
         private NumericUpDown nud_final;
@@ -701,5 +705,10 @@
         private Label lb_intra;
         private Label lb_tp2;
         private Label lb_tp1;
+        private Button btn_reculer;
+        private Button btn_premier;
+        private Button btn_avancer;
+        private Button btn_dernier;
+        private Panel pan_nav;
     }
 }
