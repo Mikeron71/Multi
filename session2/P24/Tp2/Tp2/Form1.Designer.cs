@@ -41,7 +41,7 @@
             this.listeEtStatistiquesToolStripMenuItem});
             this.menu_Inscription.Location = new System.Drawing.Point(0, 0);
             this.menu_Inscription.Name = "menu_Inscription";
-            this.menu_Inscription.Size = new System.Drawing.Size(1184, 24);
+            this.menu_Inscription.Size = new System.Drawing.Size(1234, 24);
             this.menu_Inscription.TabIndex = 1;
             this.menu_Inscription.Text = "Inscription";
             // 
@@ -64,7 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 861);
+            this.ClientSize = new System.Drawing.Size(1234, 911);
             this.Controls.Add(this.menu_Inscription);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menu_Inscription;

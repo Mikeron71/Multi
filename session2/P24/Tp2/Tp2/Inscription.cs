@@ -1,4 +1,5 @@
-﻿namespace Tp2
+﻿
+namespace Tp2
 {
     public partial class Inscription : Form
     {
@@ -54,7 +55,13 @@
         }
         private void btn_ok_Click(object sender, EventArgs e)
         {
-                
+
+
+            bool ready = Valider();
+           
+
+            if (ready)
+            {
                 string codePermanent = tb_codePermanent.Text.PadRight(13);
                 string nom = tb_nom.Text.PadRight(16);
                 string prenom = tb_prenom.Text.PadRight(16);
@@ -70,71 +77,78 @@
                 int intra = 0;
                 int final = 0;
 
-            if (action == "ajout")
-            {
 
 
-                using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Append, FileAccess.Write))
+
+                if (action == "ajout")
                 {
-                    using (BinaryWriter bw = new BinaryWriter(fs))
-                    {
-                        bw.Write(codePermanent);
-                        bw.Write(nom);
-                        bw.Write(prenom);
-                        bw.Write(sexe);
-                        bw.Write(dateNaissance);
-                        bw.Write(adresse);
-                        bw.Write(ville);
-                        bw.Write(codePostal);
-                        bw.Write(telephone);
-                        bw.Write(nodid);
-                        bw.Write(intra);
-                        bw.Write(final);
-                        bw.Write(tp1);
-                        bw.Write(tp2);
 
+
+                    using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Append, FileAccess.Write))
+                    {
+                        using (BinaryWriter bw = new BinaryWriter(fs))
+                        {
+                            bw.Write(codePermanent);
+                            bw.Write(nom);
+                            bw.Write(prenom);
+                            bw.Write(sexe);
+                            bw.Write(dateNaissance);
+                            bw.Write(adresse);
+                            bw.Write(ville);
+                            bw.Write(codePostal);
+                            bw.Write(telephone);
+                            bw.Write(nodid);
+                            bw.Write(intra);
+                            bw.Write(final);
+                            bw.Write(tp1);
+                            bw.Write(tp2);
+
+                        }
+                    }
+                    MessageBox.Show($"Inscription de {prenom.TrimEnd()} {nom.TrimEnd()} réussie.");
+                    ClearGroup(gb_inscription);
+                    IdleMode();
+                    GetEtudiant(pos);
+                }
+
+                if (action == "modif")
+                {
+                    intra = (int)nud_tp1.Value;
+                    final = (int)nud_tp2.Value;
+                    tp1 = (int)nud_intra.Value;
+                    tp2 = (int)nud_final.Value;
+
+
+                    using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Open, FileAccess.Write))
+                    {
+                        using (BinaryWriter bw = new BinaryWriter(fs))
+                        {
+                            fs.Seek(pos * 159, SeekOrigin.Begin);
+                            bw.Write(codePermanent);
+                            bw.Write(nom);
+                            bw.Write(prenom);
+                            bw.Write(sexe);
+                            bw.Write(dateNaissance);
+                            bw.Write(adresse);
+                            bw.Write(ville);
+                            bw.Write(codePostal);
+                            bw.Write(telephone);
+                            bw.Write(nodid);
+                            bw.Write(tp1);
+                            bw.Write(tp2);
+                            bw.Write(intra);
+                            bw.Write(final);
+
+                            MessageBox.Show($"Modification de {prenom.TrimEnd()} {nom.TrimEnd()} réussie.");
+                            ClearGroup(gb_inscription);
+                            GetEtudiant(pos);
+                            IdleMode();
+                        }
                     }
                 }
-                MessageBox.Show($"Inscription de {prenom.TrimEnd()} {nom.TrimEnd()} réussie.");
-                ClearGroup(gb_inscription);
-                IdleMode();
-                GetEtudiant(pos);
-            }
-
-            if(action == "modif")
+            } else
             {
-                intra = (int)nud_tp1.Value;
-                final = (int)nud_tp2.Value;
-                tp1 = (int)nud_intra.Value;
-                tp2 = (int)nud_final.Value;
 
-
-                using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Open, FileAccess.Write))
-                {
-                    using (BinaryWriter bw = new BinaryWriter(fs))
-                    {
-                        fs.Seek(pos * 159, SeekOrigin.Begin);
-                        bw.Write(codePermanent);
-                        bw.Write(nom);
-                        bw.Write(prenom);
-                        bw.Write(sexe);
-                        bw.Write(dateNaissance);
-                        bw.Write(adresse);
-                        bw.Write(ville);
-                        bw.Write(codePostal);
-                        bw.Write(telephone);
-                        bw.Write(nodid);
-                        bw.Write(tp1);
-                        bw.Write(tp2);
-                        bw.Write(intra);
-                        bw.Write(final);
-
-                        MessageBox.Show($"Modification de {prenom.TrimEnd()} {nom.TrimEnd()} réussie.");
-                        ClearGroup(gb_inscription);
-                        GetEtudiant(pos);
-                        IdleMode();
-                    }
-                }
             }
         }
 
@@ -175,49 +189,56 @@
 
         public void GetEtudiant(int pos)
         {
-            try
-            {
-                using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Open, FileAccess.Read))
+            
+            
+                try
                 {
-                    using (BinaryReader br = new BinaryReader(fs))
+                    using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Open, FileAccess.Read))
                     {
-                        nbEleves = (int)fs.Length / longeur;
-                        lb_positionEleves.Text = $"Élève {pos+1} sur {nbEleves.ToString()}";
-                        fs.Seek(pos * 159, SeekOrigin.Begin);
-                        tb_codePermanent.Text = br.ReadString();
-                        tb_nom.Text = br.ReadString().TrimEnd();
-                        tb_prenom.Text = br.ReadString().TrimEnd();
-                        char sexe = br.ReadChar();
-                        if (sexe == 'M')
+                        using (BinaryReader br = new BinaryReader(fs))
                         {
-                            rb_masculin.Checked = true;
-                        }
-                        else
+                            nbEleves = (int)fs.Length / longeur;
+                        if (nbEleves > 0)
                         {
-                            rb_feminin.Checked = true;
+                            lb_positionEleves.Text = "";
                         }
+                            lb_positionEleves.Text = $"Élève {pos + 1} sur {nbEleves.ToString()}";
+                            fs.Seek(pos * 159, SeekOrigin.Begin);
+                            tb_codePermanent.Text = br.ReadString();
+                            tb_nom.Text = br.ReadString().TrimEnd();
+                            tb_prenom.Text = br.ReadString().TrimEnd();
+                            char sexe = br.ReadChar();
+                            if (sexe == 'M')
+                            {
+                                rb_masculin.Checked = true;
+                            }
+                            else
+                            {
+                                rb_feminin.Checked = true;
+                            }
 
-                        tb_dateNaissance.Text = br.ReadString();
-                        tb_adresse.Text = br.ReadString().TrimEnd();
-                        tb_ville.Text = br.ReadString().TrimEnd();
-                        tb_codePostal.Text = br.ReadString();
-                        mtb_telephone.Text = br.ReadString();
-                        lb_noidAttribue.Text = br.ReadString();
-                        nud_tp1.Value = br.ReadInt32();
-                        nud_tp2.Value = br.ReadInt32();
-                        nud_intra.Value = br.ReadInt32();
-                        nud_final.Value = br.ReadInt32();
+                            tb_dateNaissance.Text = br.ReadString();
+                            tb_adresse.Text = br.ReadString().TrimEnd();
+                            tb_ville.Text = br.ReadString().TrimEnd();
+                            tb_codePostal.Text = br.ReadString();
+                            mtb_telephone.Text = br.ReadString();
+                            lb_noidAttribue.Text = br.ReadString();
+                            nud_tp1.Value = br.ReadInt32();
+                            nud_tp2.Value = br.ReadInt32();
+                            nud_intra.Value = br.ReadInt32();
+                            nud_final.Value = br.ReadInt32();
 
 
 
+                        }
                     }
                 }
-            }
-            catch (Exception)
-            {
+                catch (Exception)
+                {
 
-                
-            }
+
+                }
+            
         }
 
         private void btn_recherche_Click(object sender, EventArgs e)
@@ -455,10 +476,7 @@
         private void btn_supprimer_Click(object sender, EventArgs e)
         {   
                     string toDel = lb_noidAttribue.Text;
-            var result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élève?", "SUPPRESSION",
-                                 MessageBoxButtons.YesNo,
-                                 MessageBoxIcon.Question);
-
+            var result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élève?", "SUPPRESSION",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Open, FileAccess.Read))
@@ -522,11 +540,80 @@
                 {
                     MessageBox.Show(er.Message);
                 }
-                pos--;
+                if (pos > 0) pos--;
 
                 GetEtudiant(pos);
             }
 
+        }
+
+        private bool Valider()
+        {
+            bool valide = false;
+            
+            
+            
+            foreach(Control ct in gb_inscription.Controls)
+            {
+                if(ct is TextBox  && ct.Text == "")
+                {
+                    errorProvider1.SetError(ct, "Ce champ est requis");
+                    
+                    
+                }
+                if(ct is MaskedTextBox && ct.Text == "  -  -" || ct.Text == "(   )    -")
+                {
+                   
+                    errorProvider1.SetError(ct, "Ce champ est requis");
+                    
+
+                }
+                else
+                {
+                    errorProvider1.SetError(ct, "");
+                    valide = true;
+                }
+                
+            }
+
+            
+            if(tb_codePermanent.Text.Length != 12)
+            {
+                errorProvider1.SetError(tb_codePermanent, "Le code permanent doit contenir 12 caractères");
+            }
+            else
+            {
+                errorProvider1.SetError(tb_codePermanent, "");
+                valide = true;
+            }
+
+            
+
+
+            if (rb_feminin.Checked == false && rb_masculin.Checked == false)
+            {
+                errorProvider1.SetError(rb_masculin, "Vous devez cocher un des deux choix");
+            }
+            else
+            {
+                errorProvider1.SetError(rb_masculin, "");
+                valide = true;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            return valide;  
         }
     }
 }

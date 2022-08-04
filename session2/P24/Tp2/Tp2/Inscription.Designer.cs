@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_nouveau = new System.Windows.Forms.Button();
             this.lb_codePermanent = new System.Windows.Forms.Label();
             this.lb_nom = new System.Windows.Forms.Label();
@@ -79,6 +80,8 @@
             this.btn_avancer = new System.Windows.Forms.Button();
             this.btn_dernier = new System.Windows.Forms.Button();
             this.pan_nav = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gb_inscription.SuspendLayout();
             this.gb_recherche.SuspendLayout();
             this.gb_notes.SuspendLayout();
@@ -87,11 +90,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_tp2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_tp1)).BeginInit();
             this.pan_nav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_nouveau
             // 
-            this.btn_nouveau.Location = new System.Drawing.Point(788, 74);
+            this.btn_nouveau.Location = new System.Drawing.Point(896, 66);
             this.btn_nouveau.Name = "btn_nouveau";
             this.btn_nouveau.Size = new System.Drawing.Size(142, 81);
             this.btn_nouveau.TabIndex = 1;
@@ -328,7 +333,7 @@
             // btn_ok
             // 
             this.btn_ok.Enabled = false;
-            this.btn_ok.Location = new System.Drawing.Point(788, 183);
+            this.btn_ok.Location = new System.Drawing.Point(896, 175);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(142, 81);
             this.btn_ok.TabIndex = 24;
@@ -339,7 +344,7 @@
             // btn_annuler
             // 
             this.btn_annuler.Enabled = false;
-            this.btn_annuler.Location = new System.Drawing.Point(788, 294);
+            this.btn_annuler.Location = new System.Drawing.Point(896, 286);
             this.btn_annuler.Name = "btn_annuler";
             this.btn_annuler.Size = new System.Drawing.Size(142, 81);
             this.btn_annuler.TabIndex = 25;
@@ -349,7 +354,7 @@
             // 
             // btn_modifier
             // 
-            this.btn_modifier.Location = new System.Drawing.Point(788, 407);
+            this.btn_modifier.Location = new System.Drawing.Point(896, 399);
             this.btn_modifier.Name = "btn_modifier";
             this.btn_modifier.Size = new System.Drawing.Size(142, 81);
             this.btn_modifier.TabIndex = 26;
@@ -359,7 +364,7 @@
             // 
             // btn_supprimer
             // 
-            this.btn_supprimer.Location = new System.Drawing.Point(788, 523);
+            this.btn_supprimer.Location = new System.Drawing.Point(896, 515);
             this.btn_supprimer.Name = "btn_supprimer";
             this.btn_supprimer.Size = new System.Drawing.Size(142, 81);
             this.btn_supprimer.TabIndex = 27;
@@ -390,7 +395,7 @@
             this.gb_inscription.Controls.Add(this.tb_ville);
             this.gb_inscription.Controls.Add(this.lb_dateNais);
             this.gb_inscription.Controls.Add(this.lb_sexe);
-            this.gb_inscription.Location = new System.Drawing.Point(31, 62);
+            this.gb_inscription.Location = new System.Drawing.Point(86, 64);
             this.gb_inscription.Name = "gb_inscription";
             this.gb_inscription.Size = new System.Drawing.Size(652, 530);
             this.gb_inscription.TabIndex = 28;
@@ -407,9 +412,9 @@
             this.gb_recherche.Controls.Add(this.lb_rPrenom);
             this.gb_recherche.Controls.Add(this.lb_rNom);
             this.gb_recherche.Enabled = false;
-            this.gb_recherche.Location = new System.Drawing.Point(31, 681);
+            this.gb_recherche.Location = new System.Drawing.Point(86, 681);
             this.gb_recherche.Name = "gb_recherche";
-            this.gb_recherche.Size = new System.Drawing.Size(652, 158);
+            this.gb_recherche.Size = new System.Drawing.Size(652, 154);
             this.gb_recherche.TabIndex = 29;
             this.gb_recherche.TabStop = false;
             this.gb_recherche.Text = "Recherche";
@@ -483,11 +488,10 @@
             // 
             this.lb_positionEleves.AutoSize = true;
             this.lb_positionEleves.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lb_positionEleves.Location = new System.Drawing.Point(882, 809);
+            this.lb_positionEleves.Location = new System.Drawing.Point(841, 805);
             this.lb_positionEleves.Name = "lb_positionEleves";
-            this.lb_positionEleves.Size = new System.Drawing.Size(76, 30);
+            this.lb_positionEleves.Size = new System.Drawing.Size(0, 30);
             this.lb_positionEleves.TabIndex = 37;
-            this.lb_positionEleves.Text = "label1";
             // 
             // gb_notes
             // 
@@ -499,12 +503,12 @@
             this.gb_notes.Controls.Add(this.lb_intra);
             this.gb_notes.Controls.Add(this.lb_tp2);
             this.gb_notes.Controls.Add(this.lb_tp1);
-            this.gb_notes.Location = new System.Drawing.Point(31, 598);
+            this.gb_notes.Location = new System.Drawing.Point(86, 598);
             this.gb_notes.Name = "gb_notes";
             this.gb_notes.Size = new System.Drawing.Size(652, 77);
             this.gb_notes.TabIndex = 38;
             this.gb_notes.TabStop = false;
-            this.gb_notes.Text = "notes";
+            this.gb_notes.Text = "Notes";
             this.gb_notes.Visible = false;
             // 
             // nud_final
@@ -573,7 +577,7 @@
             // 
             // btn_reculer
             // 
-            this.btn_reculer.Location = new System.Drawing.Point(115, 51);
+            this.btn_reculer.Location = new System.Drawing.Point(123, 49);
             this.btn_reculer.Name = "btn_reculer";
             this.btn_reculer.Size = new System.Drawing.Size(78, 67);
             this.btn_reculer.TabIndex = 34;
@@ -583,7 +587,7 @@
             // 
             // btn_premier
             // 
-            this.btn_premier.Location = new System.Drawing.Point(31, 51);
+            this.btn_premier.Location = new System.Drawing.Point(39, 49);
             this.btn_premier.Name = "btn_premier";
             this.btn_premier.Size = new System.Drawing.Size(78, 67);
             this.btn_premier.TabIndex = 33;
@@ -593,7 +597,7 @@
             // 
             // btn_avancer
             // 
-            this.btn_avancer.Location = new System.Drawing.Point(277, 51);
+            this.btn_avancer.Location = new System.Drawing.Point(207, 49);
             this.btn_avancer.Name = "btn_avancer";
             this.btn_avancer.Size = new System.Drawing.Size(78, 67);
             this.btn_avancer.TabIndex = 35;
@@ -603,7 +607,7 @@
             // 
             // btn_dernier
             // 
-            this.btn_dernier.Location = new System.Drawing.Point(361, 51);
+            this.btn_dernier.Location = new System.Drawing.Point(291, 49);
             this.btn_dernier.Name = "btn_dernier";
             this.btn_dernier.Size = new System.Drawing.Size(78, 67);
             this.btn_dernier.TabIndex = 36;
@@ -617,16 +621,24 @@
             this.pan_nav.Controls.Add(this.btn_reculer);
             this.pan_nav.Controls.Add(this.btn_dernier);
             this.pan_nav.Controls.Add(this.btn_avancer);
-            this.pan_nav.Location = new System.Drawing.Point(705, 641);
+            this.pan_nav.Location = new System.Drawing.Point(773, 641);
             this.pan_nav.Name = "pan_nav";
-            this.pan_nav.Size = new System.Drawing.Size(453, 161);
+            this.pan_nav.Size = new System.Drawing.Size(384, 161);
             this.pan_nav.TabIndex = 39;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
             // 
             // Inscription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 861);
+            this.ClientSize = new System.Drawing.Size(1234, 911);
             this.Controls.Add(this.pan_nav);
             this.Controls.Add(this.gb_notes);
             this.Controls.Add(this.lb_positionEleves);
@@ -653,6 +665,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_tp2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_tp1)).EndInit();
             this.pan_nav.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -710,5 +724,7 @@
         private Button btn_avancer;
         private Button btn_dernier;
         private Panel pan_nav;
+        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider2;
     }
 }
