@@ -9,7 +9,6 @@ namespace Tp2
         public string noId = "";
         int compteExistant = 1;
         string action = "";
-        public bool vide = false;
 
         public Inscription()
         {
@@ -25,12 +24,11 @@ namespace Tp2
             {
                 item.Enabled = true;
             }
-
             btn_modifier.Enabled = false;
             btn_supprimer.Enabled = false;
             btn_ok.Enabled = true;
             btn_annuler.Enabled = true;
-
+            gb_recherche.Enabled = false;
         }
         public void IdleMode()
         {
@@ -45,6 +43,7 @@ namespace Tp2
             btn_nouveau.Enabled = true;
             gb_notes.Visible = false;
             pan_nav.Enabled = true;
+            gb_recherche.Enabled = true;
         }
         private void EditMode()
         {
@@ -152,7 +151,7 @@ namespace Tp2
                         MessageBox.Show($"Modification de {prenom.TrimEnd()} {nom.TrimEnd()} réussie.");
                         ClearGroup(gb_inscription);
                         IdleMode();
-                        vide = false;
+                       
                     }
                 }
             }
@@ -178,13 +177,10 @@ namespace Tp2
                 existant = Find(noIdACreer);
                 if (existant)
                 {
-
                     noId = lettresNom.ToUpper() + lettrePrenom.ToUpper() + compteExistant;
-
                 }
                 else
                 {
-                    //MessageBox.Show(" NOT foud");
                     noId = lettresNom.ToUpper() + lettrePrenom.ToUpper() + 1;
                 }
             }
@@ -192,7 +188,6 @@ namespace Tp2
             return noId;
 
         }
-
         public void GetEtudiant(int pos)
         {
             try
@@ -235,14 +230,12 @@ namespace Tp2
             }
             catch (FileNotFoundException)
             {
-                vide = true;
                 btn_supprimer.Enabled = false;
             }
             catch (Exception)
             {
 
             }
-
         }
 
         private void btn_recherche_Click(object sender, EventArgs e)
@@ -280,7 +273,6 @@ namespace Tp2
         public bool Find(string noidRecherche)
         {
             bool trouve = false;
-
             try
             {
                 using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Read))
@@ -330,7 +322,6 @@ namespace Tp2
                                 nud_intra.Value = (decimal)intra;
                                 nud_final.Value = (decimal)final;
                                 trouve = true;
-
                             }
                             if (noidRecherche.Substring(0, 4) == noId.Substring(0, 4))
                             {
@@ -400,9 +391,6 @@ namespace Tp2
             }
             return trouve;
         }
-
-     
-
         private void btn_premier_Click(object sender, EventArgs e)
         {
             pos = 0;
@@ -587,8 +575,6 @@ namespace Tp2
             else e.Handled = true;
            
         }
-
-      
         private void tb_dateNaissance_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (tb_dateNaissance.Text.Length != 10)
@@ -615,8 +601,6 @@ namespace Tp2
                 mtb_telephone.Focus();
             }
         }
-
-
 
         // Annule tout si je change de page
         private void Inscription_Deactivate(object sender, EventArgs e)

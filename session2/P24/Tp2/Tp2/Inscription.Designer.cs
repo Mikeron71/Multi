@@ -65,7 +65,6 @@
             this.lb_rnoid = new System.Windows.Forms.Label();
             this.lb_rPrenom = new System.Windows.Forms.Label();
             this.lb_rNom = new System.Windows.Forms.Label();
-            this.lb_positionEleves = new System.Windows.Forms.Label();
             this.gb_notes = new System.Windows.Forms.GroupBox();
             this.nud_final = new System.Windows.Forms.NumericUpDown();
             this.nud_intra = new System.Windows.Forms.NumericUpDown();
@@ -81,6 +80,7 @@
             this.btn_dernier = new System.Windows.Forms.Button();
             this.pan_nav = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lb_positionEleves = new System.Windows.Forms.Label();
             this.gb_inscription.SuspendLayout();
             this.gb_recherche.SuspendLayout();
             this.gb_notes.SuspendLayout();
@@ -485,15 +485,6 @@
             this.lb_rNom.TabIndex = 4;
             this.lb_rNom.Text = "Nom:";
             // 
-            // lb_positionEleves
-            // 
-            this.lb_positionEleves.AutoSize = true;
-            this.lb_positionEleves.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lb_positionEleves.Location = new System.Drawing.Point(841, 805);
-            this.lb_positionEleves.Name = "lb_positionEleves";
-            this.lb_positionEleves.Size = new System.Drawing.Size(0, 30);
-            this.lb_positionEleves.TabIndex = 37;
-            // 
             // gb_notes
             // 
             this.gb_notes.Controls.Add(this.nud_final);
@@ -635,14 +626,25 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lb_positionEleves
+            // 
+            this.lb_positionEleves.AutoSize = true;
+            this.lb_positionEleves.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lb_positionEleves.Location = new System.Drawing.Point(932, 814);
+            this.lb_positionEleves.Name = "lb_positionEleves";
+            this.lb_positionEleves.Size = new System.Drawing.Size(113, 21);
+            this.lb_positionEleves.TabIndex = 40;
+            this.lb_positionEleves.Text = "position fichier";
+            // 
             // Inscription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 911);
+            this.ControlBox = false;
+            this.Controls.Add(this.lb_positionEleves);
             this.Controls.Add(this.pan_nav);
             this.Controls.Add(this.gb_notes);
-            this.Controls.Add(this.lb_positionEleves);
             this.Controls.Add(this.btn_supprimer);
             this.Controls.Add(this.btn_modifier);
             this.Controls.Add(this.btn_annuler);
@@ -709,7 +711,7 @@
         private Label lb_rnoid;
         private Label lb_rPrenom;
         private Label lb_rNom;
-        private Label lb_positionEleves;
+       
         private GroupBox gb_notes;
         private Label lb_final;
         private Label lb_intra;
@@ -726,5 +728,6 @@
         private NumericUpDown nud_intra;
         private NumericUpDown nud_tp2;
         private NumericUpDown nud_tp1;
+        private Label lb_positionEleves;
     }
 }

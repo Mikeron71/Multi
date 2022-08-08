@@ -3,9 +3,10 @@
     public partial class Stats : Form
     {
         double nbEleves;
-        int longeur = 159;
+        int longeur = 175;
         double totalTp1, totalTp2, totalIntra, totalFinal;
         string? codePermanent, nom, prenom, dateNaissance, adresse, ville, codePostal, telephone, noId;
+
         char sexe;
         double tp1 ,tp2,intra,final;
    
@@ -17,15 +18,18 @@
 
         private void Stats_Load(object sender, EventArgs e)
         {
-                Read();
-                LoadMoyenne();
-                btn_list.Enabled = true;
-                btn_stats.Enabled = true;
+            Read();
+            LoadMoyenne();
+            btn_list.Enabled = true;
+            btn_stats.Enabled = true;
+            CreateList();
         }
+
+
 
         public void Read()
         {
-            listb_stats.Items.Clear();
+            lv_stats.Items.Clear();
             totalTp1 = 0;
             totalTp2 = 0;
             totalIntra = 0;
@@ -62,22 +66,25 @@
                             totalIntra += intra;
                             totalFinal += final;
 
-                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Code permanent :", codePermanent));
-                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Nom :", nom));
-                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Prenom :", prenom));
-                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Sexe :", sexe));
-                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Date de naissance :", dateNaissance));
-                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Adresse :", adresse));
-                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Ville :", ville)); ;
-                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Code postal :", codePostal));
-                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Telephone :", telephone)); ;
-                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "No Id :", noId));
-                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Note tp1 :", tp1));
-                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Note tp2 :", tp2));
-                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Note Intra :", intra));
-                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Note final :", final));
-                            listb_stats.Items.Add("______________________________________________________________________________");
+                            string[] arr = new string[14];
+                            arr[0] = codePermanent;
+                            arr[1] = nom;
+                            arr[2] = prenom;
+                            arr[3] = sexe.ToString();
+                            arr[4] = dateNaissance;
+                            arr[5] = adresse;
+                            arr[6] = ville;
+                            arr[7] = codePostal;
+                            arr[8] = telephone;
+                            arr[9] = noId;
+                            arr[10] = tp1.ToString();
+                            arr[11] = tp2.ToString();
+                            arr[12] = intra.ToString();
+                            arr[13] = final.ToString();
 
+                            ListViewItem item;
+                            item = new ListViewItem(arr);
+                            lv_stats.Items.Add(item);
                         }
                     }
                 }
@@ -88,12 +95,7 @@
             }
         }
 
-        private void btn_quitter_Click(object sender, EventArgs e)
-        {
-            var result = MessageBox.Show("Êtes-vous sûr de vouloir quitter?", "QUITTER",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            Environment.Exit(0);
-        }
+    
 
         public void LoadMoyenne()
         {
@@ -115,6 +117,27 @@
                     MessageBox.Show("Il n'y a aucun élève incrit.");
                 }
             }
+        }
+
+        private void CreateList()
+        {
+            lv_stats.View = View.Details;
+            lv_stats.GridLines = true;
+            lv_stats.FullRowSelect = true;
+            lv_stats.Columns.Add("Code permanent:", 110);
+            lv_stats.Columns.Add("Nom", 110);
+            lv_stats.Columns.Add("Prenom", 110);
+            lv_stats.Columns.Add("sexe", 35);
+            lv_stats.Columns.Add("Date de naissance", 110);
+            lv_stats.Columns.Add("Adresse", 110);
+            lv_stats.Columns.Add("Ville", 110);
+            lv_stats.Columns.Add("Code Postal", 90);
+            lv_stats.Columns.Add("telephone", 110);
+            lv_stats.Columns.Add("Id", 70);
+            lv_stats.Columns.Add("Tp1", 40);
+            lv_stats.Columns.Add("Tp2", 40);
+            lv_stats.Columns.Add("Intra", 40);
+            lv_stats.Columns.Add("Final", 40);
         }
 
         
