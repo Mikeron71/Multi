@@ -4,20 +4,9 @@
     {
         double nbEleves;
         int longeur = 159;
-        double totalTp1 = 0;
-        double totalTp2 = 0;
-        double totalIntra = 0;
-        double totalFinal = 0;
-        string codePermanent ="";
-        string nom ="";
-        string prenom  = "" ;
-        char sexe  ;
-        string dateNaissance = "" ;
-        string adresse = ""  ;
-        string ville ="" ;
-        string codePostal ="" ;
-        string telephone  ="" ;
-        string noId  = "" ;
+        double totalTp1, totalTp2, totalIntra, totalFinal;
+        string? codePermanent, nom, prenom, dateNaissance, adresse, ville, codePostal, telephone, noId;
+        char sexe;
         double tp1 ,tp2,intra,final;
    
 
@@ -105,8 +94,6 @@
             if (result == DialogResult.Yes)
             Environment.Exit(0);
         }
-
-     
 
         public void LoadMoyenne()
         {
