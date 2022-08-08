@@ -50,20 +50,19 @@
             // 
             // listb_stats
             // 
-            this.listb_stats.FormattingEnabled = true;
-            this.listb_stats.ItemHeight = 15;
-            this.listb_stats.Location = new System.Drawing.Point(99, 85);
+            this.listb_stats.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listb_stats.ItemHeight = 19;
+            this.listb_stats.Location = new System.Drawing.Point(52, 43);
             this.listb_stats.Name = "listb_stats";
-            this.listb_stats.Size = new System.Drawing.Size(523, 514);
+            this.listb_stats.Size = new System.Drawing.Size(615, 612);
             this.listb_stats.TabIndex = 1;
-            this.listb_stats.SelectedIndexChanged += new System.EventHandler(this.lb_stats_SelectedIndexChanged);
             // 
             // btn_list
             // 
             this.btn_list.Enabled = false;
-            this.btn_list.Location = new System.Drawing.Point(99, 698);
+            this.btn_list.Location = new System.Drawing.Point(96, 701);
             this.btn_list.Name = "btn_list";
-            this.btn_list.Size = new System.Drawing.Size(142, 61);
+            this.btn_list.Size = new System.Drawing.Size(206, 93);
             this.btn_list.TabIndex = 2;
             this.btn_list.Text = "Liste";
             this.btn_list.UseVisualStyleBackColor = true;
@@ -73,7 +72,7 @@
             // 
             this.lb_nbEtudiants.AutoSize = true;
             this.lb_nbEtudiants.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_nbEtudiants.Location = new System.Drawing.Point(657, 114);
+            this.lb_nbEtudiants.Location = new System.Drawing.Point(704, 118);
             this.lb_nbEtudiants.Name = "lb_nbEtudiants";
             this.lb_nbEtudiants.Size = new System.Drawing.Size(247, 25);
             this.lb_nbEtudiants.TabIndex = 3;
@@ -93,7 +92,7 @@
             // 
             this.lb_moyennetp1.AutoSize = true;
             this.lb_moyennetp1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_moyennetp1.Location = new System.Drawing.Point(657, 175);
+            this.lb_moyennetp1.Location = new System.Drawing.Point(704, 179);
             this.lb_moyennetp1.Name = "lb_moyennetp1";
             this.lb_moyennetp1.Size = new System.Drawing.Size(154, 25);
             this.lb_moyennetp1.TabIndex = 5;
@@ -103,7 +102,7 @@
             // 
             this.lb_moyenneFinal.AutoSize = true;
             this.lb_moyenneFinal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_moyenneFinal.Location = new System.Drawing.Point(657, 347);
+            this.lb_moyenneFinal.Location = new System.Drawing.Point(704, 351);
             this.lb_moyenneFinal.Name = "lb_moyenneFinal";
             this.lb_moyenneFinal.Size = new System.Drawing.Size(164, 25);
             this.lb_moyenneFinal.TabIndex = 6;
@@ -113,7 +112,7 @@
             // 
             this.lb_moyenneIntra.AutoSize = true;
             this.lb_moyenneIntra.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_moyenneIntra.Location = new System.Drawing.Point(657, 289);
+            this.lb_moyenneIntra.Location = new System.Drawing.Point(704, 293);
             this.lb_moyenneIntra.Name = "lb_moyenneIntra";
             this.lb_moyenneIntra.Size = new System.Drawing.Size(174, 25);
             this.lb_moyenneIntra.TabIndex = 7;
@@ -123,7 +122,7 @@
             // 
             this.lb_moyennetp2.AutoSize = true;
             this.lb_moyennetp2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_moyennetp2.Location = new System.Drawing.Point(657, 232);
+            this.lb_moyennetp2.Location = new System.Drawing.Point(704, 236);
             this.lb_moyennetp2.Name = "lb_moyennetp2";
             this.lb_moyennetp2.Size = new System.Drawing.Size(154, 25);
             this.lb_moyennetp2.TabIndex = 8;
@@ -173,7 +172,7 @@
             // 
             this.lb_moyenneTotal.AutoSize = true;
             this.lb_moyenneTotal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_moyenneTotal.Location = new System.Drawing.Point(657, 406);
+            this.lb_moyenneTotal.Location = new System.Drawing.Point(704, 410);
             this.lb_moyenneTotal.Name = "lb_moyenneTotal";
             this.lb_moyenneTotal.Size = new System.Drawing.Size(173, 25);
             this.lb_moyenneTotal.TabIndex = 13;
@@ -192,9 +191,9 @@
             // btn_stats
             // 
             this.btn_stats.Enabled = false;
-            this.btn_stats.Location = new System.Drawing.Point(288, 698);
+            this.btn_stats.Location = new System.Drawing.Point(393, 701);
             this.btn_stats.Name = "btn_stats";
-            this.btn_stats.Size = new System.Drawing.Size(142, 61);
+            this.btn_stats.Size = new System.Drawing.Size(206, 93);
             this.btn_stats.TabIndex = 15;
             this.btn_stats.Text = "Statistiques";
             this.btn_stats.UseVisualStyleBackColor = true;
@@ -202,9 +201,9 @@
             // 
             // btn_quitter
             // 
-            this.btn_quitter.Location = new System.Drawing.Point(480, 698);
+            this.btn_quitter.Location = new System.Drawing.Point(962, 701);
             this.btn_quitter.Name = "btn_quitter";
-            this.btn_quitter.Size = new System.Drawing.Size(142, 61);
+            this.btn_quitter.Size = new System.Drawing.Size(206, 93);
             this.btn_quitter.TabIndex = 16;
             this.btn_quitter.Text = "Quitter";
             this.btn_quitter.UseVisualStyleBackColor = true;
@@ -218,7 +217,7 @@
             this.pan_stats.Controls.Add(this.lb_data_moyenneTotal);
             this.pan_stats.Controls.Add(this.lb_data_moyenneintra);
             this.pan_stats.Controls.Add(this.lb_data_moyennefinal);
-            this.pan_stats.Location = new System.Drawing.Point(921, 97);
+            this.pan_stats.Location = new System.Drawing.Point(968, 101);
             this.pan_stats.Name = "pan_stats";
             this.pan_stats.Size = new System.Drawing.Size(200, 360);
             this.pan_stats.TabIndex = 17;

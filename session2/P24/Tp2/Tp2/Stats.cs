@@ -30,24 +30,13 @@
 
         private void Stats_Load(object sender, EventArgs e)
         {
-
                 Read();
+                LoadMoyenne();
                 btn_list.Enabled = true;
                 btn_stats.Enabled = true;
-
+                
+           
         }
-
-        private void lb_stats_SelectedIndexChanged(object sender, EventArgs e)
-        {
-     
-        }
-
-        private void btn_stats_Click(object sender, EventArgs e)
-        {
-            LoadStats();
-        }
-
-
 
         public void Read()
         {
@@ -90,25 +79,22 @@
                             totalIntra += intra;
                             totalFinal += final;
 
+                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Code permanent :", codePermanent));
+                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Nom :", nom));
+                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Prenom :", prenom));
+                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Sexe :", sexe));
+                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Date de naissance :", dateNaissance));
+                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Adresse :", adresse));
+                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Ville :", ville)); ;
+                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Code postal :", codePostal));
+                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Telephone :", telephone)); ;
+                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "No Id :", noId));
+                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Note tp1 :", tp1));
+                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Note tp2 :", tp2));
+                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Note Intra :", intra));
+                            listb_stats.Items.Add(String.Format("{0,-20} {1,-20}", "Note final :", final));
+                            listb_stats.Items.Add("______________________________________________________________________________");
 
-
-
-                            //TOUT BIEN FORMATER AVANT REMISE ___________________________________________________________
-                            
-                            listb_stats.Items.Add("Code permanent".PadRight(30-codePermanent.Length) +codePermanent) ;
-                            listb_stats.Items.Add("Nom".PadRight(30 - nom.Length) + codePermanent);
-                            listb_stats.Items.Add("Prenom:".PadRight(50) + prenom);
-                            listb_stats.Items.Add(sexe);
-                            listb_stats.Items.Add(dateNaissance);
-                            listb_stats.Items.Add(ville);
-                            listb_stats.Items.Add(adresse);
-                            listb_stats.Items.Add(codePostal);
-                            listb_stats.Items.Add(telephone);
-                            listb_stats.Items.Add(noId);
-                            listb_stats.Items.Add(tp1);
-                            listb_stats.Items.Add(tp2);
-                            listb_stats.Items.Add(intra);
-                            listb_stats.Items.Add(final);
                         }
                     }
                 }
@@ -129,9 +115,10 @@
         private void btn_list_Click(object sender, EventArgs e)
         {
             Read();
+           
         }
 
-        public void LoadStats()
+        public void LoadMoyenne()
         {
             if (nbEleves > 0)
             {
@@ -142,10 +129,7 @@
                     lb_data_moyennetp2.Text = (totalTp2 / nbEleves / 100).ToString("p");
                     lb_data_moyenneintra.Text = (totalIntra / nbEleves / 100).ToString("p");
                     lb_data_moyennefinal.Text = (totalFinal / nbEleves / 100).ToString("p");
-
-
                     double moyenneTotal = ((totalTp1 * 0.1) + (totalTp2 * 0.1) + (totalIntra * 0.4) + (totalFinal * 0.4)) / 100 / nbEleves;
-
                     lb_data_moyenneTotal.Text = moyenneTotal.ToString("p");
                     pan_stats.Visible = true;
                 }
@@ -154,6 +138,11 @@
                     MessageBox.Show("Il n'y a aucun élève incrit.");
                 }
             }
+        }
+
+        private void btn_stats_Click(object sender, EventArgs e)
+        {
+            LoadMoyenne();
         }
     }
 }

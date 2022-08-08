@@ -68,6 +68,13 @@ namespace Tp2
             ClearGroup(gb_inscription);
             pan_nav.Enabled = false;
         }
+        private void btn_modifier_Click(object sender, EventArgs e)
+        {
+            EditMode();
+            GetEtudiant(pos);
+            pan_nav.Enabled = false;
+        }
+
         private void btn_ok_Click(object sender, EventArgs e)
         {
             string codePermanent = tb_codePermanent.Text.PadRight(13).ToUpper();
@@ -118,10 +125,10 @@ namespace Tp2
 
             if (action == "modif")
             {
-                tp1 = (double)nud_intra.Value;
-                tp2 = (double)nud_final.Value;
-                intra = (double)nud_tp1.Value;
-                final = (double)nud_tp2.Value;
+                tp1 = (double)nud_tp1.Value;
+                tp2 = (double)nud_tp2.Value;
+                intra = (double)nud_intra.Value;
+                final = (double)nud_final.Value;
                 using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Write))
                 {
                     using (BinaryWriter bw = new(fs))
@@ -136,7 +143,7 @@ namespace Tp2
                         bw.Write(ville);
                         bw.Write(codePostal);
                         bw.Write(telephone);
-                        bw.Write(nodid);
+                        bw.Write(lb_noidAttribue.Text);
                         bw.Write(tp1);
                         bw.Write(tp2);
                         bw.Write(intra);
@@ -328,7 +335,7 @@ namespace Tp2
                             if (noidRecherche.Substring(0, 4) == noId.Substring(0, 4))
                             {
                                 trouve = true;
-                                pos = (int)fs.Position / 318;
+                                pos = (int)fs.Position/318;
                                 compteExistant++;
 
                             }
@@ -394,12 +401,7 @@ namespace Tp2
             return trouve;
         }
 
-        private void btn_modifier_Click(object sender, EventArgs e)
-        {
-            EditMode();
-            GetEtudiant(pos);
-        }
-
+     
 
         private void btn_premier_Click(object sender, EventArgs e)
         {
