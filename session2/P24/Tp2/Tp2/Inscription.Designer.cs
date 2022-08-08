@@ -655,6 +655,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Inscription";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Deactivate += new System.EventHandler(this.Inscription_Deactivate);
             this.gb_inscription.ResumeLayout(false);
             this.gb_inscription.PerformLayout();
             this.gb_recherche.ResumeLayout(false);

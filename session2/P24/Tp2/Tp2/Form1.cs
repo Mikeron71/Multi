@@ -27,26 +27,7 @@ namespace Tp2
         }
 
 
-        private void listeEtStatistiquesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            if (System.Windows.Forms.Application.OpenForms["Stats"] as Stats == null)
-            {
-                Stats f3 = new Stats();
-                f3.MdiParent = this;
-                f3.Show();
-                
-              
-            }
-            else
-            {
-                Stats f3 = (Stats)Application.OpenForms["Stats"];
-                f3.Focus();
-                f3.Read();
-               
-            }
-
-        }
+        
         public void  loadInscription()
         {
             if (System.Windows.Forms.Application.OpenForms["Inscription"] as Inscription == null)
@@ -61,8 +42,25 @@ namespace Tp2
                 f2.Focus();
             }
         }
-        
 
-        
+        private void listeEtStatistiquesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (System.Windows.Forms.Application.OpenForms["Stats"] as Stats == null)
+            {
+                Stats f3 = new Stats();
+                f3.MdiParent = this;
+                f3.Show();
+
+
+            }
+            else
+            {
+                Stats f3 = (Stats)Application.OpenForms["Stats"];
+                f3.Focus();
+                f3.Read();
+                f3.LoadMoyenne();
+            }
+        }
     }
 }

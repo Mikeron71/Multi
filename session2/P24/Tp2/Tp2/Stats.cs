@@ -18,10 +18,8 @@
         string codePostal ="" ;
         string telephone  ="" ;
         string noId  = "" ;
-        double tp1 ;
-        double tp2 ;
-        double intra  ;
-        double final  ;
+        double tp1 ,tp2,intra,final;
+   
 
         public Stats()
         {
@@ -34,8 +32,6 @@
                 LoadMoyenne();
                 btn_list.Enabled = true;
                 btn_stats.Enabled = true;
-                
-           
         }
 
         public void Read()
@@ -45,8 +41,6 @@
             totalTp2 = 0;
             totalIntra = 0;
             totalFinal = 0;
-
-
             try
             {
                 using (FileStream fs = new ("Eleve.Dta", FileMode.Open, FileAccess.Read))
@@ -112,11 +106,7 @@
             Environment.Exit(0);
         }
 
-        private void btn_list_Click(object sender, EventArgs e)
-        {
-            Read();
-           
-        }
+     
 
         public void LoadMoyenne()
         {
@@ -140,9 +130,17 @@
             }
         }
 
+        
+        //BOUTONS (ils ne sont pas nécessaires puisque je met a jour lors du focus.)
+        
         private void btn_stats_Click(object sender, EventArgs e)
         {
             LoadMoyenne();
+        }
+
+        private void btn_list_Click(object sender, EventArgs e)
+        {
+            Read();
         }
     }
 }

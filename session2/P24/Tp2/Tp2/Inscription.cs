@@ -335,7 +335,7 @@ namespace Tp2
                             if (noidRecherche.Substring(0, 4) == noId.Substring(0, 4))
                             {
                                 trouve = true;
-                                pos = (int)fs.Position/318;
+                                pos = (int)fs.Position/175-1 ;
                                 compteExistant++;
 
                             }
@@ -392,7 +392,7 @@ namespace Tp2
                             nud_intra.Value = (decimal)intra;
                             nud_final.Value = (decimal)final;
                             trouve = true;
-                            pos = (int)fs.Position / 318;
+                            pos = (int)fs.Position / 175-1 ;
                             break;
                         }
                     }
@@ -432,7 +432,7 @@ namespace Tp2
             pos = nbEleves - 1;
             GetEtudiant(pos);
         }
-        private void ClearGroup(GroupBox group)
+        public void ClearGroup(GroupBox group)
         {
             foreach (Control ctr in group.Controls)
             {
@@ -502,7 +502,6 @@ namespace Tp2
                                     }
                                 }
                             }
-
                         }
                     }
                 }
@@ -519,10 +518,8 @@ namespace Tp2
                     pos--;
                     ClearGroup(gb_inscription);
                 }
-
                 GetEtudiant(pos);
             }
-
         }
         // VALIDATION _______________________________________________________________________________________________________________
         private bool Valider()
@@ -617,6 +614,16 @@ namespace Tp2
                 errorProvider1.SetError(mtb_telephone, "Entrez le numéro de téléphone  postal en format 000-000-0000");
                 mtb_telephone.Focus();
             }
+        }
+
+
+
+        // Annule tout si je change de page
+        private void Inscription_Deactivate(object sender, EventArgs e)
+        {
+            ClearGroup(gb_inscription);
+            GetEtudiant(pos);
+            IdleMode();
         }
     }
 }
