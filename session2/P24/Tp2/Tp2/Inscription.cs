@@ -4,17 +4,19 @@ namespace Tp2
     public partial class Inscription : Form
     {
         int pos = 0;
-        int longeur = 159;
+        int longeur = 175;
         public int nbEleves = 0;
         public string noId = "";
         int compteExistant = 1;
         string action = "";
-       
+        public bool vide = false;
+
         public Inscription()
         {
             InitializeComponent();
             GetEtudiant(pos);
         }
+        // MODES INTERFACE _____________________________________________________________________________
         public void AddMode()
         {
             action = "ajout";
@@ -22,14 +24,13 @@ namespace Tp2
             foreach (Control item in gb_inscription.Controls)
             {
                 item.Enabled = true;
-
             }
 
             btn_modifier.Enabled = false;
             btn_supprimer.Enabled = false;
             btn_ok.Enabled = true;
             btn_annuler.Enabled = true;
-            
+
         }
         public void IdleMode()
         {
@@ -43,112 +44,110 @@ namespace Tp2
             btn_annuler.Enabled = false;
             btn_nouveau.Enabled = true;
             gb_notes.Visible = false;
-            gb_recherche.Visible = false;
             pan_nav.Enabled = true;
         }
+        private void EditMode()
+        {
+            action = "modif";
+            tb_adresse.Enabled = true;
+            tb_ville.Enabled = true;
+            mtb_codePostal.Enabled = true;
+            mtb_telephone.Enabled = true;
+            gb_recherche.Enabled = true;
+            btn_nouveau.Enabled = false;
+            btn_ok.Enabled = true;
+            btn_annuler.Enabled = true;
+            btn_modifier.Enabled = false;
+            gb_notes.Visible = true;
+        }
 
+        //CREATION MODIFICATION ___________________________________________________________________________
         private void btn_nouveau_Click(object sender, EventArgs e)
-        {   
+        {
             AddMode();
             ClearGroup(gb_inscription);
             pan_nav.Enabled = false;
         }
         private void btn_ok_Click(object sender, EventArgs e)
         {
-
+            string codePermanent = tb_codePermanent.Text.PadRight(13).ToUpper();
+            string nom = tb_nom.Text.PadRight(16).ToLower();
+            string prenom = tb_prenom.Text.PadRight(16).ToLower();
+            char sexe = rb_feminin.Checked ? 'F' : 'M';
+            string dateNaissance = tb_dateNaissance.Text;
+            string adresse = tb_adresse.Text.PadRight(31);
+            string ville = tb_ville.Text.PadRight(21);
+            string codePostal = mtb_codePostal.Text;
+            string telephone = mtb_telephone.Text;
+            string nodid = CreerNoid();
+            double tp1 = 0;
+            double tp2 = 0;
+            double intra = 0;
+            double final = 0;
 
             bool ready = Valider();
-           
 
-            if (ready)
+            if (action == "ajout" && ready == true)
             {
-                string codePermanent = tb_codePermanent.Text.PadRight(13);
-                string nom = tb_nom.Text.PadRight(16);
-                string prenom = tb_prenom.Text.PadRight(16);
-                char sexe = rb_feminin.Checked ? 'F' : 'M';
-                string dateNaissance = tb_dateNaissance.Text;
-                string adresse = tb_adresse.Text.PadRight(31);
-                string ville = tb_ville.Text.PadRight(21);
-                string codePostal = tb_codePostal.Text;
-                string telephone = mtb_telephone.Text;
-                string nodid = CreerNoid();
-                int tp1 = 0;
-                int tp2 = 0;
-                int intra = 0;
-                int final = 0;
-
-
-
-
-                if (action == "ajout")
+                using (FileStream fs = new("Eleve.Dta", FileMode.Append, FileAccess.Write))
                 {
-
-
-                    using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Append, FileAccess.Write))
+                    using (BinaryWriter bw = new(fs))
                     {
-                        using (BinaryWriter bw = new BinaryWriter(fs))
-                        {
-                            bw.Write(codePermanent);
-                            bw.Write(nom);
-                            bw.Write(prenom);
-                            bw.Write(sexe);
-                            bw.Write(dateNaissance);
-                            bw.Write(adresse);
-                            bw.Write(ville);
-                            bw.Write(codePostal);
-                            bw.Write(telephone);
-                            bw.Write(nodid);
-                            bw.Write(intra);
-                            bw.Write(final);
-                            bw.Write(tp1);
-                            bw.Write(tp2);
-
-                        }
-                    }
-                    MessageBox.Show($"Inscription de {prenom.TrimEnd()} {nom.TrimEnd()} réussie.");
-                    ClearGroup(gb_inscription);
-                    IdleMode();
-                    GetEtudiant(pos);
-                }
-
-                if (action == "modif")
-                {
-                    intra = (int)nud_tp1.Value;
-                    final = (int)nud_tp2.Value;
-                    tp1 = (int)nud_intra.Value;
-                    tp2 = (int)nud_final.Value;
-
-
-                    using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Open, FileAccess.Write))
-                    {
-                        using (BinaryWriter bw = new BinaryWriter(fs))
-                        {
-                            fs.Seek(pos * 159, SeekOrigin.Begin);
-                            bw.Write(codePermanent);
-                            bw.Write(nom);
-                            bw.Write(prenom);
-                            bw.Write(sexe);
-                            bw.Write(dateNaissance);
-                            bw.Write(adresse);
-                            bw.Write(ville);
-                            bw.Write(codePostal);
-                            bw.Write(telephone);
-                            bw.Write(nodid);
-                            bw.Write(tp1);
-                            bw.Write(tp2);
-                            bw.Write(intra);
-                            bw.Write(final);
-
-                            MessageBox.Show($"Modification de {prenom.TrimEnd()} {nom.TrimEnd()} réussie.");
-                            ClearGroup(gb_inscription);
-                            GetEtudiant(pos);
-                            IdleMode();
-                        }
+                        bw.Write(codePermanent);
+                        bw.Write(nom);
+                        bw.Write(prenom);
+                        bw.Write(sexe);
+                        bw.Write(dateNaissance);
+                        bw.Write(adresse);
+                        bw.Write(ville);
+                        bw.Write(codePostal);
+                        bw.Write(telephone);
+                        bw.Write(nodid);
+                        bw.Write(tp1);
+                        bw.Write(tp2);
+                        bw.Write(intra);
+                        bw.Write(final);
                     }
                 }
-            } else
-            {
+                MessageBox.Show($"Inscription de {prenom.TrimEnd()} {nom.TrimEnd()} réussie.");
+                ClearGroup(gb_inscription);
+                IdleMode();
+                GetEtudiant(pos);
+            }
 
+
+            if (action == "modif")
+            {
+                tp1 = (double)nud_intra.Value;
+                tp2 = (double)nud_final.Value;
+                intra = (double)nud_tp1.Value;
+                final = (double)nud_tp2.Value;
+                using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Write))
+                {
+                    using (BinaryWriter bw = new(fs))
+                    {
+                        fs.Seek(pos * longeur, SeekOrigin.Begin);
+                        bw.Write(codePermanent);
+                        bw.Write(nom);
+                        bw.Write(prenom);
+                        bw.Write(sexe);
+                        bw.Write(dateNaissance);
+                        bw.Write(adresse);
+                        bw.Write(ville);
+                        bw.Write(codePostal);
+                        bw.Write(telephone);
+                        bw.Write(nodid);
+                        bw.Write(tp1);
+                        bw.Write(tp2);
+                        bw.Write(intra);
+                        bw.Write(final);
+
+                        MessageBox.Show($"Modification de {prenom.TrimEnd()} {nom.TrimEnd()} réussie.");
+                        ClearGroup(gb_inscription);
+                        IdleMode();
+                        vide = false;
+                    }
+                }
             }
         }
 
@@ -159,10 +158,10 @@ namespace Tp2
             IdleMode();
         }
 
-        //Je dois incrementer le noid ????? ___________________________________________________________________
+        //Creation du ID ___________________________________________________________________
         public string CreerNoid()
-        {   
-            
+        {
+
             bool existant = false;
             if (tb_nom.Text.Length > 2 && tb_prenom.Text.Length > 1)
             {
@@ -170,11 +169,11 @@ namespace Tp2
                 string lettrePrenom = tb_prenom.Text.Substring(0, 1);
                 string noIdACreer = lettresNom.ToUpper() + lettrePrenom.ToUpper() + 1;
                 existant = Find(noIdACreer);
-             if(existant)
+                if (existant)
                 {
-                   
-                    noId = lettresNom.ToUpper() + lettrePrenom.ToUpper() + compteExistant ;
-                 
+
+                    noId = lettresNom.ToUpper() + lettrePrenom.ToUpper() + compteExistant;
+
                 }
                 else
                 {
@@ -184,103 +183,102 @@ namespace Tp2
             }
             compteExistant = 1;
             return noId;
-            
+
         }
 
         public void GetEtudiant(int pos)
         {
-            
-            
-                try
+            try
+            {
+                using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Read))
                 {
-                    using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Open, FileAccess.Read))
+                    using (BinaryReader br = new(fs))
                     {
-                        using (BinaryReader br = new BinaryReader(fs))
-                        {
-                            nbEleves = (int)fs.Length / longeur;
+                        nbEleves = (int)fs.Length / longeur;
                         if (nbEleves > 0)
                         {
                             lb_positionEleves.Text = "";
                         }
-                            lb_positionEleves.Text = $"Élève {pos + 1} sur {nbEleves.ToString()}";
-                            fs.Seek(pos * 159, SeekOrigin.Begin);
-                            tb_codePermanent.Text = br.ReadString();
-                            tb_nom.Text = br.ReadString().TrimEnd();
-                            tb_prenom.Text = br.ReadString().TrimEnd();
-                            char sexe = br.ReadChar();
-                            if (sexe == 'M')
-                            {
-                                rb_masculin.Checked = true;
-                            }
-                            else
-                            {
-                                rb_feminin.Checked = true;
-                            }
-
-                            tb_dateNaissance.Text = br.ReadString();
-                            tb_adresse.Text = br.ReadString().TrimEnd();
-                            tb_ville.Text = br.ReadString().TrimEnd();
-                            tb_codePostal.Text = br.ReadString();
-                            mtb_telephone.Text = br.ReadString();
-                            lb_noidAttribue.Text = br.ReadString();
-                            nud_tp1.Value = br.ReadInt32();
-                            nud_tp2.Value = br.ReadInt32();
-                            nud_intra.Value = br.ReadInt32();
-                            nud_final.Value = br.ReadInt32();
-
-
-
+                        lb_positionEleves.Text = $"Élève {pos + 1} sur {nbEleves.ToString()}";
+                        fs.Seek(pos * longeur, SeekOrigin.Begin);
+                        tb_codePermanent.Text = br.ReadString();
+                        tb_nom.Text = br.ReadString().TrimEnd();
+                        tb_prenom.Text = br.ReadString().TrimEnd();
+                        char sexe = br.ReadChar();
+                        if (sexe == 'M')
+                        {
+                            rb_masculin.Checked = true;
                         }
+                        else
+                        {
+                            rb_feminin.Checked = true;
+                        }
+                        tb_dateNaissance.Text = br.ReadString();
+                        tb_adresse.Text = br.ReadString().TrimEnd();
+                        tb_ville.Text = br.ReadString().TrimEnd();
+                        mtb_codePostal.Text = br.ReadString();
+                        mtb_telephone.Text = br.ReadString();
+                        lb_noidAttribue.Text = br.ReadString();
+                        nud_tp1.Value = (decimal)br.ReadDouble();
+                        nud_tp2.Value = (decimal)br.ReadDouble();
+                        nud_intra.Value = (decimal)br.ReadDouble();
+                        nud_final.Value = (decimal)br.ReadDouble();
                     }
                 }
-                catch (Exception)
-                {
+            }
+            catch (FileNotFoundException)
+            {
+                vide = true;
+                btn_supprimer.Enabled = false;
+            }
+            catch (Exception)
+            {
 
+            }
 
-                }
-            
         }
 
         private void btn_recherche_Click(object sender, EventArgs e)
         {
             action = "rechercheEleve";
             bool noidFound, nomFound;
-            if(tb_rNoid.Text != "")
+            if (tb_rNoid.Text != "")
             {
-            noidFound = Find(tb_rNoid.Text);
+                noidFound = Find(tb_rNoid.Text.ToUpper());
                 if (noidFound) {
-                    MessageBox.Show("trouve");
-                        } else {
-                    MessageBox.Show(" non trouve");
+                    MessageBox.Show("Étudiant(e) trouvé(e).");
+                    ClearGroup(gb_recherche);
+                    GetEtudiant(pos);
+                } else {
+                    MessageBox.Show("Étudiant(e) inexistant(e)");
                 }
             }
 
             if (tb_rNom.Text != "" && tb_rPrenom.Text != "")
             {
-                nomFound = Find(tb_rNom.Text, tb_rPrenom.Text);
+                nomFound = Find(tb_rNom.Text.ToLower(), tb_rPrenom.Text.ToLower());
                 if (nomFound)
                 {
-                    MessageBox.Show("trouve");
+                    MessageBox.Show("Étudiant(e) trouvé(e).");
+                    ClearGroup(gb_recherche);
+                    GetEtudiant(pos);
                 }
                 else
                 {
-                    MessageBox.Show(" non trouve");
+                    MessageBox.Show("Étudiant(e) inexistant(e)");
                 }
             }
-
-
         }
 
-
-        public bool Find(string noid)
+        public bool Find(string noidRecherche)
         {
             bool trouve = false;
 
             try
             {
-                using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Open, FileAccess.Read))
+                using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Read))
                 {
-                    using (BinaryReader br = new BinaryReader(fs))
+                    using (BinaryReader br = new(fs))
                     {
                         for (; ; )
                         {
@@ -292,14 +290,14 @@ namespace Tp2
                             string dateNaissance = br.ReadString();
                             string adresse = br.ReadString();
                             string ville = br.ReadString();
-                            string codePostal =br.ReadString();
+                            string codePostal = br.ReadString();
                             string telephone = br.ReadString();
                             string noId = br.ReadString();
-                            int tp1 = br.ReadInt32();
-                            int tp2 =  br.ReadInt32();
-                            int intra = br.ReadInt32();
-                            int final = br.ReadInt32();
-                            if (noid == noId && action == "rechercheEleve")
+                            double tp1 = br.ReadDouble();
+                            double tp2 = br.ReadDouble();
+                            double intra = br.ReadDouble();
+                            double final = br.ReadDouble();
+                            if (noidRecherche == noId && action == "rechercheEleve")
                             {
 
                                 tb_codePermanent.Text = codePermanent;
@@ -317,46 +315,41 @@ namespace Tp2
                                 tb_dateNaissance.Text = dateNaissance;
                                 tb_adresse.Text = adresse.TrimEnd();
                                 tb_ville.Text = ville.TrimEnd();
-                                tb_codePostal.Text = codePostal;
+                                mtb_codePostal.Text = codePostal;
                                 mtb_telephone.Text = telephone;
-                                lb_noidAttribue.Text = noid;
-                                nud_tp1.Value = tp1;
-                                nud_tp2.Value = tp2;
-                                nud_intra.Value = intra;
-                                nud_final.Value = final;
+                                lb_noidAttribue.Text = noId;
+                                nud_tp1.Value = (decimal)tp1;
+                                nud_tp2.Value = (decimal)tp2;
+                                nud_intra.Value = (decimal)intra;
+                                nud_final.Value = (decimal)final;
                                 trouve = true;
 
                             }
-                            if (noid.Substring(0, 4) == noId.Substring(0, 4))
+                            if (noidRecherche.Substring(0, 4) == noId.Substring(0, 4))
                             {
                                 trouve = true;
+                                pos = (int)fs.Position / 318;
                                 compteExistant++;
-                               
-                            }
 
+                            }
                         }
                     }
                 }
-
-
                 return trouve;
-            }catch(Exception e)
+            } catch (Exception e)
             {
                 return trouve;
             }
         }
-     
 
-        public bool Find(string name,string firstname)
+
+        public bool Find(string name, string firstname)
 
         {
-            
             bool trouve = false;
-
-
-            using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Open, FileAccess.Read))
+            using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Read))
             {
-                using (BinaryReader br = new BinaryReader(fs))
+                using (BinaryReader br = new(fs))
                 {
                     for (; ; )
                     {
@@ -371,10 +364,10 @@ namespace Tp2
                         string codePostal = br.ReadString();
                         string telephone = br.ReadString();
                         string noId = br.ReadString();
-                        int tp1 = br.ReadInt32();
-                        int tp2 = br.ReadInt32();
-                        int intra = br.ReadInt32();
-                        int final = br.ReadInt32();
+                        double tp1 = br.ReadDouble();
+                        double tp2 = br.ReadDouble();
+                        double intra = br.ReadDouble();
+                        double final = br.ReadDouble();
 
                         if (name == nom && firstname == prenom)
                         {
@@ -384,28 +377,25 @@ namespace Tp2
                             tb_dateNaissance.Text = dateNaissance;
                             tb_adresse.Text = adresse.TrimEnd();
                             tb_ville.Text = ville.TrimEnd();
-                            tb_codePostal.Text = codePostal;
+                            mtb_codePostal.Text = codePostal;
                             mtb_telephone.Text = telephone;
                             lb_noidAttribue.Text = noId;
-                            nud_tp1.Value = tp1;
-                            nud_tp2.Value = tp2;
-                            nud_intra.Value = intra;
-                            nud_final.Value = final;
+                            nud_tp1.Value = (decimal)tp1;
+                            nud_tp2.Value = (decimal)tp2;
+                            nud_intra.Value = (decimal)intra;
+                            nud_final.Value = (decimal)final;
                             trouve = true;
+                            pos = (int)fs.Position / 318;
                             break;
                         }
                     }
                 }
             }
-         
             return trouve;
-
         }
 
         private void btn_modifier_Click(object sender, EventArgs e)
         {
-            gb_recherche.Visible = true;
-
             EditMode();
             GetEtudiant(pos);
         }
@@ -419,14 +409,11 @@ namespace Tp2
 
         private void btn_avancer_Click(object sender, EventArgs e)
         {
-            
-            
-                if(pos < nbEleves - 1) {
+            if (pos < nbEleves - 1)
+            {
                 pos++;
                 GetEtudiant(pos);
             }
-                
-
         }
 
         private void btn_reculer_Click(object sender, EventArgs e)
@@ -436,54 +423,40 @@ namespace Tp2
                 pos--;
                 GetEtudiant(pos);
             }
-
         }
 
         private void btn_dernier_Click(object sender, EventArgs e)
         {
             pos = nbEleves - 1;
-            GetEtudiant(pos); 
-
+            GetEtudiant(pos);
         }
         private void ClearGroup(GroupBox group)
         {
             foreach (Control ctr in group.Controls)
             {
-                if (ctr is TextBox  || ctr is MaskedTextBox)
+                if (ctr is TextBox || ctr is MaskedTextBox)
                 {
                     ctr.Text = "";
                 }
             }
-                lb_noidAttribue.Text   = "";
+            lb_noidAttribue.Text = "";
             rb_feminin.Checked = false;
             rb_masculin.Checked = false;
-        }
-        private void EditMode()
-        {
-            action = "modif";
-            tb_adresse.Enabled = true;
-            tb_ville.Enabled = true;
-            tb_codePostal.Enabled = true;
-            mtb_telephone.Enabled = true;
-            gb_recherche.Enabled = true;
-            btn_nouveau.Enabled = false;
-            btn_ok.Enabled = true;
-            btn_annuler.Enabled = true;
-            btn_modifier.Enabled = false;
-            gb_notes.Visible = true;
+
         }
 
+
         private void btn_supprimer_Click(object sender, EventArgs e)
-        {   
-                    string toDel = lb_noidAttribue.Text;
-            var result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élève?", "SUPPRESSION",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+        {
+            string toDel = lb_noidAttribue.Text;
+            var result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élève?", "SUPPRESSION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                using (FileStream fs = new FileStream("Eleve.Dta", FileMode.Open, FileAccess.Read))
+                using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Read))
                 {
-                    using (BinaryReader br = new BinaryReader(fs))
+                    using (BinaryReader br = new(fs))
                     {
-                        fs.Seek(0,SeekOrigin.Begin);
+                        fs.Seek(0, SeekOrigin.Begin);
 
                         for (; ; )
                         {
@@ -498,20 +471,20 @@ namespace Tp2
                             string codePostal = br.ReadString();
                             string telephone = br.ReadString();
                             string noId = br.ReadString();
-                            int tp1 = br.ReadInt32();
-                            int tp2 = br.ReadInt32();
-                            int intra = br.ReadInt32();
-                            int final = br.ReadInt32();
+                            double tp1 = br.ReadDouble();
+                            double tp2 = br.ReadDouble();
+                            double intra = br.ReadDouble();
+                            double final = br.ReadDouble();
 
                             if (toDel != noId)
                             {
-                                using (FileStream fs2 = new FileStream("Eleve2.Dta", FileMode.Append, FileAccess.Write))
+                                using (FileStream fs2 = new("Eleve2.Dta", FileMode.Append, FileAccess.Write))
                                 {
-                                    using (BinaryWriter bw = new BinaryWriter(fs2))
+                                    using (BinaryWriter bw = new(fs2))
                                     {
-                                        bw.Write(codePermanent.PadRight(13));
-                                        bw.Write(nom.PadRight(16));
-                                        bw.Write(prenom.PadRight(16));
+                                        bw.Write(codePermanent.PadRight(13).ToUpper());
+                                        bw.Write(nom.PadRight(16).ToLower());
+                                        bw.Write(prenom.PadRight(16).ToLower());
                                         bw.Write(sexe);
                                         bw.Write(dateNaissance);
                                         bw.Write(adresse.PadRight(31));
@@ -536,84 +509,112 @@ namespace Tp2
                     File.Delete("Eleve.Dta");
                     File.Move("Eleve2.Dta", "Eleve.Dta");
                 }
-                catch (Exception er)
+                catch (Exception)
                 {
-                    MessageBox.Show(er.Message);
+
                 }
-                if (pos > 0) pos--;
+                if (pos > 0) {
+                    pos--;
+                    ClearGroup(gb_inscription);
+                }
 
                 GetEtudiant(pos);
             }
 
         }
-
+        // VALIDATION _______________________________________________________________________________________________________________
         private bool Valider()
         {
-            bool valide = false;
-            
-            
-            
-            foreach(Control ct in gb_inscription.Controls)
+            bool valide = true;
+            foreach (Control ct in gb_inscription.Controls)
             {
-                if(ct is TextBox  && ct.Text == "")
+                if (ct is TextBox && ct.Text == "")
                 {
                     errorProvider1.SetError(ct, "Ce champ est requis");
-                    
-                    
+                    valide = false;
                 }
-                if(ct is MaskedTextBox && ct.Text == "  -  -" || ct.Text == "(   )    -")
+                else if (ct is MaskedTextBox && ct.Text == "  -  -" || ct.Text == "(   )    -")
                 {
-                   
                     errorProvider1.SetError(ct, "Ce champ est requis");
-                    
-
+                    valide = false;
                 }
                 else
                 {
                     errorProvider1.SetError(ct, "");
-                    valide = true;
                 }
-                
+
+            }
+            if (rb_feminin.Checked == false && rb_masculin.Checked == false)
+            {
+                errorProvider1.SetError(rb_masculin, "Vous devez cocher un des deux choix");
+                valide = false;
             }
 
-            
-            if(tb_codePermanent.Text.Length != 12)
+            if (tb_codePermanent.Text.Length != 12 || tb_dateNaissance.Text.Length != 10 || mtb_telephone.Text.Length != 14)
+            {
+                valide = false;
+            }
+            return valide;
+        }
+
+        private void tb_codePermanent_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (tb_codePermanent.Text.Length != 12 && tb_codePermanent.Enabled == true)
             {
                 errorProvider1.SetError(tb_codePermanent, "Le code permanent doit contenir 12 caractères");
+                tb_codePermanent.Focus();
             }
             else
             {
                 errorProvider1.SetError(tb_codePermanent, "");
-                valide = true;
             }
+        }
 
-            
-
-
-            if (rb_feminin.Checked == false && rb_masculin.Checked == false)
+        private void tb_nom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-')
             {
-                errorProvider1.SetError(rb_masculin, "Vous devez cocher un des deux choix");
+                e.Handled = false;
             }
-            else
+            else e.Handled = true;
+        }
+
+        private void tb_prenom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-')
             {
-                errorProvider1.SetError(rb_masculin, "");
-                valide = true;
+                e.Handled = false;
             }
+            else e.Handled = true;
+           
+        }
 
+      
+        private void tb_dateNaissance_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (tb_dateNaissance.Text.Length != 10)
+            {
+                errorProvider1.SetError(tb_dateNaissance, "Entrez la date en format 00/00/0000");
+                tb_dateNaissance.Focus();
+            }  
+        }
 
+        private void mtb_codePostal_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (mtb_codePostal.Text.Length != 7)
+            {
+                errorProvider1.SetError(mtb_codePostal, "Entrez le code postal en format A0A-0A0");
+                mtb_codePostal.Focus();
+            }
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-            return valide;  
+        private void mtb_telephone_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (mtb_telephone.Text.Length != 14)
+            {
+                errorProvider1.SetError(mtb_telephone, "Entrez le numéro de téléphone  postal en format 000-000-0000");
+                mtb_telephone.Focus();
+            }
         }
     }
 }

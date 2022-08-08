@@ -45,7 +45,6 @@
             this.tb_prenom = new System.Windows.Forms.TextBox();
             this.tb_adresse = new System.Windows.Forms.TextBox();
             this.tb_ville = new System.Windows.Forms.TextBox();
-            this.tb_codePostal = new System.Windows.Forms.TextBox();
             this.rb_feminin = new System.Windows.Forms.RadioButton();
             this.rb_masculin = new System.Windows.Forms.RadioButton();
             this.tb_dateNaissance = new System.Windows.Forms.MaskedTextBox();
@@ -57,6 +56,7 @@
             this.btn_modifier = new System.Windows.Forms.Button();
             this.btn_supprimer = new System.Windows.Forms.Button();
             this.gb_inscription = new System.Windows.Forms.GroupBox();
+            this.mtb_codePostal = new System.Windows.Forms.MaskedTextBox();
             this.gb_recherche = new System.Windows.Forms.GroupBox();
             this.tb_rNoid = new System.Windows.Forms.TextBox();
             this.btn_recherche = new System.Windows.Forms.Button();
@@ -81,7 +81,6 @@
             this.btn_dernier = new System.Windows.Forms.Button();
             this.pan_nav = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gb_inscription.SuspendLayout();
             this.gb_recherche.SuspendLayout();
             this.gb_notes.SuspendLayout();
@@ -91,7 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_tp1)).BeginInit();
             this.pan_nav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_nouveau
@@ -213,6 +211,7 @@
             this.tb_codePermanent.Name = "tb_codePermanent";
             this.tb_codePermanent.Size = new System.Drawing.Size(297, 29);
             this.tb_codePermanent.TabIndex = 12;
+            this.tb_codePermanent.Validating += new System.ComponentModel.CancelEventHandler(this.tb_codePermanent_Validating);
             // 
             // tb_nom
             // 
@@ -223,6 +222,7 @@
             this.tb_nom.Name = "tb_nom";
             this.tb_nom.Size = new System.Drawing.Size(297, 29);
             this.tb_nom.TabIndex = 13;
+            this.tb_nom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_nom_KeyPress);
             // 
             // tb_prenom
             // 
@@ -233,6 +233,7 @@
             this.tb_prenom.Name = "tb_prenom";
             this.tb_prenom.Size = new System.Drawing.Size(297, 29);
             this.tb_prenom.TabIndex = 14;
+            this.tb_prenom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_prenom_KeyPress);
             // 
             // tb_adresse
             // 
@@ -253,16 +254,6 @@
             this.tb_ville.Name = "tb_ville";
             this.tb_ville.Size = new System.Drawing.Size(297, 29);
             this.tb_ville.TabIndex = 16;
-            // 
-            // tb_codePostal
-            // 
-            this.tb_codePostal.Enabled = false;
-            this.tb_codePostal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_codePostal.Location = new System.Drawing.Point(262, 421);
-            this.tb_codePostal.MaxLength = 7;
-            this.tb_codePostal.Name = "tb_codePostal";
-            this.tb_codePostal.Size = new System.Drawing.Size(297, 29);
-            this.tb_codePostal.TabIndex = 17;
             // 
             // rb_feminin
             // 
@@ -300,6 +291,7 @@
             this.tb_dateNaissance.Size = new System.Drawing.Size(100, 29);
             this.tb_dateNaissance.TabIndex = 20;
             this.tb_dateNaissance.ValidatingType = typeof(System.DateTime);
+            this.tb_dateNaissance.Validating += new System.ComponentModel.CancelEventHandler(this.tb_dateNaissance_Validating);
             // 
             // lb_noidAttribue
             // 
@@ -319,6 +311,7 @@
             this.mtb_telephone.Name = "mtb_telephone";
             this.mtb_telephone.Size = new System.Drawing.Size(123, 29);
             this.mtb_telephone.TabIndex = 22;
+            this.mtb_telephone.Validating += new System.ComponentModel.CancelEventHandler(this.mtb_telephone_Validating);
             // 
             // lb_titreInscription
             // 
@@ -374,6 +367,7 @@
             // 
             // gb_inscription
             // 
+            this.gb_inscription.Controls.Add(this.mtb_codePostal);
             this.gb_inscription.Controls.Add(this.tb_codePermanent);
             this.gb_inscription.Controls.Add(this.tb_nom);
             this.gb_inscription.Controls.Add(this.tb_prenom);
@@ -390,7 +384,6 @@
             this.gb_inscription.Controls.Add(this.lb_nom);
             this.gb_inscription.Controls.Add(this.lb_ville);
             this.gb_inscription.Controls.Add(this.lb_codePermanent);
-            this.gb_inscription.Controls.Add(this.tb_codePostal);
             this.gb_inscription.Controls.Add(this.lb_adresse);
             this.gb_inscription.Controls.Add(this.tb_ville);
             this.gb_inscription.Controls.Add(this.lb_dateNais);
@@ -402,6 +395,16 @@
             this.gb_inscription.TabStop = false;
             this.gb_inscription.Text = "Informations";
             // 
+            // mtb_codePostal
+            // 
+            this.mtb_codePostal.Enabled = false;
+            this.mtb_codePostal.Location = new System.Drawing.Point(262, 427);
+            this.mtb_codePostal.Mask = "A9A-9A9";
+            this.mtb_codePostal.Name = "mtb_codePostal";
+            this.mtb_codePostal.Size = new System.Drawing.Size(100, 23);
+            this.mtb_codePostal.TabIndex = 23;
+            this.mtb_codePostal.Validating += new System.ComponentModel.CancelEventHandler(this.mtb_codePostal_Validating);
+            // 
             // gb_recherche
             // 
             this.gb_recherche.Controls.Add(this.tb_rNoid);
@@ -411,14 +414,12 @@
             this.gb_recherche.Controls.Add(this.lb_rnoid);
             this.gb_recherche.Controls.Add(this.lb_rPrenom);
             this.gb_recherche.Controls.Add(this.lb_rNom);
-            this.gb_recherche.Enabled = false;
             this.gb_recherche.Location = new System.Drawing.Point(86, 681);
             this.gb_recherche.Name = "gb_recherche";
             this.gb_recherche.Size = new System.Drawing.Size(652, 154);
             this.gb_recherche.TabIndex = 29;
             this.gb_recherche.TabStop = false;
             this.gb_recherche.Text = "Recherche";
-            this.gb_recherche.Visible = false;
             // 
             // tb_rNoid
             // 
@@ -513,31 +514,35 @@
             // 
             // nud_final
             // 
-            this.nud_final.Location = new System.Drawing.Point(575, 41);
+            this.nud_final.Location = new System.Drawing.Point(557, 35);
             this.nud_final.Name = "nud_final";
-            this.nud_final.Size = new System.Drawing.Size(47, 23);
+            this.nud_final.Size = new System.Drawing.Size(83, 23);
             this.nud_final.TabIndex = 7;
+            this.nud_final.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nud_intra
             // 
-            this.nud_intra.Location = new System.Drawing.Point(409, 41);
+            this.nud_intra.Location = new System.Drawing.Point(384, 35);
             this.nud_intra.Name = "nud_intra";
-            this.nud_intra.Size = new System.Drawing.Size(47, 23);
+            this.nud_intra.Size = new System.Drawing.Size(83, 23);
             this.nud_intra.TabIndex = 6;
+            this.nud_intra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nud_tp2
             // 
-            this.nud_tp2.Location = new System.Drawing.Point(262, 39);
+            this.nud_tp2.Location = new System.Drawing.Point(226, 35);
             this.nud_tp2.Name = "nud_tp2";
-            this.nud_tp2.Size = new System.Drawing.Size(47, 23);
+            this.nud_tp2.Size = new System.Drawing.Size(83, 23);
             this.nud_tp2.TabIndex = 5;
+            this.nud_tp2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nud_tp1
             // 
-            this.nud_tp1.Location = new System.Drawing.Point(55, 39);
+            this.nud_tp1.Location = new System.Drawing.Point(54, 35);
             this.nud_tp1.Name = "nud_tp1";
-            this.nud_tp1.Size = new System.Drawing.Size(47, 23);
+            this.nud_tp1.Size = new System.Drawing.Size(83, 23);
             this.nud_tp1.TabIndex = 4;
+            this.nud_tp1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lb_final
             // 
@@ -621,7 +626,7 @@
             this.pan_nav.Controls.Add(this.btn_reculer);
             this.pan_nav.Controls.Add(this.btn_dernier);
             this.pan_nav.Controls.Add(this.btn_avancer);
-            this.pan_nav.Location = new System.Drawing.Point(773, 641);
+            this.pan_nav.Location = new System.Drawing.Point(790, 633);
             this.pan_nav.Name = "pan_nav";
             this.pan_nav.Size = new System.Drawing.Size(384, 161);
             this.pan_nav.TabIndex = 39;
@@ -629,10 +634,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // errorProvider2
-            // 
-            this.errorProvider2.ContainerControl = this;
             // 
             // Inscription
             // 
@@ -666,7 +667,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_tp1)).EndInit();
             this.pan_nav.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -689,7 +689,6 @@
         private TextBox tb_prenom;
         private TextBox tb_adresse;
         private TextBox tb_ville;
-        private TextBox tb_codePostal;
         private RadioButton rb_feminin;
         private RadioButton rb_masculin;
         private MaskedTextBox tb_dateNaissance;
@@ -711,10 +710,6 @@
         private Label lb_rNom;
         private Label lb_positionEleves;
         private GroupBox gb_notes;
-        private NumericUpDown nud_final;
-        private NumericUpDown nud_intra;
-        private NumericUpDown nud_tp2;
-        private NumericUpDown nud_tp1;
         private Label lb_final;
         private Label lb_intra;
         private Label lb_tp2;
@@ -725,6 +720,10 @@
         private Button btn_dernier;
         private Panel pan_nav;
         private ErrorProvider errorProvider1;
-        private ErrorProvider errorProvider2;
+        private MaskedTextBox mtb_codePostal;
+        private NumericUpDown nud_final;
+        private NumericUpDown nud_intra;
+        private NumericUpDown nud_tp2;
+        private NumericUpDown nud_tp1;
     }
 }

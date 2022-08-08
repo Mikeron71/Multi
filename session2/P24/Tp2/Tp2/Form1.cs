@@ -36,11 +36,15 @@ namespace Tp2
                 Stats f3 = new Stats();
                 f3.MdiParent = this;
                 f3.Show();
+                f3.LoadStats();
+                f3.Read();
             }
             else
             {
                 Stats f3 = (Stats)Application.OpenForms["Stats"];
                 f3.Focus();
+                f3.LoadStats();
+                f3.Read();
             }
 
         }

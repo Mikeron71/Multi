@@ -44,6 +44,8 @@
             this.lb_data_moyenneTotal = new System.Windows.Forms.Label();
             this.btn_stats = new System.Windows.Forms.Button();
             this.btn_quitter = new System.Windows.Forms.Button();
+            this.pan_stats = new System.Windows.Forms.Panel();
+            this.pan_stats.SuspendLayout();
             this.SuspendLayout();
             // 
             // listb_stats
@@ -65,7 +67,7 @@
             this.btn_list.TabIndex = 2;
             this.btn_list.Text = "Liste";
             this.btn_list.UseVisualStyleBackColor = true;
-            this.btn_list.Click += new System.EventHandler(this.btn_load_Click);
+            this.btn_list.Click += new System.EventHandler(this.btn_list_Click);
             // 
             // lb_nbEtudiants
             // 
@@ -81,7 +83,7 @@
             // 
             this.lb_nbEtudiantsValeur.AutoSize = true;
             this.lb_nbEtudiantsValeur.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_nbEtudiantsValeur.Location = new System.Drawing.Point(1036, 114);
+            this.lb_nbEtudiantsValeur.Location = new System.Drawing.Point(70, 29);
             this.lb_nbEtudiantsValeur.Name = "lb_nbEtudiantsValeur";
             this.lb_nbEtudiantsValeur.Size = new System.Drawing.Size(57, 25);
             this.lb_nbEtudiantsValeur.TabIndex = 4;
@@ -131,7 +133,7 @@
             // 
             this.lb_data_moyennetp1.AutoSize = true;
             this.lb_data_moyennetp1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_data_moyennetp1.Location = new System.Drawing.Point(1036, 175);
+            this.lb_data_moyennetp1.Location = new System.Drawing.Point(70, 90);
             this.lb_data_moyennetp1.Name = "lb_data_moyennetp1";
             this.lb_data_moyennetp1.Size = new System.Drawing.Size(57, 25);
             this.lb_data_moyennetp1.TabIndex = 9;
@@ -141,7 +143,7 @@
             // 
             this.lb_data_moyennetp2.AutoSize = true;
             this.lb_data_moyennetp2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_data_moyennetp2.Location = new System.Drawing.Point(1036, 232);
+            this.lb_data_moyennetp2.Location = new System.Drawing.Point(70, 147);
             this.lb_data_moyennetp2.Name = "lb_data_moyennetp2";
             this.lb_data_moyennetp2.Size = new System.Drawing.Size(57, 25);
             this.lb_data_moyennetp2.TabIndex = 10;
@@ -151,7 +153,7 @@
             // 
             this.lb_data_moyenneintra.AutoSize = true;
             this.lb_data_moyenneintra.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_data_moyenneintra.Location = new System.Drawing.Point(1036, 289);
+            this.lb_data_moyenneintra.Location = new System.Drawing.Point(70, 204);
             this.lb_data_moyenneintra.Name = "lb_data_moyenneintra";
             this.lb_data_moyenneintra.Size = new System.Drawing.Size(57, 25);
             this.lb_data_moyenneintra.TabIndex = 11;
@@ -161,7 +163,7 @@
             // 
             this.lb_data_moyennefinal.AutoSize = true;
             this.lb_data_moyennefinal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_data_moyennefinal.Location = new System.Drawing.Point(1036, 347);
+            this.lb_data_moyennefinal.Location = new System.Drawing.Point(70, 262);
             this.lb_data_moyennefinal.Name = "lb_data_moyennefinal";
             this.lb_data_moyennefinal.Size = new System.Drawing.Size(57, 25);
             this.lb_data_moyennefinal.TabIndex = 12;
@@ -181,7 +183,7 @@
             // 
             this.lb_data_moyenneTotal.AutoSize = true;
             this.lb_data_moyenneTotal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_data_moyenneTotal.Location = new System.Drawing.Point(1036, 406);
+            this.lb_data_moyenneTotal.Location = new System.Drawing.Point(70, 321);
             this.lb_data_moyenneTotal.Name = "lb_data_moyenneTotal";
             this.lb_data_moyenneTotal.Size = new System.Drawing.Size(57, 25);
             this.lb_data_moyenneTotal.TabIndex = 14;
@@ -208,24 +210,33 @@
             this.btn_quitter.UseVisualStyleBackColor = true;
             this.btn_quitter.Click += new System.EventHandler(this.btn_quitter_Click);
             // 
+            // pan_stats
+            // 
+            this.pan_stats.Controls.Add(this.lb_nbEtudiantsValeur);
+            this.pan_stats.Controls.Add(this.lb_data_moyennetp1);
+            this.pan_stats.Controls.Add(this.lb_data_moyennetp2);
+            this.pan_stats.Controls.Add(this.lb_data_moyenneTotal);
+            this.pan_stats.Controls.Add(this.lb_data_moyenneintra);
+            this.pan_stats.Controls.Add(this.lb_data_moyennefinal);
+            this.pan_stats.Location = new System.Drawing.Point(921, 97);
+            this.pan_stats.Name = "pan_stats";
+            this.pan_stats.Size = new System.Drawing.Size(200, 360);
+            this.pan_stats.TabIndex = 17;
+            this.pan_stats.Visible = false;
+            // 
             // Stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 911);
+            this.Controls.Add(this.pan_stats);
             this.Controls.Add(this.btn_quitter);
             this.Controls.Add(this.btn_stats);
-            this.Controls.Add(this.lb_data_moyenneTotal);
             this.Controls.Add(this.lb_moyenneTotal);
-            this.Controls.Add(this.lb_data_moyennefinal);
-            this.Controls.Add(this.lb_data_moyenneintra);
-            this.Controls.Add(this.lb_data_moyennetp2);
-            this.Controls.Add(this.lb_data_moyennetp1);
             this.Controls.Add(this.lb_moyennetp2);
             this.Controls.Add(this.lb_moyenneIntra);
             this.Controls.Add(this.lb_moyenneFinal);
             this.Controls.Add(this.lb_moyennetp1);
-            this.Controls.Add(this.lb_nbEtudiantsValeur);
             this.Controls.Add(this.lb_nbEtudiants);
             this.Controls.Add(this.btn_list);
             this.Controls.Add(this.listb_stats);
@@ -234,6 +245,8 @@
             this.Text = "Stats";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Stats_Load);
+            this.pan_stats.ResumeLayout(false);
+            this.pan_stats.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +269,6 @@
         private Label lb_data_moyenneTotal;
         private Button btn_stats;
         private Button btn_quitter;
+        private Panel pan_stats;
     }
 }
