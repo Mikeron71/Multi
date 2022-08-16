@@ -210,7 +210,7 @@
             this.tb_codePermanent.MaxLength = 12;
             this.tb_codePermanent.Name = "tb_codePermanent";
             this.tb_codePermanent.Size = new System.Drawing.Size(297, 29);
-            this.tb_codePermanent.TabIndex = 12;
+            this.tb_codePermanent.TabIndex = 1;
             this.tb_codePermanent.Validating += new System.ComponentModel.CancelEventHandler(this.tb_codePermanent_Validating);
             // 
             // tb_nom
@@ -221,7 +221,7 @@
             this.tb_nom.MaxLength = 15;
             this.tb_nom.Name = "tb_nom";
             this.tb_nom.Size = new System.Drawing.Size(297, 29);
-            this.tb_nom.TabIndex = 13;
+            this.tb_nom.TabIndex = 2;
             this.tb_nom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_nom_KeyPress);
             // 
             // tb_prenom
@@ -232,7 +232,7 @@
             this.tb_prenom.MaxLength = 15;
             this.tb_prenom.Name = "tb_prenom";
             this.tb_prenom.Size = new System.Drawing.Size(297, 29);
-            this.tb_prenom.TabIndex = 14;
+            this.tb_prenom.TabIndex = 3;
             this.tb_prenom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_prenom_KeyPress);
             // 
             // tb_adresse
@@ -243,7 +243,7 @@
             this.tb_adresse.MaxLength = 30;
             this.tb_adresse.Name = "tb_adresse";
             this.tb_adresse.Size = new System.Drawing.Size(297, 29);
-            this.tb_adresse.TabIndex = 15;
+            this.tb_adresse.TabIndex = 5;
             // 
             // tb_ville
             // 
@@ -253,7 +253,7 @@
             this.tb_ville.MaxLength = 20;
             this.tb_ville.Name = "tb_ville";
             this.tb_ville.Size = new System.Drawing.Size(297, 29);
-            this.tb_ville.TabIndex = 16;
+            this.tb_ville.TabIndex = 6;
             // 
             // rb_feminin
             // 
@@ -263,7 +263,7 @@
             this.rb_feminin.Location = new System.Drawing.Point(278, 244);
             this.rb_feminin.Name = "rb_feminin";
             this.rb_feminin.Size = new System.Drawing.Size(84, 25);
-            this.rb_feminin.TabIndex = 18;
+            this.rb_feminin.TabIndex = 4;
             this.rb_feminin.TabStop = true;
             this.rb_feminin.Text = "Feminin";
             this.rb_feminin.UseVisualStyleBackColor = true;
@@ -289,7 +289,7 @@
             this.tb_dateNaissance.Mask = "00/00/0000";
             this.tb_dateNaissance.Name = "tb_dateNaissance";
             this.tb_dateNaissance.Size = new System.Drawing.Size(100, 29);
-            this.tb_dateNaissance.TabIndex = 20;
+            this.tb_dateNaissance.TabIndex = 4;
             this.tb_dateNaissance.ValidatingType = typeof(System.DateTime);
             this.tb_dateNaissance.Validating += new System.ComponentModel.CancelEventHandler(this.tb_dateNaissance_Validating);
             // 
@@ -310,7 +310,7 @@
             this.mtb_telephone.Mask = "(999) 000-0000";
             this.mtb_telephone.Name = "mtb_telephone";
             this.mtb_telephone.Size = new System.Drawing.Size(123, 29);
-            this.mtb_telephone.TabIndex = 22;
+            this.mtb_telephone.TabIndex = 8;
             this.mtb_telephone.Validating += new System.ComponentModel.CancelEventHandler(this.mtb_telephone_Validating);
             // 
             // lb_titreInscription
@@ -402,7 +402,7 @@
             this.mtb_codePostal.Mask = "A9A-9A9";
             this.mtb_codePostal.Name = "mtb_codePostal";
             this.mtb_codePostal.Size = new System.Drawing.Size(100, 23);
-            this.mtb_codePostal.TabIndex = 23;
+            this.mtb_codePostal.TabIndex = 7;
             this.mtb_codePostal.Validating += new System.ComponentModel.CancelEventHandler(this.mtb_codePostal_Validating);
             // 
             // gb_recherche

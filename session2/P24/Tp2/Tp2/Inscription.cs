@@ -66,6 +66,7 @@ namespace Tp2
             AddMode();
             ClearGroup(gb_inscription);
             pan_nav.Enabled = false;
+            btn_nouveau.Enabled = false;
         }
         private void btn_modifier_Click(object sender, EventArgs e)
         {
