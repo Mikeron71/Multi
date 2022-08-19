@@ -40,7 +40,6 @@
             this.lb_codePostal = new System.Windows.Forms.Label();
             this.lb_telephone = new System.Windows.Forms.Label();
             this.lb_noid = new System.Windows.Forms.Label();
-            this.tb_codePermanent = new System.Windows.Forms.TextBox();
             this.tb_nom = new System.Windows.Forms.TextBox();
             this.tb_prenom = new System.Windows.Forms.TextBox();
             this.tb_adresse = new System.Windows.Forms.TextBox();
@@ -56,6 +55,7 @@
             this.btn_modifier = new System.Windows.Forms.Button();
             this.btn_supprimer = new System.Windows.Forms.Button();
             this.gb_inscription = new System.Windows.Forms.GroupBox();
+            this.tb_codePermanent = new System.Windows.Forms.MaskedTextBox();
             this.mtb_codePostal = new System.Windows.Forms.MaskedTextBox();
             this.gb_recherche = new System.Windows.Forms.GroupBox();
             this.tb_rNoid = new System.Windows.Forms.TextBox();
@@ -202,17 +202,6 @@
             this.lb_noid.TabIndex = 11;
             this.lb_noid.Text = "Numéro d\'indentification:";
             // 
-            // tb_codePermanent
-            // 
-            this.tb_codePermanent.Enabled = false;
-            this.tb_codePermanent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_codePermanent.Location = new System.Drawing.Point(256, 27);
-            this.tb_codePermanent.MaxLength = 12;
-            this.tb_codePermanent.Name = "tb_codePermanent";
-            this.tb_codePermanent.Size = new System.Drawing.Size(297, 29);
-            this.tb_codePermanent.TabIndex = 1;
-            this.tb_codePermanent.Validating += new System.ComponentModel.CancelEventHandler(this.tb_codePermanent_Validating);
-            // 
             // tb_nom
             // 
             this.tb_nom.Enabled = false;
@@ -291,6 +280,7 @@
             this.tb_dateNaissance.Size = new System.Drawing.Size(100, 29);
             this.tb_dateNaissance.TabIndex = 4;
             this.tb_dateNaissance.ValidatingType = typeof(System.DateTime);
+            this.tb_dateNaissance.Enter += new System.EventHandler(this.tb_dateNaissance_Enter);
             this.tb_dateNaissance.Validating += new System.ComponentModel.CancelEventHandler(this.tb_dateNaissance_Validating);
             // 
             // lb_noidAttribue
@@ -367,8 +357,8 @@
             // 
             // gb_inscription
             // 
-            this.gb_inscription.Controls.Add(this.mtb_codePostal);
             this.gb_inscription.Controls.Add(this.tb_codePermanent);
+            this.gb_inscription.Controls.Add(this.mtb_codePostal);
             this.gb_inscription.Controls.Add(this.tb_nom);
             this.gb_inscription.Controls.Add(this.tb_prenom);
             this.gb_inscription.Controls.Add(this.rb_feminin);
@@ -394,6 +384,16 @@
             this.gb_inscription.TabIndex = 28;
             this.gb_inscription.TabStop = false;
             this.gb_inscription.Text = "Informations";
+            // 
+            // tb_codePermanent
+            // 
+            this.tb_codePermanent.Enabled = false;
+            this.tb_codePermanent.Location = new System.Drawing.Point(256, 41);
+            this.tb_codePermanent.Mask = "LLLL00000000";
+            this.tb_codePermanent.Name = "tb_codePermanent";
+            this.tb_codePermanent.Size = new System.Drawing.Size(74, 23);
+            this.tb_codePermanent.TabIndex = 22;
+            this.tb_codePermanent.ValidatingType = typeof(int);
             // 
             // mtb_codePostal
             // 
@@ -687,7 +687,6 @@
         private Label lb_codePostal;
         private Label lb_telephone;
         private Label lb_noid;
-        private TextBox tb_codePermanent;
         private TextBox tb_nom;
         private TextBox tb_prenom;
         private TextBox tb_adresse;
@@ -729,5 +728,6 @@
         private NumericUpDown nud_tp2;
         private NumericUpDown nud_tp1;
         private Label lb_positionEleves;
+        private MaskedTextBox tb_codePermanent;
     }
 }

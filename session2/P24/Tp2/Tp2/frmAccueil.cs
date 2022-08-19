@@ -8,10 +8,11 @@ namespace Tp2
             InitializeComponent();
         }
 
+    
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            LoadInscription();
+            LoadInscription(); 
         }
        
         
@@ -22,7 +23,7 @@ namespace Tp2
             LoadInscription();
         }
 
-        public void  LoadInscription()
+        public  void  LoadInscription()
         {
             if (System.Windows.Forms.Application.OpenForms["Inscription"] as Inscription == null)
             {
@@ -44,6 +45,7 @@ namespace Tp2
             {
                 Stats frmStats = new Stats();
                 frmStats.MdiParent = this;
+             
                 frmStats.Show();
             }
             else

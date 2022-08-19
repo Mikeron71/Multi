@@ -9,11 +9,12 @@ namespace Tp2
         public string noId = "";
         int compteExistant = 1;
         string action = "";
-
+        
         public Inscription()
         {
             InitializeComponent();
             GetEtudiant(pos);
+            
         }
         // MODES INTERFACE _____________________________________________________________________________
         public void AddMode()
@@ -67,6 +68,7 @@ namespace Tp2
             ClearGroup(gb_inscription);
             pan_nav.Enabled = false;
             btn_nouveau.Enabled = false;
+         
         }
         private void btn_modifier_Click(object sender, EventArgs e)
         {
@@ -77,20 +79,20 @@ namespace Tp2
 
         private void btn_ok_Click(object sender, EventArgs e)
         {
-            string codePermanent = tb_codePermanent.Text.PadRight(13).ToUpper();
-            string nom = tb_nom.Text.PadRight(16).ToLower();
-            string prenom = tb_prenom.Text.PadRight(16).ToLower();
-            char sexe = rb_feminin.Checked ? 'F' : 'M';
-            string dateNaissance = tb_dateNaissance.Text;
-            string adresse = tb_adresse.Text.PadRight(31);
-            string ville = tb_ville.Text.PadRight(21);
-            string codePostal = mtb_codePostal.Text;
-            string telephone = mtb_telephone.Text;
-            string nodid = CreerNoid();
-            double tp1 = 0;
-            double tp2 = 0;
-            double intra = 0;
-            double final = 0;
+            Etudiant.codePermanent = tb_codePermanent.Text.PadRight(13).ToUpper();
+            Etudiant.nom = tb_nom.Text.PadRight(16).ToLower();
+            Etudiant.prenom = tb_prenom.Text.PadRight(16).ToLower();
+            Etudiant.sexe = rb_feminin.Checked ? 'F' : 'M';
+            Etudiant.dateNaissance = tb_dateNaissance.Text;
+            Etudiant.adresse = tb_adresse.Text.PadRight(31);
+            Etudiant.ville = tb_ville.Text.PadRight(21);
+            Etudiant.codePostal = mtb_codePostal.Text;
+            Etudiant.telephone = mtb_telephone.Text;
+            Etudiant.noId = CreerNoid();
+            Etudiant.tp1 = 0;
+            Etudiant.tp2 = 0;
+            Etudiant.intra = 0;
+            Etudiant.final = 0;
 
             bool ready = Valider();
 
@@ -100,23 +102,23 @@ namespace Tp2
                 {
                     using (BinaryWriter bw = new(fs))
                     {
-                        bw.Write(codePermanent);
-                        bw.Write(nom);
-                        bw.Write(prenom);
-                        bw.Write(sexe);
-                        bw.Write(dateNaissance);
-                        bw.Write(adresse);
-                        bw.Write(ville);
-                        bw.Write(codePostal);
-                        bw.Write(telephone);
-                        bw.Write(nodid);
-                        bw.Write(tp1);
-                        bw.Write(tp2);
-                        bw.Write(intra);
-                        bw.Write(final);
+                        bw.Write(Etudiant.codePermanent);
+                        bw.Write(Etudiant.nom);
+                        bw.Write(Etudiant.prenom);
+                        bw.Write(Etudiant.sexe);
+                        bw.Write(Etudiant.dateNaissance);
+                        bw.Write(Etudiant.adresse);
+                        bw.Write(Etudiant.ville);
+                        bw.Write(Etudiant.codePostal);
+                        bw.Write(Etudiant.telephone);
+                        bw.Write(Etudiant.noId);
+                        bw.Write(Etudiant.tp1);
+                        bw.Write(Etudiant.tp2);
+                        bw.Write(Etudiant.intra);
+                        bw.Write(Etudiant.final);
                     }
                 }
-                MessageBox.Show($"Inscription de {prenom.TrimEnd()} {nom.TrimEnd()} réussie.");
+                MessageBox.Show($"Inscription de {Etudiant.prenom.TrimEnd()} {Etudiant.nom.TrimEnd()} réussie.");
                 ClearGroup(gb_inscription);
                 IdleMode();
                 GetEtudiant(pos);
@@ -125,31 +127,31 @@ namespace Tp2
 
             if (action == "modif")
             {
-                tp1 = (double)nud_tp1.Value;
-                tp2 = (double)nud_tp2.Value;
-                intra = (double)nud_intra.Value;
-                final = (double)nud_final.Value;
+                Etudiant.tp1 = (double)nud_tp1.Value;
+                Etudiant.tp2 = (double)nud_tp2.Value;
+                Etudiant.intra = (double)nud_intra.Value;
+                Etudiant.final = (double)nud_final.Value;
                 using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Write))
                 {
                     using (BinaryWriter bw = new(fs))
                     {
                         fs.Seek(pos * longeur, SeekOrigin.Begin);
-                        bw.Write(codePermanent);
-                        bw.Write(nom);
-                        bw.Write(prenom);
-                        bw.Write(sexe);
-                        bw.Write(dateNaissance);
-                        bw.Write(adresse);
-                        bw.Write(ville);
-                        bw.Write(codePostal);
-                        bw.Write(telephone);
+                        bw.Write(Etudiant.codePermanent);
+                        bw.Write(Etudiant.nom);
+                        bw.Write(Etudiant.prenom);
+                        bw.Write(Etudiant.sexe);
+                        bw.Write(Etudiant.dateNaissance);
+                        bw.Write(Etudiant.adresse);
+                        bw.Write(Etudiant.ville);
+                        bw.Write(Etudiant.codePostal);
+                        bw.Write(Etudiant.telephone);
                         bw.Write(lb_noidAttribue.Text);
-                        bw.Write(tp1);
-                        bw.Write(tp2);
-                        bw.Write(intra);
-                        bw.Write(final);
+                        bw.Write(Etudiant.tp1);
+                        bw.Write(Etudiant.tp2);
+                        bw.Write(Etudiant.intra);
+                        bw.Write(Etudiant.final);
 
-                        MessageBox.Show($"Modification de {prenom.TrimEnd()} {nom.TrimEnd()} réussie.");
+                        MessageBox.Show($"Modification de {Etudiant.prenom.TrimEnd()} {Etudiant.nom.TrimEnd()} réussie.");
                         ClearGroup(gb_inscription);
                         IdleMode();
                        
@@ -609,6 +611,16 @@ namespace Tp2
             ClearGroup(gb_inscription);
             GetEtudiant(pos);
             IdleMode();
+        }
+
+        private void tb_dateNaissance_Enter(object sender, EventArgs e)
+        {
+                this.BeginInvoke((MethodInvoker)delegate ()
+                {
+                    tb_dateNaissance.Select(0, 0);
+                });
+
+            
         }
     }
 }

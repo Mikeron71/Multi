@@ -171,6 +171,7 @@
             this.lv_stats.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.lv_stats.TabIndex = 18;
             this.lv_stats.UseCompatibleStateImageBehavior = false;
+            this.lv_stats.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lv_stats_MouseDoubleClick);
             // 
             // columnHeader1
             // 

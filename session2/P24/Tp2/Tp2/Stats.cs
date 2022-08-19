@@ -5,16 +5,17 @@
         double nbEleves;
         int longeur = 175;
         double totalTp1, totalTp2, totalIntra, totalFinal;
-        string? codePermanent, nom, prenom, dateNaissance, adresse, ville, codePostal, telephone, noId;
-
-        char sexe;
         double tp1 ,tp2,intra,final;
+        
    
 
         public Stats()
         {
             InitializeComponent();
+            
         }
+
+        
 
         private void Stats_Load(object sender, EventArgs e)
         {
@@ -46,16 +47,16 @@
                         for (; ; )
                         {
                             if (br.PeekChar() == -1) break;
-                            codePermanent = br.ReadString();
-                            nom = br.ReadString().TrimEnd();
-                            prenom = br.ReadString().TrimEnd();
-                            sexe = br.ReadChar();
-                            dateNaissance = br.ReadString();
-                            adresse = br.ReadString().TrimEnd();
-                            ville = br.ReadString().TrimEnd();
-                            codePostal = br.ReadString();
-                            telephone = br.ReadString();
-                            noId = br.ReadString();
+                            Etudiant.codePermanent = br.ReadString();
+                            Etudiant.nom = br.ReadString().TrimEnd();
+                            Etudiant.prenom = br.ReadString().TrimEnd();
+                            Etudiant.sexe = br.ReadChar();
+                            Etudiant.dateNaissance = br.ReadString();
+                            Etudiant.adresse = br.ReadString().TrimEnd();
+                            Etudiant.ville = br.ReadString().TrimEnd();
+                            Etudiant.codePostal = br.ReadString();
+                            Etudiant.telephone = br.ReadString();
+                            Etudiant.noId = br.ReadString();
                             tp1 = br.ReadDouble();
                             tp2 = br.ReadDouble();
                             intra = br.ReadDouble();
@@ -67,16 +68,16 @@
                             totalFinal += final;
 
                             string[] arr = new string[14];
-                            arr[0] = codePermanent;
-                            arr[1] = nom;
-                            arr[2] = prenom;
-                            arr[3] = sexe.ToString();
-                            arr[4] = dateNaissance;
-                            arr[5] = adresse;
-                            arr[6] = ville;
-                            arr[7] = codePostal;
-                            arr[8] = telephone;
-                            arr[9] = noId;
+                            arr[0] = Etudiant.codePermanent;
+                            arr[1] = Etudiant.nom;
+                            arr[2] = Etudiant.prenom;
+                            arr[3] = Etudiant.sexe.ToString();
+                            arr[4] = Etudiant.dateNaissance;
+                            arr[5] = Etudiant.adresse;
+                            arr[6] = Etudiant.ville;
+                            arr[7] = Etudiant.codePostal;
+                            arr[8] = Etudiant.telephone;
+                            arr[9] = Etudiant.noId;
                             arr[10] = tp1.ToString();
                             arr[11] = tp2.ToString();
                             arr[12] = intra.ToString();
@@ -152,5 +153,16 @@
         {
             Read();
         }
+
+        private void lv_stats_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string noid = lv_stats.SelectedItems[0].Text;
+            MessageBox.Show(noid);
+        
+           
+          
+        }
+
+
     }
 }
