@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Tp2
+﻿namespace Tp2
 {
     public static class Etudiant
     {
@@ -12,6 +6,5 @@ namespace Tp2
         public static string? codePermanent, nom, prenom, dateNaissance, adresse, ville, codePostal, telephone, noId;
         public static char sexe;
         public static double tp1, tp2, intra, final;
-
     }
 }

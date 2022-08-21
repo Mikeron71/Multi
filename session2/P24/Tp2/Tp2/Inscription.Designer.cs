@@ -243,6 +243,7 @@
             this.tb_ville.Name = "tb_ville";
             this.tb_ville.Size = new System.Drawing.Size(297, 29);
             this.tb_ville.TabIndex = 6;
+            this.tb_ville.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_ville_KeyPress);
             // 
             // rb_feminin
             // 
@@ -391,8 +392,8 @@
             this.tb_codePermanent.Location = new System.Drawing.Point(256, 41);
             this.tb_codePermanent.Mask = "LLLL00000000";
             this.tb_codePermanent.Name = "tb_codePermanent";
-            this.tb_codePermanent.Size = new System.Drawing.Size(74, 23);
-            this.tb_codePermanent.TabIndex = 22;
+            this.tb_codePermanent.Size = new System.Drawing.Size(94, 23);
+            this.tb_codePermanent.TabIndex = 1;
             this.tb_codePermanent.ValidatingType = typeof(int);
             // 
             // mtb_codePostal

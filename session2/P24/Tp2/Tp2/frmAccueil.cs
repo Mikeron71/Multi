@@ -2,20 +2,16 @@ namespace Tp2
 {
     public partial class frmAccueil : Form
     {
-   
+        public static Inscription? frmInscription =  null;
         public frmAccueil()
         {
             InitializeComponent();
         }
-
-    
-
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadInscription(); 
         }
-       
-        
+      
         // MENU BAR_________________________________________________________________________
         
         private void inscriptionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -27,7 +23,7 @@ namespace Tp2
         {
             if (System.Windows.Forms.Application.OpenForms["Inscription"] as Inscription == null)
             {
-                Inscription frmInscription = new Inscription();
+                frmInscription = new Inscription();
                 frmInscription.MdiParent = this;
                 frmInscription.Show();
             }
@@ -45,7 +41,6 @@ namespace Tp2
             {
                 Stats frmStats = new Stats();
                 frmStats.MdiParent = this;
-             
                 frmStats.Show();
             }
             else

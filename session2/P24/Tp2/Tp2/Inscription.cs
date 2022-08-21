@@ -8,13 +8,12 @@ namespace Tp2
         public int nbEleves = 0;
         public string noId = "";
         int compteExistant = 1;
-        string action = "";
+        public string action = "";
         
         public Inscription()
         {
             InitializeComponent();
             GetEtudiant(pos);
-            
         }
         // MODES INTERFACE _____________________________________________________________________________
         public void AddMode()
@@ -165,6 +164,8 @@ namespace Tp2
             ClearGroup(gb_inscription);
             GetEtudiant(pos);
             IdleMode();
+            ResetError();
+           
         }
 
         //Creation du ID ___________________________________________________________________
@@ -523,7 +524,7 @@ namespace Tp2
                     errorProvider1.SetError(ct, "Ce champ est requis");
                     valide = false;
                 }
-                else if (ct is MaskedTextBox && ct.Text == "  -  -" || ct.Text == "(   )    -")
+                else if (ct is MaskedTextBox && ct.Text.Length != 12 )
                 {
                     errorProvider1.SetError(ct, "Ce champ est requis");
                     valide = false;
@@ -547,6 +548,12 @@ namespace Tp2
             return valide;
         }
 
+        private void ResetError()
+        {
+            foreach (Control ct in gb_inscription.Controls)
+                errorProvider1.SetError(ct, "");
+        }
+
         private void tb_codePermanent_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (tb_codePermanent.Text.Length != 12 && tb_codePermanent.Enabled == true)
@@ -562,7 +569,7 @@ namespace Tp2
 
         private void tb_nom_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-')
+            if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-' )
             {
                 e.Handled = false;
             }
@@ -571,7 +578,7 @@ namespace Tp2
 
         private void tb_prenom_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-')
+            if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-' )
             {
                 e.Handled = false;
             }
@@ -621,6 +628,18 @@ namespace Tp2
                 });
 
             
+        }
+
+        private void tb_ville_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            {
+                if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-' || e.KeyChar == 'é' || e.KeyChar == ' ') 
+                {
+                    e.Handled = false;
+                }
+                else e.Handled = true;
+
+            }
         }
     }
 }

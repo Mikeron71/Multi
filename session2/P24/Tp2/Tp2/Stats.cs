@@ -6,17 +6,10 @@
         int longeur = 175;
         double totalTp1, totalTp2, totalIntra, totalFinal;
         double tp1 ,tp2,intra,final;
-        
-   
-
         public Stats()
         {
             InitializeComponent();
-            
         }
-
-        
-
         private void Stats_Load(object sender, EventArgs e)
         {
             Read();
@@ -25,8 +18,6 @@
             btn_stats.Enabled = true;
             CreateList();
         }
-
-
 
         public void Read()
         {
@@ -68,7 +59,7 @@
                             totalFinal += final;
 
                             string[] arr = new string[14];
-                            arr[0] = Etudiant.codePermanent;
+                            arr[0] = Etudiant.noId;
                             arr[1] = Etudiant.nom;
                             arr[2] = Etudiant.prenom;
                             arr[3] = Etudiant.sexe.ToString();
@@ -77,7 +68,7 @@
                             arr[6] = Etudiant.ville;
                             arr[7] = Etudiant.codePostal;
                             arr[8] = Etudiant.telephone;
-                            arr[9] = Etudiant.noId;
+                            arr[9] = Etudiant.codePermanent;
                             arr[10] = tp1.ToString();
                             arr[11] = tp2.ToString();
                             arr[12] = intra.ToString();
@@ -95,9 +86,6 @@
                 MessageBox.Show("Il n'y a aucun élève d'incrit");
             }
         }
-
-    
-
         public void LoadMoyenne()
         {
             if (nbEleves > 0)
@@ -125,7 +113,7 @@
             lv_stats.View = View.Details;
             lv_stats.GridLines = true;
             lv_stats.FullRowSelect = true;
-            lv_stats.Columns.Add("Code permanent:", 110);
+            lv_stats.Columns.Add("Id", 70);
             lv_stats.Columns.Add("Nom", 110);
             lv_stats.Columns.Add("Prenom", 110);
             lv_stats.Columns.Add("sexe", 35);
@@ -134,7 +122,7 @@
             lv_stats.Columns.Add("Ville", 110);
             lv_stats.Columns.Add("Code Postal", 90);
             lv_stats.Columns.Add("telephone", 110);
-            lv_stats.Columns.Add("Id", 70);
+            lv_stats.Columns.Add("Code permanent:", 110);
             lv_stats.Columns.Add("Tp1", 40);
             lv_stats.Columns.Add("Tp2", 40);
             lv_stats.Columns.Add("Intra", 40);
@@ -148,7 +136,6 @@
         {
             LoadMoyenne();
         }
-
         private void btn_list_Click(object sender, EventArgs e)
         {
             Read();
@@ -157,10 +144,9 @@
         private void lv_stats_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             string noid = lv_stats.SelectedItems[0].Text;
-            MessageBox.Show(noid);
-        
-           
-          
+            frmAccueil.frmInscription.Focus();
+            frmAccueil.frmInscription.action = "rechercheEleve";
+            frmAccueil.frmInscription.Find(noid);
         }
 
 
