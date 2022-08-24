@@ -9,7 +9,6 @@ namespace Tp2
         public string noId = "";
         int compteExistant = 1;
         public string action = "";
-        
         public Inscription()
         {
             InitializeComponent();
@@ -97,9 +96,9 @@ namespace Tp2
 
             if (action == "ajout" && ready == true)
             {
-                using (FileStream fs = new("Eleve.Dta", FileMode.Append, FileAccess.Write))
+                using (FileStream fs = new ("Eleve.Dta", FileMode.Append, FileAccess.Write))
                 {
-                    using (BinaryWriter bw = new(fs))
+                    using (BinaryWriter bw = new BinaryWriter(fs, System.Text.Encoding.Latin1))
                     {
                         bw.Write(Etudiant.codePermanent);
                         bw.Write(Etudiant.nom);
@@ -132,7 +131,7 @@ namespace Tp2
                 Etudiant.final = (double)nud_final.Value;
                 using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Write))
                 {
-                    using (BinaryWriter bw = new(fs))
+                    using (BinaryWriter bw = new(fs, System.Text.Encoding.Latin1))
                     {
                         fs.Seek(pos * longeur, SeekOrigin.Begin);
                         bw.Write(Etudiant.codePermanent);
@@ -153,7 +152,6 @@ namespace Tp2
                         MessageBox.Show($"Modification de {Etudiant.prenom.TrimEnd()} {Etudiant.nom.TrimEnd()} réussie.");
                         ClearGroup(gb_inscription);
                         IdleMode();
-                       
                     }
                 }
             }
@@ -198,7 +196,7 @@ namespace Tp2
             {
                 using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Read))
                 {
-                    using (BinaryReader br = new(fs))
+                    using (BinaryReader br = new(fs, System.Text.Encoding.Latin1))
                     {
                         nbEleves = (int)fs.Length / longeur;
                         if (nbEleves > 0)
@@ -281,7 +279,7 @@ namespace Tp2
             {
                 using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Read))
                 {
-                    using (BinaryReader br = new(fs))
+                    using (BinaryReader br = new(fs, System.Text.Encoding.Latin1))
                     {
                         for (; ; )
                         {
@@ -351,7 +349,7 @@ namespace Tp2
             bool trouve = false;
             using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Read))
             {
-                using (BinaryReader br = new(fs))
+                using (BinaryReader br = new(fs, System.Text.Encoding.Latin1))
                 {
                     for (; ; )
                     {
@@ -448,7 +446,7 @@ namespace Tp2
             {
                 using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Read))
                 {
-                    using (BinaryReader br = new(fs))
+                    using (BinaryReader br = new(fs, System.Text.Encoding.Latin1))
                     {
                         fs.Seek(0, SeekOrigin.Begin);
 
@@ -474,7 +472,7 @@ namespace Tp2
                             {
                                 using (FileStream fs2 = new("Eleve2.Dta", FileMode.Append, FileAccess.Write))
                                 {
-                                    using (BinaryWriter bw = new(fs2))
+                                    using (BinaryWriter bw = new(fs2, System.Text.Encoding.Latin1))
                                     {
                                         bw.Write(codePermanent.PadRight(13).ToUpper());
                                         bw.Write(nom.PadRight(16).ToLower());
@@ -524,11 +522,11 @@ namespace Tp2
                     errorProvider1.SetError(ct, "Ce champ est requis");
                     valide = false;
                 }
-                else if (ct is MaskedTextBox && ct.Text.Length != 12 )
-                {
-                    errorProvider1.SetError(ct, "Ce champ est requis");
-                    valide = false;
-                }
+                //else if (ct is MaskedTextBox && ct.Text.Length != 12 )
+                //{
+                //    errorProvider1.SetError(ct, "Ce champ est requis");
+                //    valide = false;
+                //}
                 else
                 {
                     errorProvider1.SetError(ct, "");

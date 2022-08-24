@@ -30,7 +30,7 @@
             {
                 using (FileStream fs = new ("Eleve.Dta", FileMode.Open, FileAccess.Read))
                 {
-                    using (BinaryReader br = new (fs))
+                    using (BinaryReader br = new (fs, System.Text.Encoding.Latin1))
                     {
 
                         nbEleves = (int)fs.Length / longeur;
