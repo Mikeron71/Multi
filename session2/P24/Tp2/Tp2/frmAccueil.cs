@@ -2,9 +2,11 @@ namespace Tp2
 {
     public partial class frmAccueil : Form
     {
+        private StudentFile _studentFile;
         public static Inscription? frmInscription =  null;
-        public frmAccueil()
+        public frmAccueil(StudentFile studentfile)
         {
+            _studentFile = studentfile;
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -23,7 +25,7 @@ namespace Tp2
         {
             if (System.Windows.Forms.Application.OpenForms["Inscription"] as Inscription == null)
             {
-                frmInscription = new Inscription();
+                frmInscription = new Inscription(_studentFile);
                 frmInscription.MdiParent = this;
                 frmInscription.Show();
             }

@@ -38,16 +38,16 @@
                         for (; ; )
                         {
                             if (br.PeekChar() == -1) break;
-                            Etudiant.codePermanent = br.ReadString();
-                            Etudiant.nom = br.ReadString().TrimEnd();
-                            Etudiant.prenom = br.ReadString().TrimEnd();
-                            Etudiant.sexe = br.ReadChar();
-                            Etudiant.dateNaissance = br.ReadString();
-                            Etudiant.adresse = br.ReadString().TrimEnd();
-                            Etudiant.ville = br.ReadString().TrimEnd();
-                            Etudiant.codePostal = br.ReadString();
-                            Etudiant.telephone = br.ReadString();
-                            Etudiant.noId = br.ReadString();
+                            Etudiant.CodePermanent = br.ReadString();
+                            Etudiant.Nom = br.ReadString().TrimEnd();
+                            Etudiant.Prenom = br.ReadString().TrimEnd();
+                            Etudiant.Sexe = br.ReadChar();
+                            Etudiant.DateNaissance = br.ReadString();
+                            Etudiant.Adresse = br.ReadString().TrimEnd();
+                            Etudiant.Ville = br.ReadString().TrimEnd();
+                            Etudiant.CodePostal = br.ReadString();
+                            Etudiant.Telephone = br.ReadString();
+                            Etudiant.NoId = br.ReadString();
                             tp1 = br.ReadDouble();
                             tp2 = br.ReadDouble();
                             intra = br.ReadDouble();
@@ -59,16 +59,16 @@
                             totalFinal += final;
 
                             string[] arr = new string[14];
-                            arr[0] = Etudiant.noId;
-                            arr[1] = Etudiant.nom;
-                            arr[2] = Etudiant.prenom;
-                            arr[3] = Etudiant.sexe.ToString();
-                            arr[4] = Etudiant.dateNaissance;
-                            arr[5] = Etudiant.adresse;
-                            arr[6] = Etudiant.ville;
-                            arr[7] = Etudiant.codePostal;
-                            arr[8] = Etudiant.telephone;
-                            arr[9] = Etudiant.codePermanent;
+                            arr[0] = Etudiant.NoId;
+                            arr[1] = Etudiant.Nom;
+                            arr[2] = Etudiant.Prenom;
+                            arr[3] = Etudiant.Sexe.ToString();
+                            arr[4] = Etudiant.DateNaissance;
+                            arr[5] = Etudiant.Adresse;
+                            arr[6] = Etudiant.Ville;
+                            arr[7] = Etudiant.CodePostal;
+                            arr[8] = Etudiant.Telephone;
+                            arr[9] = Etudiant.CodePermanent;
                             arr[10] = tp1.ToString();
                             arr[11] = tp2.ToString();
                             arr[12] = intra.ToString();

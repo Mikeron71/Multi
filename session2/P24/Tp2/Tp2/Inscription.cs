@@ -3,14 +3,15 @@ namespace Tp2
 {
     public partial class Inscription : Form
     {
+        private StudentFile _studentFile;
         int pos = 0;
-        int longeur = 175;
         public int nbEleves = 0;
         public string noId = "";
         int compteExistant = 1;
         public string action = "";
-        public Inscription()
+        public Inscription(StudentFile studentFile)
         {
+            _studentFile = studentFile;
             InitializeComponent();
             GetEtudiant(pos);
         }
@@ -66,7 +67,7 @@ namespace Tp2
             ClearGroup(gb_inscription);
             pan_nav.Enabled = false;
             btn_nouveau.Enabled = false;
-         
+
         }
         private void btn_modifier_Click(object sender, EventArgs e)
         {
@@ -77,46 +78,28 @@ namespace Tp2
 
         private void btn_ok_Click(object sender, EventArgs e)
         {
-            Etudiant.codePermanent = tb_codePermanent.Text.PadRight(13).ToUpper();
-            Etudiant.nom = tb_nom.Text.PadRight(16).ToLower();
-            Etudiant.prenom = tb_prenom.Text.PadRight(16).ToLower();
-            Etudiant.sexe = rb_feminin.Checked ? 'F' : 'M';
-            Etudiant.dateNaissance = tb_dateNaissance.Text;
-            Etudiant.adresse = tb_adresse.Text.PadRight(31);
-            Etudiant.ville = tb_ville.Text.PadRight(21);
-            Etudiant.codePostal = mtb_codePostal.Text;
-            Etudiant.telephone = mtb_telephone.Text;
-            Etudiant.noId = CreerNoid();
-            Etudiant.tp1 = 0;
-            Etudiant.tp2 = 0;
-            Etudiant.intra = 0;
-            Etudiant.final = 0;
+            var etudiant = new Etudiant();
+            etudiant.CodePermanent = tb_codePermanent.Text.PadRight(13).ToUpper();
+            etudiant.Nom = tb_nom.Text.PadRight(16).ToLower();
+            etudiant.Prenom = tb_prenom.Text.PadRight(16).ToLower();
+            etudiant.Sexe = rb_feminin.Checked ? 'F' : 'M';
+            etudiant.DateNaissance = tb_dateNaissance.Text;
+            etudiant.Adresse = tb_adresse.Text.PadRight(31);
+            etudiant.Ville = tb_ville.Text.PadRight(21);
+            etudiant.CodePostal = mtb_codePostal.Text;
+            etudiant.Telephone = mtb_telephone.Text;
+            etudiant.Tp1 = 0;
+            etudiant.Tp2 = 0;
+            etudiant.Intra = 0;
+            etudiant.Final = 0;
 
             bool ready = Valider();
 
             if (action == "ajout" && ready == true)
             {
-                using (FileStream fs = new ("Eleve.Dta", FileMode.Append, FileAccess.Write))
-                {
-                    using (BinaryWriter bw = new BinaryWriter(fs, System.Text.Encoding.Latin1))
-                    {
-                        bw.Write(Etudiant.codePermanent);
-                        bw.Write(Etudiant.nom);
-                        bw.Write(Etudiant.prenom);
-                        bw.Write(Etudiant.sexe);
-                        bw.Write(Etudiant.dateNaissance);
-                        bw.Write(Etudiant.adresse);
-                        bw.Write(Etudiant.ville);
-                        bw.Write(Etudiant.codePostal);
-                        bw.Write(Etudiant.telephone);
-                        bw.Write(Etudiant.noId);
-                        bw.Write(Etudiant.tp1);
-                        bw.Write(Etudiant.tp2);
-                        bw.Write(Etudiant.intra);
-                        bw.Write(Etudiant.final);
-                    }
-                }
-                MessageBox.Show($"Inscription de {Etudiant.prenom.TrimEnd()} {Etudiant.nom.TrimEnd()} réussie.");
+                etudiant.NoId = CreerNoid();
+                _studentFile.AddStudent(etudiant);
+                MessageBox.Show($"Inscription de {etudiant.Prenom.TrimEnd()} {etudiant.Nom.TrimEnd()} réussie.");
                 ClearGroup(gb_inscription);
                 IdleMode();
                 GetEtudiant(pos);
@@ -125,37 +108,20 @@ namespace Tp2
 
             if (action == "modif")
             {
-                Etudiant.tp1 = (double)nud_tp1.Value;
-                Etudiant.tp2 = (double)nud_tp2.Value;
-                Etudiant.intra = (double)nud_intra.Value;
-                Etudiant.final = (double)nud_final.Value;
-                using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Write))
-                {
-                    using (BinaryWriter bw = new(fs, System.Text.Encoding.Latin1))
-                    {
-                        fs.Seek(pos * longeur, SeekOrigin.Begin);
-                        bw.Write(Etudiant.codePermanent);
-                        bw.Write(Etudiant.nom);
-                        bw.Write(Etudiant.prenom);
-                        bw.Write(Etudiant.sexe);
-                        bw.Write(Etudiant.dateNaissance);
-                        bw.Write(Etudiant.adresse);
-                        bw.Write(Etudiant.ville);
-                        bw.Write(Etudiant.codePostal);
-                        bw.Write(Etudiant.telephone);
-                        bw.Write(lb_noidAttribue.Text);
-                        bw.Write(Etudiant.tp1);
-                        bw.Write(Etudiant.tp2);
-                        bw.Write(Etudiant.intra);
-                        bw.Write(Etudiant.final);
+                etudiant.Tp1 = (double)nud_tp1.Value;
+                etudiant.Tp2 = (double)nud_tp2.Value;
+                etudiant.Intra = (double)nud_intra.Value;
+                etudiant.NoId = lb_noidAttribue.Text;
+                etudiant.Final = (double)nud_final.Value;
+                _studentFile.EditStudent(etudiant, pos);
 
-                        MessageBox.Show($"Modification de {Etudiant.prenom.TrimEnd()} {Etudiant.nom.TrimEnd()} réussie.");
-                        ClearGroup(gb_inscription);
-                        IdleMode();
-                    }
-                }
+                MessageBox.Show($"Modification de {etudiant.Prenom.TrimEnd()} {etudiant.Nom.TrimEnd()} réussie.");
+                ClearGroup(gb_inscription);
+                IdleMode();
             }
         }
+
+
 
         private void btn_annuler_Click(object sender, EventArgs e)
         {
@@ -163,7 +129,7 @@ namespace Tp2
             GetEtudiant(pos);
             IdleMode();
             ResetError();
-           
+
         }
 
         //Creation du ID ___________________________________________________________________
@@ -194,41 +160,37 @@ namespace Tp2
         {
             try
             {
-                using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Read))
+                var etudiant = _studentFile.ReadEtudiant(pos);
+                if (nbEleves > 0)
                 {
-                    using (BinaryReader br = new(fs, System.Text.Encoding.Latin1))
-                    {
-                        nbEleves = (int)fs.Length / longeur;
-                        if (nbEleves > 0)
-                        {
-                            lb_positionEleves.Text = "";
-                        }
-                        lb_positionEleves.Text = $"Élève {pos + 1} sur {nbEleves.ToString()}";
-                        fs.Seek(pos * longeur, SeekOrigin.Begin);
-                        tb_codePermanent.Text = br.ReadString();
-                        tb_nom.Text = br.ReadString().TrimEnd();
-                        tb_prenom.Text = br.ReadString().TrimEnd();
-                        char sexe = br.ReadChar();
-                        if (sexe == 'M')
-                        {
-                            rb_masculin.Checked = true;
-                        }
-                        else
-                        {
-                            rb_feminin.Checked = true;
-                        }
-                        tb_dateNaissance.Text = br.ReadString();
-                        tb_adresse.Text = br.ReadString().TrimEnd();
-                        tb_ville.Text = br.ReadString().TrimEnd();
-                        mtb_codePostal.Text = br.ReadString();
-                        mtb_telephone.Text = br.ReadString();
-                        lb_noidAttribue.Text = br.ReadString();
-                        nud_tp1.Value = (decimal)br.ReadDouble();
-                        nud_tp2.Value = (decimal)br.ReadDouble();
-                        nud_intra.Value = (decimal)br.ReadDouble();
-                        nud_final.Value = (decimal)br.ReadDouble();
-                    }
+                    lb_positionEleves.Text = "";
                 }
+                lb_positionEleves.Text = $"Élève {pos + 1} sur {nbEleves.ToString()}";
+
+                tb_codePermanent.Text = etudiant.CodePermanent;
+                tb_nom.Text = etudiant.Nom;
+                tb_prenom.Text = etudiant.Prenom;
+                char sexe = etudiant.Sexe;
+                if (sexe == 'M')
+                {
+                    rb_masculin.Checked = true;
+                }
+                else
+                {
+                    rb_feminin.Checked = true;
+                }
+                tb_dateNaissance.Text = etudiant.DateNaissance;
+                tb_adresse.Text = etudiant.Adresse;
+                tb_ville.Text = etudiant.Ville;
+                mtb_codePostal.Text = etudiant.CodePostal;
+                mtb_telephone.Text = etudiant.Telephone;
+                lb_noidAttribue.Text = etudiant.NoId;
+                nud_tp1.Value = (decimal)etudiant.Tp1;
+                nud_tp2.Value = (decimal)etudiant.Tp2;
+                nud_intra.Value = (decimal)etudiant.Intra;
+                nud_final.Value = (decimal)etudiant.Final;
+
+
             }
             catch (FileNotFoundException)
             {
@@ -247,11 +209,14 @@ namespace Tp2
             if (tb_rNoid.Text != "")
             {
                 noidFound = Find(tb_rNoid.Text.ToUpper());
-                if (noidFound) {
+                if (noidFound)
+                {
                     MessageBox.Show("Étudiant(e) trouvé(e).");
                     ClearGroup(gb_recherche);
                     GetEtudiant(pos);
-                } else {
+                }
+                else
+                {
                     MessageBox.Show("Étudiant(e) inexistant(e)");
                 }
             }
@@ -328,7 +293,7 @@ namespace Tp2
                             if (noidRecherche.Substring(0, 4) == noId.Substring(0, 4))
                             {
                                 trouve = true;
-                                pos = (int)fs.Position/175-1 ;
+                                pos = (int)fs.Position / 175 - 1;
                                 compteExistant++;
 
                             }
@@ -336,7 +301,8 @@ namespace Tp2
                     }
                 }
                 return trouve;
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 return trouve;
             }
@@ -385,7 +351,7 @@ namespace Tp2
                             nud_intra.Value = (decimal)intra;
                             nud_final.Value = (decimal)final;
                             trouve = true;
-                            pos = (int)fs.Position / 175-1 ;
+                            pos = (int)fs.Position / 175 - 1;
                             break;
                         }
                     }
@@ -504,7 +470,8 @@ namespace Tp2
                 {
 
                 }
-                if (pos > 0) {
+                if (pos > 0)
+                {
                     pos--;
                     ClearGroup(gb_inscription);
                 }
@@ -567,7 +534,7 @@ namespace Tp2
 
         private void tb_nom_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-' )
+            if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-')
             {
                 e.Handled = false;
             }
@@ -576,12 +543,12 @@ namespace Tp2
 
         private void tb_prenom_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-' )
+            if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-')
             {
                 e.Handled = false;
             }
             else e.Handled = true;
-           
+
         }
         private void tb_dateNaissance_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -589,7 +556,7 @@ namespace Tp2
             {
                 errorProvider1.SetError(tb_dateNaissance, "Entrez la date en format 00/00/0000");
                 tb_dateNaissance.Focus();
-            }  
+            }
         }
 
         private void mtb_codePostal_Validating(object sender, System.ComponentModel.CancelEventArgs e)
@@ -620,18 +587,18 @@ namespace Tp2
 
         private void tb_dateNaissance_Enter(object sender, EventArgs e)
         {
-                this.BeginInvoke((MethodInvoker)delegate ()
-                {
-                    tb_dateNaissance.Select(0, 0);
-                });
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                tb_dateNaissance.Select(0, 0);
+            });
 
-            
+
         }
 
         private void tb_ville_KeyPress(object sender, KeyPressEventArgs e)
         {
             {
-                if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-' || e.KeyChar == 'é' || e.KeyChar == ' ') 
+                if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-' || e.KeyChar == 'é' || e.KeyChar == ' ')
                 {
                     e.Handled = false;
                 }
