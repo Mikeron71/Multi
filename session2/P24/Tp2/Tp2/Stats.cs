@@ -6,6 +6,7 @@
         int longeur = 175;
         double totalTp1, totalTp2, totalIntra, totalFinal;
         double tp1 ,tp2,intra,final;
+        StudentFile studentFile = new StudentFile();
         public Stats()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@
         }
 
         public void Read()
-        {
+        {   
             lv_stats.Items.Clear();
             totalTp1 = 0;
             totalTp2 = 0;
@@ -28,26 +29,28 @@
             totalFinal = 0;
             try
             {
+
                 using (FileStream fs = new ("Eleve.Dta", FileMode.Open, FileAccess.Read))
                 {
                     using (BinaryReader br = new (fs, System.Text.Encoding.Latin1))
                     {
+                        Etudiant etudiant = new Etudiant();
 
                         nbEleves = (int)fs.Length / longeur;
 
                         for (; ; )
                         {
                             if (br.PeekChar() == -1) break;
-                            Etudiant.CodePermanent = br.ReadString();
-                            Etudiant.Nom = br.ReadString().TrimEnd();
-                            Etudiant.Prenom = br.ReadString().TrimEnd();
-                            Etudiant.Sexe = br.ReadChar();
-                            Etudiant.DateNaissance = br.ReadString();
-                            Etudiant.Adresse = br.ReadString().TrimEnd();
-                            Etudiant.Ville = br.ReadString().TrimEnd();
-                            Etudiant.CodePostal = br.ReadString();
-                            Etudiant.Telephone = br.ReadString();
-                            Etudiant.NoId = br.ReadString();
+                            etudiant.CodePermanent = br.ReadString();
+                            etudiant.Nom = br.ReadString().TrimEnd();
+                            etudiant.Prenom = br.ReadString().TrimEnd();
+                            etudiant.Sexe = br.ReadChar();
+                            etudiant.DateNaissance = br.ReadString();
+                            etudiant.Adresse = br.ReadString().TrimEnd();
+                            etudiant.Ville = br.ReadString().TrimEnd();
+                            etudiant.CodePostal = br.ReadString();
+                            etudiant.Telephone = br.ReadString();
+                            etudiant.NoId = br.ReadString();
                             tp1 = br.ReadDouble();
                             tp2 = br.ReadDouble();
                             intra = br.ReadDouble();
@@ -59,16 +62,16 @@
                             totalFinal += final;
 
                             string[] arr = new string[14];
-                            arr[0] = Etudiant.NoId;
-                            arr[1] = Etudiant.Nom;
-                            arr[2] = Etudiant.Prenom;
-                            arr[3] = Etudiant.Sexe.ToString();
-                            arr[4] = Etudiant.DateNaissance;
-                            arr[5] = Etudiant.Adresse;
-                            arr[6] = Etudiant.Ville;
-                            arr[7] = Etudiant.CodePostal;
-                            arr[8] = Etudiant.Telephone;
-                            arr[9] = Etudiant.CodePermanent;
+                            arr[0] = etudiant.NoId;
+                            arr[1] = etudiant.Nom;
+                            arr[2] = etudiant.Prenom;
+                            arr[3] = etudiant.Sexe.ToString();
+                            arr[4] = etudiant.DateNaissance;
+                            arr[5] = etudiant.Adresse;
+                            arr[6] = etudiant.Ville;
+                            arr[7] = etudiant.CodePostal;
+                            arr[8] = etudiant.Telephone;
+                            arr[9] = etudiant.CodePermanent;
                             arr[10] = tp1.ToString();
                             arr[11] = tp2.ToString();
                             arr[12] = intra.ToString();
@@ -144,11 +147,10 @@
         private void lv_stats_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             string noid = lv_stats.SelectedItems[0].Text;
+            
+            frmAccueil.frmInscription.GetEtudiant(frmAccueil.frmInscription._studentFile.FindStudent(noid, false));
             frmAccueil.frmInscription.Focus();
-            frmAccueil.frmInscription.action = "rechercheEleve";
-            frmAccueil.frmInscription.Find(noid);
         }
-
 
     }
 }
