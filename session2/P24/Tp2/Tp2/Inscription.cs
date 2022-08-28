@@ -44,6 +44,7 @@ namespace Tp2
             gb_notes.Visible = false;
             pan_nav.Enabled = true;
             gb_recherche.Enabled = true;
+            dtp_dateNaissance.Checked = false;
         }
         private void EditMode()
         {
@@ -83,7 +84,7 @@ namespace Tp2
             etudiant.Nom = tb_nom.Text.PadRight(16).ToLower();
             etudiant.Prenom = tb_prenom.Text.PadRight(16).ToLower();
             etudiant.Sexe = rb_feminin.Checked ? 'F' : 'M';
-            etudiant.DateNaissance = tb_dateNaissance.Text;
+            etudiant.DateNaissance = dtp_dateNaissance.Value.ToShortDateString().PadRight(10);
             etudiant.Adresse = tb_adresse.Text.PadRight(31);
             etudiant.Ville = tb_ville.Text.PadRight(21);
             etudiant.CodePostal = mtb_codePostal.Text;
@@ -102,6 +103,7 @@ namespace Tp2
                 MessageBox.Show($"Inscription de {etudiant.Prenom.TrimEnd()} {etudiant.Nom.TrimEnd()} réussie.");
                 ClearGroup(gb_inscription);
                 IdleMode();
+                pos = _studentFile.nbEleves ;
                 GetEtudiant(pos);
             }
 
@@ -117,6 +119,9 @@ namespace Tp2
                 MessageBox.Show($"Modification de {etudiant.Prenom.TrimEnd()} {etudiant.Nom.TrimEnd()} réussie.");
                 ClearGroup(gb_inscription);
                 IdleMode();
+                GetEtudiant(pos);
+
+
             }
         }
 
@@ -151,7 +156,6 @@ namespace Tp2
                 }
             }
             compteExistant = 1;
-            MessageBox.Show(noId);
             return noId;
 
         }
@@ -162,6 +166,7 @@ namespace Tp2
                 var etudiant = _studentFile.ReadStudent(pos);
                 if (_studentFile.nbEleves > 0)
                 {
+                    lb_positionEleves.Show();
                     lb_positionEleves.Text = "";
                 }
                 lb_positionEleves.Text = $"Élève {pos + 1} sur {_studentFile.nbEleves}";
@@ -178,7 +183,7 @@ namespace Tp2
                 {
                     rb_feminin.Checked = true;
                 }
-                tb_dateNaissance.Text = etudiant.DateNaissance;
+                dtp_dateNaissance.Text = etudiant.DateNaissance;
                 tb_adresse.Text = etudiant.Adresse;
                 tb_ville.Text = etudiant.Ville;
                 mtb_codePostal.Text = etudiant.CodePostal;
@@ -208,7 +213,6 @@ namespace Tp2
             if (tb_rNoid.Text != "")
             {
                 int position = _studentFile.FindStudent(tb_rNoid.Text.ToUpper(), false);
-                MessageBox.Show(position.ToString());
                 if (position != -1)
                 {
                     MessageBox.Show("Étudiant(e) trouvé(e).");
@@ -308,16 +312,12 @@ namespace Tp2
             bool valide = true;
             foreach (Control ct in gb_inscription.Controls)
             {
-                if (ct is TextBox && ct.Text == "" || ct.Text.Length < 3)
+                if (ct is TextBox && ct.Text == "" || ct is TextBox && ct.Text == "" && ct.Text.Length < 3)
                 {
                     errorProvider1.SetError(ct, "Ce champ est requis");
                     valide = false;
                 }
-                //else if (ct is MaskedTextBox && ct.Text.Length != 12 )
-                //{
-                //    errorProvider1.SetError(ct, "Ce champ est requis");
-                //    valide = false;
-                //}
+           
                 else
                 {
                     errorProvider1.SetError(ct, "");
@@ -336,12 +336,11 @@ namespace Tp2
                 errorProvider1.SetError(tb_codePermanent, "Ce champ est requis");
             }
 
-            if (tb_dateNaissance.Text.Length != 10)
+           if(dtp_dateNaissance.Checked == false && action == "ajout")
             {
-                valide = false;
-                errorProvider1.SetError(tb_dateNaissance, "Ce champ est requis");
-
+                errorProvider1.SetError(dtp_dateNaissance, "Ce champ est requis");
             }
+
 
             if (mtb_telephone.Text.Length != 14)
             {
@@ -349,6 +348,14 @@ namespace Tp2
                 errorProvider1.SetError(mtb_telephone, "Ce champ est requis");
 
             }
+
+            if(dtp_dateNaissance.Checked == false && action =="ajout")
+            {
+                valide = false;
+                errorProvider1.SetError(dtp_dateNaissance, "Ce champ est requis");
+
+            }
+
 
             return valide;
         }
@@ -392,10 +399,10 @@ namespace Tp2
         }
         private void tb_dateNaissance_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (tb_dateNaissance.Text.Length != 10)
+            if (dtp_dateNaissance.Text.Length != 10)
             {
-                errorProvider1.SetError(tb_dateNaissance, "Entrez la date en format 00/00/0000");
-                tb_dateNaissance.Focus();
+                errorProvider1.SetError(dtp_dateNaissance, "Entrez la date en format 00/00/0000");
+                dtp_dateNaissance.Focus();
             }
         }
 
@@ -425,15 +432,7 @@ namespace Tp2
             IdleMode();
         }
 
-        private void tb_dateNaissance_Enter(object sender, EventArgs e)
-        {
-            this.BeginInvoke((MethodInvoker)delegate ()
-            {
-                tb_dateNaissance.Select(0, 0);
-            });
-
-
-        }
+        
 
         private void tb_ville_KeyPress(object sender, KeyPressEventArgs e)
         {

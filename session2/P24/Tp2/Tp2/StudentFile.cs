@@ -20,7 +20,7 @@ namespace Tp2
                         etudiant.Nom = br.ReadString().TrimEnd();
                         etudiant.Prenom = br.ReadString().TrimEnd();
                         etudiant.Sexe = br.ReadChar();
-                        etudiant.DateNaissance = br.ReadString();
+                        etudiant.DateNaissance = br.ReadString().TrimEnd();
                         etudiant.Adresse = br.ReadString().TrimEnd();
                         etudiant.Ville = br.ReadString().TrimEnd();
                         etudiant.CodePostal = br.ReadString();
@@ -56,7 +56,7 @@ namespace Tp2
                                     etudiant.Nom = br.ReadString().TrimEnd();
                                     etudiant.Prenom = br.ReadString().TrimEnd();
                                     etudiant.Sexe = br.ReadChar();
-                                    etudiant.DateNaissance = br.ReadString();
+                                    etudiant.DateNaissance = br.ReadString().TrimEnd();
                                     etudiant.Adresse = br.ReadString().TrimEnd();
                                     etudiant.Ville = br.ReadString().TrimEnd();
                                     etudiant.CodePostal = br.ReadString();
@@ -85,6 +85,7 @@ namespace Tp2
             }
             catch (Exception e)
             {
+                Console.WriteLine("Pas d'etudiants");
             }
             if (!found)
                 return -1;
@@ -112,7 +113,7 @@ namespace Tp2
                                 etudiant.Nom = br.ReadString().TrimEnd();
                                 etudiant.Prenom = br.ReadString().TrimEnd();
                                 etudiant.Sexe = br.ReadChar();
-                                etudiant.DateNaissance = br.ReadString();
+                                etudiant.DateNaissance = br.ReadString().TrimEnd();
                                 etudiant.Adresse = br.ReadString().TrimEnd();
                                 etudiant.Ville = br.ReadString().TrimEnd();
                                 etudiant.CodePostal = br.ReadString();
@@ -198,7 +199,7 @@ namespace Tp2
                         string nom = br.ReadString().TrimEnd();
                         string prenom = br.ReadString().TrimEnd();
                         char sexe = br.ReadChar();
-                        string dateNaissance = br.ReadString();
+                        string dateNaissance = br.ReadString().TrimEnd();
                         string adresse = br.ReadString();
                         string ville = br.ReadString();
                         string codePostal = br.ReadString();
@@ -219,7 +220,7 @@ namespace Tp2
                                     bw.Write(nom.PadRight(16).ToLower());
                                     bw.Write(prenom.PadRight(16).ToLower());
                                     bw.Write(sexe);
-                                    bw.Write(dateNaissance);
+                                    bw.Write(dateNaissance.PadRight(10));
                                     bw.Write(adresse.PadRight(31));
                                     bw.Write(ville.PadRight(21));
                                     bw.Write(codePostal);

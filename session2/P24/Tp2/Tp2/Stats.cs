@@ -150,6 +150,7 @@
         {
             string noid = lv_stats.SelectedItems[0].Text;
 
+            _FrmInscription.pos = _FrmInscription._studentFile.FindStudent(noid, false);
             _FrmInscription.GetEtudiant(_FrmInscription._studentFile.FindStudent(noid, false));
             _FrmInscription.Focus();
         }

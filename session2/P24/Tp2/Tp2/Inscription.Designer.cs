@@ -46,7 +46,6 @@
             this.tb_ville = new System.Windows.Forms.TextBox();
             this.rb_feminin = new System.Windows.Forms.RadioButton();
             this.rb_masculin = new System.Windows.Forms.RadioButton();
-            this.tb_dateNaissance = new System.Windows.Forms.MaskedTextBox();
             this.lb_noidAttribue = new System.Windows.Forms.Label();
             this.mtb_telephone = new System.Windows.Forms.MaskedTextBox();
             this.lb_titreInscription = new System.Windows.Forms.Label();
@@ -55,10 +54,12 @@
             this.btn_modifier = new System.Windows.Forms.Button();
             this.btn_supprimer = new System.Windows.Forms.Button();
             this.gb_inscription = new System.Windows.Forms.GroupBox();
+            this.dtp_dateNaissance = new System.Windows.Forms.DateTimePicker();
             this.tb_codePermanent = new System.Windows.Forms.MaskedTextBox();
             this.mtb_codePostal = new System.Windows.Forms.MaskedTextBox();
             this.gb_recherche = new System.Windows.Forms.GroupBox();
             this.tb_rNoid = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_recherche = new System.Windows.Forms.Button();
             this.tb_rPrenom = new System.Windows.Forms.TextBox();
             this.tb_rNom = new System.Windows.Forms.TextBox();
@@ -94,6 +95,7 @@
             // 
             // btn_nouveau
             // 
+            this.btn_nouveau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_nouveau.Location = new System.Drawing.Point(896, 66);
             this.btn_nouveau.Name = "btn_nouveau";
             this.btn_nouveau.Size = new System.Drawing.Size(142, 81);
@@ -228,7 +230,7 @@
             // 
             this.tb_adresse.Enabled = false;
             this.tb_adresse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_adresse.Location = new System.Drawing.Point(262, 330);
+            this.tb_adresse.Location = new System.Drawing.Point(254, 332);
             this.tb_adresse.MaxLength = 30;
             this.tb_adresse.Name = "tb_adresse";
             this.tb_adresse.Size = new System.Drawing.Size(297, 29);
@@ -238,7 +240,7 @@
             // 
             this.tb_ville.Enabled = false;
             this.tb_ville.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_ville.Location = new System.Drawing.Point(262, 371);
+            this.tb_ville.Location = new System.Drawing.Point(254, 371);
             this.tb_ville.MaxLength = 20;
             this.tb_ville.Name = "tb_ville";
             this.tb_ville.Size = new System.Drawing.Size(297, 29);
@@ -271,33 +273,20 @@
             this.rb_masculin.Text = "Masculin";
             this.rb_masculin.UseVisualStyleBackColor = true;
             // 
-            // tb_dateNaissance
-            // 
-            this.tb_dateNaissance.Enabled = false;
-            this.tb_dateNaissance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_dateNaissance.Location = new System.Drawing.Point(262, 286);
-            this.tb_dateNaissance.Mask = "00/00/0000";
-            this.tb_dateNaissance.Name = "tb_dateNaissance";
-            this.tb_dateNaissance.Size = new System.Drawing.Size(100, 29);
-            this.tb_dateNaissance.TabIndex = 4;
-            this.tb_dateNaissance.ValidatingType = typeof(System.DateTime);
-            this.tb_dateNaissance.Enter += new System.EventHandler(this.tb_dateNaissance_Enter);
-            this.tb_dateNaissance.Validating += new System.ComponentModel.CancelEventHandler(this.tb_dateNaissance_Validating);
-            // 
             // lb_noidAttribue
             // 
             this.lb_noidAttribue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lb_noidAttribue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lb_noidAttribue.Location = new System.Drawing.Point(256, 192);
             this.lb_noidAttribue.Name = "lb_noidAttribue";
-            this.lb_noidAttribue.Size = new System.Drawing.Size(150, 32);
+            this.lb_noidAttribue.Size = new System.Drawing.Size(98, 32);
             this.lb_noidAttribue.TabIndex = 21;
             // 
             // mtb_telephone
             // 
             this.mtb_telephone.Enabled = false;
             this.mtb_telephone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mtb_telephone.Location = new System.Drawing.Point(262, 471);
+            this.mtb_telephone.Location = new System.Drawing.Point(255, 471);
             this.mtb_telephone.Mask = "(999) 000-0000";
             this.mtb_telephone.Name = "mtb_telephone";
             this.mtb_telephone.Size = new System.Drawing.Size(123, 29);
@@ -317,6 +306,7 @@
             // btn_ok
             // 
             this.btn_ok.Enabled = false;
+            this.btn_ok.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_ok.Location = new System.Drawing.Point(896, 175);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(142, 81);
@@ -328,6 +318,7 @@
             // btn_annuler
             // 
             this.btn_annuler.Enabled = false;
+            this.btn_annuler.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_annuler.Location = new System.Drawing.Point(896, 286);
             this.btn_annuler.Name = "btn_annuler";
             this.btn_annuler.Size = new System.Drawing.Size(142, 81);
@@ -338,6 +329,7 @@
             // 
             // btn_modifier
             // 
+            this.btn_modifier.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_modifier.Location = new System.Drawing.Point(896, 399);
             this.btn_modifier.Name = "btn_modifier";
             this.btn_modifier.Size = new System.Drawing.Size(142, 81);
@@ -348,6 +340,7 @@
             // 
             // btn_supprimer
             // 
+            this.btn_supprimer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_supprimer.Location = new System.Drawing.Point(896, 515);
             this.btn_supprimer.Name = "btn_supprimer";
             this.btn_supprimer.Size = new System.Drawing.Size(142, 81);
@@ -358,6 +351,7 @@
             // 
             // gb_inscription
             // 
+            this.gb_inscription.Controls.Add(this.dtp_dateNaissance);
             this.gb_inscription.Controls.Add(this.tb_codePermanent);
             this.gb_inscription.Controls.Add(this.mtb_codePostal);
             this.gb_inscription.Controls.Add(this.tb_nom);
@@ -367,7 +361,6 @@
             this.gb_inscription.Controls.Add(this.lb_noidAttribue);
             this.gb_inscription.Controls.Add(this.mtb_telephone);
             this.gb_inscription.Controls.Add(this.lb_noid);
-            this.gb_inscription.Controls.Add(this.tb_dateNaissance);
             this.gb_inscription.Controls.Add(this.lb_telephone);
             this.gb_inscription.Controls.Add(this.lb_codePostal);
             this.gb_inscription.Controls.Add(this.lb_Prenom);
@@ -386,29 +379,46 @@
             this.gb_inscription.TabStop = false;
             this.gb_inscription.Text = "Informations";
             // 
+            // dtp_dateNaissance
+            // 
+            this.dtp_dateNaissance.Checked = false;
+            this.dtp_dateNaissance.Enabled = false;
+            this.dtp_dateNaissance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtp_dateNaissance.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_dateNaissance.Location = new System.Drawing.Point(254, 288);
+            this.dtp_dateNaissance.MaxDate = new System.DateTime(2005, 1, 1, 0, 0, 0, 0);
+            this.dtp_dateNaissance.MinDate = new System.DateTime(1915, 1, 1, 0, 0, 0, 0);
+            this.dtp_dateNaissance.Name = "dtp_dateNaissance";
+            this.dtp_dateNaissance.Size = new System.Drawing.Size(124, 29);
+            this.dtp_dateNaissance.TabIndex = 22;
+            this.dtp_dateNaissance.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
+            // 
             // tb_codePermanent
             // 
             this.tb_codePermanent.Enabled = false;
-            this.tb_codePermanent.Location = new System.Drawing.Point(256, 41);
+            this.tb_codePermanent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tb_codePermanent.Location = new System.Drawing.Point(256, 39);
             this.tb_codePermanent.Mask = "LLLL00000000";
             this.tb_codePermanent.Name = "tb_codePermanent";
-            this.tb_codePermanent.Size = new System.Drawing.Size(94, 23);
+            this.tb_codePermanent.Size = new System.Drawing.Size(133, 29);
             this.tb_codePermanent.TabIndex = 1;
             this.tb_codePermanent.ValidatingType = typeof(int);
             // 
             // mtb_codePostal
             // 
             this.mtb_codePostal.Enabled = false;
-            this.mtb_codePostal.Location = new System.Drawing.Point(262, 427);
+            this.mtb_codePostal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mtb_codePostal.Location = new System.Drawing.Point(254, 426);
             this.mtb_codePostal.Mask = "A9A-9A9";
             this.mtb_codePostal.Name = "mtb_codePostal";
-            this.mtb_codePostal.Size = new System.Drawing.Size(100, 23);
+            this.mtb_codePostal.Size = new System.Drawing.Size(100, 29);
             this.mtb_codePostal.TabIndex = 7;
             this.mtb_codePostal.Validating += new System.ComponentModel.CancelEventHandler(this.mtb_codePostal_Validating);
             // 
             // gb_recherche
             // 
             this.gb_recherche.Controls.Add(this.tb_rNoid);
+            this.gb_recherche.Controls.Add(this.button1);
             this.gb_recherche.Controls.Add(this.btn_recherche);
             this.gb_recherche.Controls.Add(this.tb_rPrenom);
             this.gb_recherche.Controls.Add(this.tb_rNom);
@@ -425,16 +435,28 @@
             // tb_rNoid
             // 
             this.tb_rNoid.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_rNoid.Location = new System.Drawing.Point(262, 115);
+            this.tb_rNoid.Location = new System.Drawing.Point(226, 115);
             this.tb_rNoid.Name = "tb_rNoid";
             this.tb_rNoid.Size = new System.Drawing.Size(297, 29);
             this.tb_rNoid.TabIndex = 25;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(529, 77);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 67);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Rechercher";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn_recherche_Click);
+            // 
             // btn_recherche
             // 
-            this.btn_recherche.Location = new System.Drawing.Point(565, 77);
+            this.btn_recherche.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_recherche.Location = new System.Drawing.Point(529, 77);
             this.btn_recherche.Name = "btn_recherche";
-            this.btn_recherche.Size = new System.Drawing.Size(78, 67);
+            this.btn_recherche.Size = new System.Drawing.Size(103, 67);
             this.btn_recherche.TabIndex = 31;
             this.btn_recherche.Text = "Rechercher";
             this.btn_recherche.UseVisualStyleBackColor = true;
@@ -443,7 +465,7 @@
             // tb_rPrenom
             // 
             this.tb_rPrenom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_rPrenom.Location = new System.Drawing.Point(262, 69);
+            this.tb_rPrenom.Location = new System.Drawing.Point(226, 69);
             this.tb_rPrenom.Name = "tb_rPrenom";
             this.tb_rPrenom.Size = new System.Drawing.Size(297, 29);
             this.tb_rPrenom.TabIndex = 24;
@@ -451,7 +473,7 @@
             // tb_rNom
             // 
             this.tb_rNom.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_rNom.Location = new System.Drawing.Point(262, 24);
+            this.tb_rNom.Location = new System.Drawing.Point(226, 24);
             this.tb_rNom.Name = "tb_rNom";
             this.tb_rNom.Size = new System.Drawing.Size(297, 29);
             this.tb_rNom.TabIndex = 23;
@@ -506,69 +528,77 @@
             // 
             // nud_final
             // 
-            this.nud_final.Location = new System.Drawing.Point(557, 35);
+            this.nud_final.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nud_final.Location = new System.Drawing.Point(540, 35);
             this.nud_final.Name = "nud_final";
-            this.nud_final.Size = new System.Drawing.Size(83, 23);
+            this.nud_final.Size = new System.Drawing.Size(83, 29);
             this.nud_final.TabIndex = 7;
             this.nud_final.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nud_intra
             // 
+            this.nud_intra.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nud_intra.Location = new System.Drawing.Point(384, 35);
             this.nud_intra.Name = "nud_intra";
-            this.nud_intra.Size = new System.Drawing.Size(83, 23);
+            this.nud_intra.Size = new System.Drawing.Size(83, 29);
             this.nud_intra.TabIndex = 6;
             this.nud_intra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nud_tp2
             // 
+            this.nud_tp2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nud_tp2.Location = new System.Drawing.Point(226, 35);
             this.nud_tp2.Name = "nud_tp2";
-            this.nud_tp2.Size = new System.Drawing.Size(83, 23);
+            this.nud_tp2.Size = new System.Drawing.Size(83, 29);
             this.nud_tp2.TabIndex = 5;
             this.nud_tp2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nud_tp1
             // 
+            this.nud_tp1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nud_tp1.Location = new System.Drawing.Point(54, 35);
             this.nud_tp1.Name = "nud_tp1";
-            this.nud_tp1.Size = new System.Drawing.Size(83, 23);
+            this.nud_tp1.Size = new System.Drawing.Size(83, 29);
             this.nud_tp1.TabIndex = 4;
             this.nud_tp1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lb_final
             // 
             this.lb_final.AutoSize = true;
-            this.lb_final.Location = new System.Drawing.Point(521, 43);
+            this.lb_final.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lb_final.Location = new System.Drawing.Point(494, 37);
             this.lb_final.Name = "lb_final";
-            this.lb_final.Size = new System.Drawing.Size(30, 15);
+            this.lb_final.Size = new System.Drawing.Size(40, 21);
             this.lb_final.TabIndex = 3;
             this.lb_final.Text = "final";
             // 
             // lb_intra
             // 
             this.lb_intra.AutoSize = true;
-            this.lb_intra.Location = new System.Drawing.Point(347, 43);
+            this.lb_intra.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lb_intra.Location = new System.Drawing.Point(336, 37);
             this.lb_intra.Name = "lb_intra";
-            this.lb_intra.Size = new System.Drawing.Size(31, 15);
+            this.lb_intra.Size = new System.Drawing.Size(42, 21);
             this.lb_intra.TabIndex = 2;
             this.lb_intra.Text = "Intra";
             // 
             // lb_tp2
             // 
             this.lb_tp2.AutoSize = true;
-            this.lb_tp2.Location = new System.Drawing.Point(196, 43);
+            this.lb_tp2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lb_tp2.Location = new System.Drawing.Point(188, 37);
             this.lb_tp2.Name = "lb_tp2";
-            this.lb_tp2.Size = new System.Drawing.Size(24, 15);
+            this.lb_tp2.Size = new System.Drawing.Size(33, 21);
             this.lb_tp2.TabIndex = 1;
             this.lb_tp2.Text = "tp2";
             // 
             // lb_tp1
             // 
             this.lb_tp1.AutoSize = true;
-            this.lb_tp1.Location = new System.Drawing.Point(23, 43);
+            this.lb_tp1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lb_tp1.Location = new System.Drawing.Point(15, 37);
             this.lb_tp1.Name = "lb_tp1";
-            this.lb_tp1.Size = new System.Drawing.Size(24, 15);
+            this.lb_tp1.Size = new System.Drawing.Size(33, 21);
             this.lb_tp1.TabIndex = 0;
             this.lb_tp1.Text = "tp1";
             // 
@@ -636,6 +666,7 @@
             this.lb_positionEleves.Size = new System.Drawing.Size(113, 21);
             this.lb_positionEleves.TabIndex = 40;
             this.lb_positionEleves.Text = "position fichier";
+            this.lb_positionEleves.Visible = false;
             // 
             // Inscription
             // 
@@ -694,7 +725,6 @@
         private TextBox tb_ville;
         private RadioButton rb_feminin;
         private RadioButton rb_masculin;
-        private MaskedTextBox tb_dateNaissance;
         private Label lb_noidAttribue;
         private MaskedTextBox mtb_telephone;
         private Label lb_titreInscription;
@@ -730,5 +760,7 @@
         private NumericUpDown nud_tp1;
         private Label lb_positionEleves;
         private MaskedTextBox tb_codePermanent;
+        private DateTimePicker dtp_dateNaissance;
+        private Button button1;
     }
 }
