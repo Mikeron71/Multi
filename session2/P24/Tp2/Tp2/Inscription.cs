@@ -5,7 +5,7 @@ namespace Tp2
     {
         public StudentFile _studentFile;
         public int pos = 0;
-      
+
         public string noId = "";
         public int compteExistant = 1;
         public string action = "";
@@ -134,13 +134,13 @@ namespace Tp2
         public string CreerNoid()
         {
 
-            
+
             if (tb_nom.Text.Length > 3 && tb_prenom.Text.Length > 3)
             {
                 string lettresNom = tb_nom.Text.Substring(0, 3);
                 string lettrePrenom = tb_prenom.Text.Substring(0, 1);
                 string noIdACreer = lettresNom.ToUpper() + lettrePrenom.ToUpper() + 1;
-                int pos = _studentFile.FindStudent(noIdACreer,true);
+                int pos = _studentFile.FindStudent(noIdACreer, true);
                 if (pos != -1)
                 {
                     noId = lettresNom.ToUpper() + lettrePrenom.ToUpper() + compteExistant;
@@ -159,7 +159,7 @@ namespace Tp2
         {
             try
             {
-                var etudiant = _studentFile.ReadEtudiant(pos);
+                var etudiant = _studentFile.ReadStudent(pos);
                 if (_studentFile.nbEleves > 0)
                 {
                     lb_positionEleves.Text = "";
@@ -204,10 +204,10 @@ namespace Tp2
         private void btn_recherche_Click(object sender, EventArgs e)
         {
             action = "rechercheEleve";
-           
+
             if (tb_rNoid.Text != "")
             {
-                int position = _studentFile.FindStudent(tb_rNoid.Text.ToUpper(),false);
+                int position = _studentFile.FindStudent(tb_rNoid.Text.ToUpper(), false);
                 MessageBox.Show(position.ToString());
                 if (position != -1)
                 {
@@ -218,14 +218,14 @@ namespace Tp2
                 }
                 else
                 {
-              
+
                     MessageBox.Show("Étudiant(e) inexistant(e)");
                 }
             }
 
             if (tb_rNom.Text != "" && tb_rPrenom.Text != "")
             {
-                int position  = _studentFile.FindStudent(tb_rNom.Text.ToLower(), tb_rPrenom.Text.ToLower());
+                int position = _studentFile.FindStudent(tb_rNom.Text.ToLower(), tb_rPrenom.Text.ToLower());
                 if (pos != 1)
                 {
                     MessageBox.Show("Étudiant(e) trouvé(e).");
@@ -235,200 +235,216 @@ namespace Tp2
                 }
                 else
                 {
-                  
+
                     MessageBox.Show("Étudiant(e) inexistant(e)");
                 }
             }
         }
 
-    private void btn_premier_Click(object sender, EventArgs e)
-    {
-        pos = 0;
-        GetEtudiant(pos);
-    }
-
-    private void btn_avancer_Click(object sender, EventArgs e)
-    {
-        if (pos <  _studentFile.nbEleves - 1)
+        private void btn_premier_Click(object sender, EventArgs e)
         {
-            pos++;
+            pos = 0;
             GetEtudiant(pos);
         }
-    }
 
-    private void btn_reculer_Click(object sender, EventArgs e)
-    {
-        if (pos > 0)
+        private void btn_avancer_Click(object sender, EventArgs e)
         {
-            pos--;
-            GetEtudiant(pos);
-        }
-    }
-
-    private void btn_dernier_Click(object sender, EventArgs e)
-    {
-        pos = _studentFile.nbEleves - 1;
-        GetEtudiant(pos);
-    }
-    public void ClearGroup(GroupBox group)
-    {
-        foreach (Control ctr in group.Controls)
-        {
-            if (ctr is TextBox || ctr is MaskedTextBox)
+            if (pos < _studentFile.nbEleves - 1)
             {
-                ctr.Text = "";
+                pos++;
+                GetEtudiant(pos);
             }
         }
-        lb_noidAttribue.Text = "";
-        rb_feminin.Checked = false;
-        rb_masculin.Checked = false;
 
-    }
-
-
-    private void btn_supprimer_Click(object sender, EventArgs e)
-    {
-        string idtoDelete = lb_noidAttribue.Text;
-        var result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élève?", "SUPPRESSION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        if (result == DialogResult.Yes)
-        {   
-                _studentFile.DeleteStudent(idtoDelete);
-           
+        private void btn_reculer_Click(object sender, EventArgs e)
+        {
             if (pos > 0)
             {
                 pos--;
-                ClearGroup(gb_inscription);
+                GetEtudiant(pos);
             }
+        }
+
+        private void btn_dernier_Click(object sender, EventArgs e)
+        {
+            pos = _studentFile.nbEleves - 1;
             GetEtudiant(pos);
         }
-    }
-    // VALIDATION _______________________________________________________________________________________________________________
-    private bool Valider()
-    {
-        bool valide = true;
-        foreach (Control ct in gb_inscription.Controls)
+        public void ClearGroup(GroupBox group)
         {
-            if (ct is TextBox && ct.Text == "")
+            foreach (Control ctr in group.Controls)
             {
-                errorProvider1.SetError(ct, "Ce champ est requis");
+                if (ctr is TextBox || ctr is MaskedTextBox)
+                {
+                    ctr.Text = "";
+                }
+            }
+            lb_noidAttribue.Text = "";
+            rb_feminin.Checked = false;
+            rb_masculin.Checked = false;
+
+        }
+
+
+        private void btn_supprimer_Click(object sender, EventArgs e)
+        {
+            string idtoDelete = lb_noidAttribue.Text;
+            var result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet élève?", "SUPPRESSION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                _studentFile.DeleteStudent(idtoDelete);
+
+                if (pos > 0)
+                {
+                    pos--;
+                    ClearGroup(gb_inscription);
+                }
+                GetEtudiant(pos);
+            }
+        }
+        // VALIDATION _______________________________________________________________________________________________________________
+        private bool Valider()
+        {
+            bool valide = true;
+            foreach (Control ct in gb_inscription.Controls)
+            {
+                if (ct is TextBox && ct.Text == "" || ct.Text.Length < 3)
+                {
+                    errorProvider1.SetError(ct, "Ce champ est requis");
+                    valide = false;
+                }
+                //else if (ct is MaskedTextBox && ct.Text.Length != 12 )
+                //{
+                //    errorProvider1.SetError(ct, "Ce champ est requis");
+                //    valide = false;
+                //}
+                else
+                {
+                    errorProvider1.SetError(ct, "");
+                }
+
+            }
+            if (rb_feminin.Checked == false && rb_masculin.Checked == false)
+            {
+                errorProvider1.SetError(rb_masculin, "Vous devez cocher un des deux choix");
                 valide = false;
             }
-            //else if (ct is MaskedTextBox && ct.Text.Length != 12 )
-            //{
-            //    errorProvider1.SetError(ct, "Ce champ est requis");
-            //    valide = false;
-            //}
-            else
+
+            if (tb_codePermanent.Text.Length != 12)
             {
-                errorProvider1.SetError(ct, "");
+                valide = false;
+                errorProvider1.SetError(tb_codePermanent, "Ce champ est requis");
             }
 
+            if (tb_dateNaissance.Text.Length != 10)
+            {
+                valide = false;
+                errorProvider1.SetError(tb_dateNaissance, "Ce champ est requis");
+
+            }
+
+            if (mtb_telephone.Text.Length != 14)
+            {
+                valide = false;
+                errorProvider1.SetError(mtb_telephone, "Ce champ est requis");
+
+            }
+
+            return valide;
         }
-        if (rb_feminin.Checked == false && rb_masculin.Checked == false)
+
+        private void ResetError()
         {
-            errorProvider1.SetError(rb_masculin, "Vous devez cocher un des deux choix");
-            valide = false;
+            foreach (Control ct in gb_inscription.Controls)
+                errorProvider1.SetError(ct, "");
         }
 
-        if (tb_codePermanent.Text.Length != 12 || tb_dateNaissance.Text.Length != 10 || mtb_telephone.Text.Length != 14)
+        private void tb_codePermanent_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            valide = false;
+            if (tb_codePermanent.Text.Length != 12 && tb_codePermanent.Enabled == true)
+            {
+                errorProvider1.SetError(tb_codePermanent, "Le code permanent doit contenir 12 caractères");
+                tb_codePermanent.Focus();
+            }
+            else
+            {
+                errorProvider1.SetError(tb_codePermanent, "");
+            }
         }
-        return valide;
-    }
 
-    private void ResetError()
-    {
-        foreach (Control ct in gb_inscription.Controls)
-            errorProvider1.SetError(ct, "");
-    }
-
-    private void tb_codePermanent_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-    {
-        if (tb_codePermanent.Text.Length != 12 && tb_codePermanent.Enabled == true)
+        private void tb_nom_KeyPress(object sender, KeyPressEventArgs e)
         {
-            errorProvider1.SetError(tb_codePermanent, "Le code permanent doit contenir 12 caractères");
-            tb_codePermanent.Focus();
+            if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-')
+            {
+                e.Handled = false;
+            }
+            else e.Handled = true;
         }
-        else
+
+        private void tb_prenom_KeyPress(object sender, KeyPressEventArgs e)
         {
-            errorProvider1.SetError(tb_codePermanent, "");
-        }
-    }
-
-    private void tb_nom_KeyPress(object sender, KeyPressEventArgs e)
-    {
-        if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-')
-        {
-            e.Handled = false;
-        }
-        else e.Handled = true;
-    }
-
-    private void tb_prenom_KeyPress(object sender, KeyPressEventArgs e)
-    {
-        if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-')
-        {
-            e.Handled = false;
-        }
-        else e.Handled = true;
-
-    }
-    private void tb_dateNaissance_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-    {
-        if (tb_dateNaissance.Text.Length != 10)
-        {
-            errorProvider1.SetError(tb_dateNaissance, "Entrez la date en format 00/00/0000");
-            tb_dateNaissance.Focus();
-        }
-    }
-
-    private void mtb_codePostal_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-    {
-        if (mtb_codePostal.Text.Length != 7)
-        {
-            errorProvider1.SetError(mtb_codePostal, "Entrez le code postal en format A0A-0A0");
-            mtb_codePostal.Focus();
-        }
-    }
-
-    private void mtb_telephone_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-    {
-        if (mtb_telephone.Text.Length != 14)
-        {
-            errorProvider1.SetError(mtb_telephone, "Entrez le numéro de téléphone  postal en format 000-000-0000");
-            mtb_telephone.Focus();
-        }
-    }
-
-    // Annule tout si je change de page
-    private void Inscription_Deactivate(object sender, EventArgs e)
-    {
-        ClearGroup(gb_inscription);
-        GetEtudiant(pos);
-        IdleMode();
-    }
-
-    private void tb_dateNaissance_Enter(object sender, EventArgs e)
-    {
-        this.BeginInvoke((MethodInvoker)delegate ()
-        {
-            tb_dateNaissance.Select(0, 0);
-        });
-
-
-    }
-
-    private void tb_ville_KeyPress(object sender, KeyPressEventArgs e)
-    {
-        {
-            if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-' || e.KeyChar == 'é' || e.KeyChar == ' ')
+            if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-')
             {
                 e.Handled = false;
             }
             else e.Handled = true;
 
         }
+        private void tb_dateNaissance_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (tb_dateNaissance.Text.Length != 10)
+            {
+                errorProvider1.SetError(tb_dateNaissance, "Entrez la date en format 00/00/0000");
+                tb_dateNaissance.Focus();
+            }
+        }
+
+        private void mtb_codePostal_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (mtb_codePostal.Text.Length != 7)
+            {
+                errorProvider1.SetError(mtb_codePostal, "Entrez le code postal en format A0A-0A0");
+                mtb_codePostal.Focus();
+            }
+        }
+
+        private void mtb_telephone_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (mtb_telephone.Text.Length != 14)
+            {
+                errorProvider1.SetError(mtb_telephone, "Entrez le numéro de téléphone  postal en format 000-000-0000");
+                mtb_telephone.Focus();
+            }
+        }
+
+        // Annule tout si je change de page
+        private void Inscription_Deactivate(object sender, EventArgs e)
+        {
+            ClearGroup(gb_inscription);
+            GetEtudiant(pos);
+            IdleMode();
+        }
+
+        private void tb_dateNaissance_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate ()
+            {
+                tb_dateNaissance.Select(0, 0);
+            });
+
+
+        }
+
+        private void tb_ville_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            {
+                if ((char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back) || e.KeyChar == '-' || e.KeyChar == 'é' || e.KeyChar == ' ')
+                {
+                    e.Handled = false;
+                }
+                else e.Handled = true;
+
+            }
+        }
     }
-}
 }

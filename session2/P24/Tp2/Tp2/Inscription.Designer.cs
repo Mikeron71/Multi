@@ -428,7 +428,7 @@
             this.tb_rNoid.Location = new System.Drawing.Point(262, 115);
             this.tb_rNoid.Name = "tb_rNoid";
             this.tb_rNoid.Size = new System.Drawing.Size(297, 29);
-            this.tb_rNoid.TabIndex = 32;
+            this.tb_rNoid.TabIndex = 25;
             // 
             // btn_recherche
             // 
@@ -446,7 +446,7 @@
             this.tb_rPrenom.Location = new System.Drawing.Point(262, 69);
             this.tb_rPrenom.Name = "tb_rPrenom";
             this.tb_rPrenom.Size = new System.Drawing.Size(297, 29);
-            this.tb_rPrenom.TabIndex = 31;
+            this.tb_rPrenom.TabIndex = 24;
             // 
             // tb_rNom
             // 

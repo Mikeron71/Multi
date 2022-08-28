@@ -3,7 +3,7 @@ namespace Tp2
     public partial class frmAccueil : Form
     {
         private StudentFile _studentFile;
-        public static Inscription? frmInscription =  null;
+        public static Inscription? frmInscription = null;
         public frmAccueil(StudentFile studentfile)
         {
             _studentFile = studentfile;
@@ -11,17 +11,17 @@ namespace Tp2
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            LoadInscription(); 
+            LoadInscription();
         }
-      
+
         // MENU BAR_________________________________________________________________________
-        
+
         private void inscriptionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadInscription();
         }
 
-        public  void  LoadInscription()
+        public void LoadInscription()
         {
             if (System.Windows.Forms.Application.OpenForms["Inscription"] as Inscription == null)
             {
@@ -38,10 +38,9 @@ namespace Tp2
 
         private void listeEtStatistiquesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             if (System.Windows.Forms.Application.OpenForms["Stats"] as Stats == null)
             {
-                Stats frmStats = new Stats();
+                Stats frmStats = new Stats(frmInscription);
                 frmStats.MdiParent = this;
                 frmStats.Show();
             }

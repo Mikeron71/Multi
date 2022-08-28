@@ -5,13 +5,15 @@
         double nbEleves;
         int longeur = 175;
         double totalTp1, totalTp2, totalIntra, totalFinal;
-        double tp1 ,tp2,intra,final;
-        StudentFile studentFile = new StudentFile();
-        public Stats()
+        double tp1, tp2, intra, final;
+        Inscription _FrmInscription;
+        public Stats(Inscription frmInsciption)
         {
             InitializeComponent();
+            _FrmInscription = frmInsciption;
         }
         private void Stats_Load(object sender, EventArgs e)
+
         {
             Read();
             LoadMoyenne();
@@ -21,7 +23,7 @@
         }
 
         public void Read()
-        {   
+        {
             lv_stats.Items.Clear();
             totalTp1 = 0;
             totalTp2 = 0;
@@ -30,9 +32,9 @@
             try
             {
 
-                using (FileStream fs = new ("Eleve.Dta", FileMode.Open, FileAccess.Read))
+                using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Read))
                 {
-                    using (BinaryReader br = new (fs, System.Text.Encoding.Latin1))
+                    using (BinaryReader br = new(fs, System.Text.Encoding.Latin1))
                     {
                         Etudiant etudiant = new Etudiant();
 
@@ -132,9 +134,9 @@
             lv_stats.Columns.Add("Final", 40);
         }
 
-        
+
         //BOUTONS (ils ne sont pas nécessaires puisque je met a jour lors du focus.)
-        
+
         private void btn_stats_Click(object sender, EventArgs e)
         {
             LoadMoyenne();
@@ -147,9 +149,9 @@
         private void lv_stats_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             string noid = lv_stats.SelectedItems[0].Text;
-            
-            frmAccueil.frmInscription.GetEtudiant(frmAccueil.frmInscription._studentFile.FindStudent(noid, false));
-            frmAccueil.frmInscription.Focus();
+
+            _FrmInscription.GetEtudiant(_FrmInscription._studentFile.FindStudent(noid, false));
+            _FrmInscription.Focus();
         }
 
     }

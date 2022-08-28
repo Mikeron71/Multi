@@ -5,7 +5,7 @@ namespace Tp2
     {
         const int longeur = 175;
         public int nbEleves = 0;
-        public Etudiant ReadEtudiant(int pos)
+        public Etudiant ReadStudent(int pos)
         {
             Etudiant etudiant = new Etudiant();
             using (FileStream fs = new("Eleve.Dta", FileMode.Open, FileAccess.Read))
@@ -87,7 +87,7 @@ namespace Tp2
             {
             }
             if (!found)
-            return -1;
+                return -1;
             else
             {
                 return 1;
@@ -133,9 +133,6 @@ namespace Tp2
             }
             return -1;
         }
-
-
-
         public void AddStudent(Etudiant etudiant)
         {
             using (FileStream fs = new("Eleve.Dta", FileMode.Append, FileAccess.Write))
@@ -232,7 +229,6 @@ namespace Tp2
                                     bw.Write(tp2);
                                     bw.Write(intra);
                                     bw.Write(final);
-
                                 }
                             }
                         }
@@ -246,7 +242,7 @@ namespace Tp2
             }
             catch (Exception)
             {
-
+                MessageBox.Show("Erreur!");
             }
         }
     }
